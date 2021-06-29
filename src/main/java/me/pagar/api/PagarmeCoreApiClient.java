@@ -10,6 +10,14 @@ import me.pagar.api.http.client.HttpClient;
 
 public class PagarmeCoreApiClient {
     /**
+     * Singleton access to Plans controller
+     * @return	Returns the PlansController instance 
+     */
+    public PlansController getPlans() {
+        return PlansController.getInstance();
+    }
+
+    /**
      * Singleton access to Subscriptions controller
      * @return	Returns the SubscriptionsController instance 
      */
@@ -23,14 +31,6 @@ public class PagarmeCoreApiClient {
      */
     public OrdersController getOrders() {
         return OrdersController.getInstance();
-    }
-
-    /**
-     * Singleton access to Plans controller
-     * @return	Returns the PlansController instance 
-     */
-    public PlansController getPlans() {
-        return PlansController.getInstance();
     }
 
     /**
@@ -55,6 +55,14 @@ public class PagarmeCoreApiClient {
      */
     public ChargesController getCharges() {
         return ChargesController.getInstance();
+    }
+
+    /**
+     * Singleton access to Transfers controller
+     * @return	Returns the TransfersController instance 
+     */
+    public TransfersController getTransfers() {
+        return TransfersController.getInstance();
     }
 
     /**
@@ -87,14 +95,6 @@ public class PagarmeCoreApiClient {
      */
     public TransactionsController getTransactions() {
         return TransactionsController.getInstance();
-    }
-
-    /**
-     * Singleton access to Transfers controller
-     * @return	Returns the TransfersController instance 
-     */
-    public TransfersController getTransfers() {
-        return TransfersController.getInstance();
     }
 
     /**
