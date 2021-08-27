@@ -11,19 +11,19 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 ## How to Use
 
@@ -33,40 +33,40 @@ The following section explains how to use the PagarmeCoreApi library in a new co
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 ### 2. Add reference of the library project
 
 The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *PagarmeCoreApiLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 Clicking the ``` Add ``` button will open a dialog where you need to specify PagarmeCoreApi in ``` Group Id ``` and PagarmeCoreApiLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Pagarme.Core.Api-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=PagarmeCoreApi-Java&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApiLib&rootNamespace=me.pagar.api)
 
 ## How to Test
 
@@ -492,8 +492,8 @@ void getPlansAsync(
 #### Example Usage
 
 ```java
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 String name = "name";
 String status = "status";
 String billingType = "billing_type";
@@ -906,8 +906,8 @@ void getSubscriptionItemsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 String name = "name";
 String code = "code";
 String status = "status";
@@ -1053,8 +1053,8 @@ void getSubscriptionsAsync(
 #### Example Usage
 
 ```java
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 String code = "code";
 String billingType = "billing_type";
 String customerId = "customer_id";
@@ -1532,8 +1532,8 @@ void getDiscountsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-int page = 165;
-int size = 165;
+int page = 42;
+int size = 42;
 // Invoking the API call with sample inputs
 subscriptions.getDiscountsAsync(subscriptionId, page, size, new APICallBack<ListDiscountsResponse>() {
     public void onSuccess(HttpContext context, ListDiscountsResponse response) {
@@ -1659,8 +1659,8 @@ void getIncrementsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 // Invoking the API call with sample inputs
 subscriptions.getIncrementsAsync(subscriptionId, page, size, new APICallBack<ListIncrementsResponse>() {
     public void onSuccess(HttpContext context, ListIncrementsResponse response) {
@@ -1929,8 +1929,8 @@ void getUsagesAsync(
 ```java
 String subscriptionId = "subscription_id";
 String itemId = "item_id";
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 String code = "code";
 String group = "group";
 DateTime usedSince = new Date();
@@ -2333,8 +2333,8 @@ void getInvoicesAsync(
 #### Example Usage
 
 ```java
-Integer page = 165;
-Integer size = 165;
+Integer page = 42;
+Integer size = 42;
 String code = "code";
 String customerId = "customer_id";
 String subscriptionId = "subscription_id";
@@ -2482,8 +2482,8 @@ void getOrdersAsync(
 #### Example Usage
 
 ```java
-Integer page = 165;
-Integer size = 165;
+Integer page = 1;
+Integer size = 1;
 String code = "code";
 String status = "status";
 DateTime createdSince = new Date();
@@ -3440,8 +3440,8 @@ void getAccessTokensAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 // Invoking the API call with sample inputs
 customers.getAccessTokensAsync(customerId, page, size, new APICallBack<ListAccessTokensResponse>() {
     public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
@@ -3481,8 +3481,8 @@ void getCardsAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 // Invoking the API call with sample inputs
 customers.getCardsAsync(customerId, page, size, new APICallBack<ListCardsResponse>() {
     public void onSuccess(HttpContext context, ListCardsResponse response) {
@@ -3687,8 +3687,8 @@ void getAddressesAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 // Invoking the API call with sample inputs
 customers.getAddressesAsync(customerId, page, size, new APICallBack<ListAddressesResponse>() {
     public void onSuccess(HttpContext context, ListAddressesResponse response) {
@@ -3941,8 +3941,8 @@ void getRecipientsAsync(
 #### Example Usage
 
 ```java
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 // Invoking the API call with sample inputs
 recipients.getRecipientsAsync(page, size, new APICallBack<ListRecipientResponse>() {
     public void onSuccess(HttpContext context, ListRecipientResponse response) {
@@ -4116,8 +4116,8 @@ void getTransfersAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();
@@ -4380,8 +4380,8 @@ void getAnticipationsAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 String status = "status";
 String timeframe = "timeframe";
 DateTime paymentDateSince = new Date();
@@ -4503,8 +4503,8 @@ void getWithdrawalsAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();
@@ -4771,8 +4771,8 @@ void getChargeTransactionsAsync(
 
 ```java
 String chargeId = "charge_id";
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 // Invoking the API call with sample inputs
 charges.getChargeTransactionsAsync(chargeId, page, size, new APICallBack<ListChargeTransactionsResponse>() {
     public void onSuccess(HttpContext context, ListChargeTransactionsResponse response) {
@@ -4868,8 +4868,8 @@ void getChargesAsync(
 #### Example Usage
 
 ```java
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 String code = "code";
 String status = "status";
 String paymentMethod = "payment_method";
@@ -5690,8 +5690,8 @@ void getSellersAsync(
 #### Example Usage
 
 ```java
-Integer page = 2;
-Integer size = 2;
+Integer page = 1;
+Integer size = 1;
 String name = "name";
 String document = "document";
 String code = "code";
