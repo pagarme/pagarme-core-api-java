@@ -263,6 +263,14 @@ public class CreateSubscriptionRequestBuilder {
         createSubscriptionRequest.setSubmerchant(submerchant);
         return this;
     }
+
+    /**
+     * Split
+     */
+    public CreateSubscriptionRequestBuilder split(CreateSubscriptionSplitRequest split) {
+        createSubscriptionRequest.setSplit(split);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

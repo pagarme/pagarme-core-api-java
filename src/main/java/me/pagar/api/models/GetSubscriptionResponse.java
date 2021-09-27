@@ -18,7 +18,7 @@ import org.joda.time.DateTime;
 @JsonInclude(Include.ALWAYS)
 public class GetSubscriptionResponse 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 2816787901418113615L;
+    private static final long serialVersionUID = 6665266992638812086L;
     private String id;
     private String code;
     private DateTime startAt;
@@ -46,6 +46,7 @@ public class GetSubscriptionResponse
     private List<GetDiscountResponse> discounts;
     private List<GetIncrementResponse> increments;
     private Integer boletoDueDays;
+    private GetSubscriptionSplitResponse split;
     /** GETTER
      * TODO: Write general description for this method
      */
@@ -486,6 +487,22 @@ public class GetSubscriptionResponse
     @JsonSetter("boleto_due_days")
     public void setBoletoDueDays (Integer value) { 
         this.boletoDueDays = value;
+    }
+ 
+    /** GETTER
+     * Split
+     */
+    @JsonGetter("split")
+    public GetSubscriptionSplitResponse getSplit ( ) { 
+        return this.split;
+    }
+    
+    /** SETTER
+     * Split
+     */
+    @JsonSetter("split")
+    public void setSplit (GetSubscriptionSplitResponse value) { 
+        this.split = value;
     }
  
 }
