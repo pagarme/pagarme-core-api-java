@@ -43,22 +43,6 @@ public class CreateOrderItemRequestBuilder {
     }
 
     /**
-     * Item seller
-     */
-    public CreateOrderItemRequestBuilder seller(CreateSellerRequest seller) {
-        createOrderItemRequest.setSeller(seller);
-        return this;
-    }
-
-    /**
-     * seller identificator
-     */
-    public CreateOrderItemRequestBuilder sellerId(String sellerId) {
-        createOrderItemRequest.setSellerId(sellerId);
-        return this;
-    }
-
-    /**
      * Category
      */
     public CreateOrderItemRequestBuilder category(String category) {

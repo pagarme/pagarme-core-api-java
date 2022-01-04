@@ -42,14 +42,6 @@ public class GetOrderItemResponseBuilder {
     }
 
     /**
-     * Seller data
-     */
-    public GetOrderItemResponseBuilder getSellerResponse(GetSellerResponse getSellerResponse) {
-        getOrderItemResponse.setGetSellerResponse(getSellerResponse);
-        return this;
-    }
-
-    /**
      * Category
      */
     public GetOrderItemResponseBuilder category(String category) {
