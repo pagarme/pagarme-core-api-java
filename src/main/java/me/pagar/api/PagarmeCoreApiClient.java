@@ -26,14 +26,6 @@ public class PagarmeCoreApiClient {
     }
 
     /**
-     * Singleton access to Invoices controller
-     * @return	Returns the InvoicesController instance 
-     */
-    public InvoicesController getInvoices() {
-        return InvoicesController.getInstance();
-    }
-
-    /**
      * Singleton access to Orders controller
      * @return	Returns the OrdersController instance 
      */
@@ -42,19 +34,19 @@ public class PagarmeCoreApiClient {
     }
 
     /**
+     * Singleton access to Invoices controller
+     * @return	Returns the InvoicesController instance 
+     */
+    public InvoicesController getInvoices() {
+        return InvoicesController.getInstance();
+    }
+
+    /**
      * Singleton access to Customers controller
      * @return	Returns the CustomersController instance 
      */
     public CustomersController getCustomers() {
         return CustomersController.getInstance();
-    }
-
-    /**
-     * Singleton access to Recipients controller
-     * @return	Returns the RecipientsController instance 
-     */
-    public RecipientsController getRecipients() {
-        return RecipientsController.getInstance();
     }
 
     /**
@@ -74,19 +66,19 @@ public class PagarmeCoreApiClient {
     }
 
     /**
+     * Singleton access to Recipients controller
+     * @return	Returns the RecipientsController instance 
+     */
+    public RecipientsController getRecipients() {
+        return RecipientsController.getInstance();
+    }
+
+    /**
      * Singleton access to Tokens controller
      * @return	Returns the TokensController instance 
      */
     public TokensController getTokens() {
         return TokensController.getInstance();
-    }
-
-    /**
-     * Singleton access to Sellers controller
-     * @return	Returns the SellersController instance 
-     */
-    public SellersController getSellers() {
-        return SellersController.getInstance();
     }
 
     /**
