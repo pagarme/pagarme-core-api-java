@@ -53,8 +53,8 @@ public class CancelSplitRequestBuilder {
     /**
      * Rule id
      */
-    public CancelSplitRequestBuilder splitRuleID(String splitRuleID) {
-        cancelSplitRequest.setSplitRuleID(splitRuleID);
+    public CancelSplitRequestBuilder splitRuleId(String splitRuleId) {
+        cancelSplitRequest.setSplitRuleId(splitRuleId);
         return this;
     }
     /**
