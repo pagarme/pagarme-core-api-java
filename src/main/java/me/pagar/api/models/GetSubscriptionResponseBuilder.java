@@ -165,6 +165,14 @@ public class GetSubscriptionResponseBuilder {
         getSubscriptionResponse.setBoletoDueDays(boletoDueDays);
         return this;
     }
+
+    /**
+     * Subscription's split responde
+     */
+    public GetSubscriptionResponseBuilder split(GetSubscriptionSplitResponse split) {
+        getSubscriptionResponse.setSplit(split);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
