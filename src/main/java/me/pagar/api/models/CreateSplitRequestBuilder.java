@@ -49,6 +49,14 @@ public class CreateSplitRequestBuilder {
         createSplitRequest.setOptions(options);
         return this;
     }
+
+    /**
+     * Rule code used in cancellation.
+     */
+    public CreateSplitRequestBuilder splitRuleId(String splitRuleId) {
+        createSplitRequest.setSplitRuleId(splitRuleId);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
