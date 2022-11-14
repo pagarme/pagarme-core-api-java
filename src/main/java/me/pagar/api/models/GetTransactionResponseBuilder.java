@@ -134,6 +134,21 @@ public class GetTransactionResponseBuilder {
         getTransactionResponse.setSplit(split);
         return this;
     }
+
+    public GetTransactionResponseBuilder interest(GetInterestResponse interest) {
+        getTransactionResponse.setInterest(interest);
+        return this;
+    }
+
+    public GetTransactionResponseBuilder fine(GetFineResponse fine) {
+        getTransactionResponse.setFine(fine);
+        return this;
+    }
+
+    public GetTransactionResponseBuilder maxDaysToPayPastDue(Integer maxDaysToPayPastDue) {
+        getTransactionResponse.setMaxDaysToPayPastDue(maxDaysToPayPastDue);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

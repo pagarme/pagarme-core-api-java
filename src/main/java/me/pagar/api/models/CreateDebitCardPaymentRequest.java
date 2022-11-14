@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.ALWAYS)
 public class CreateDebitCardPaymentRequest 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 495268052255169489L;
+    private static final long serialVersionUID = -7918472504869189950L;
     private String statementDescriptor;
     private CreateCardRequest card;
     private String cardId;
@@ -22,6 +22,7 @@ public class CreateDebitCardPaymentRequest
     private Boolean recurrence;
     private CreatePaymentAuthenticationRequest authentication;
     private CreateCardPaymentContactlessRequest token;
+    private String recurrencyCycle;
     /** GETTER
      * The text that will be shown on the debit card's statement
      */
@@ -132,6 +133,22 @@ public class CreateDebitCardPaymentRequest
     @JsonSetter("token")
     public void setToken (CreateCardPaymentContactlessRequest value) { 
         this.token = value;
+    }
+ 
+    /** GETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonGetter("recurrency_cycle")
+    public String getRecurrencyCycle ( ) { 
+        return this.recurrencyCycle;
+    }
+    
+    /** SETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonSetter("recurrency_cycle")
+    public void setRecurrencyCycle (String value) { 
+        this.recurrencyCycle = value;
     }
  
 }

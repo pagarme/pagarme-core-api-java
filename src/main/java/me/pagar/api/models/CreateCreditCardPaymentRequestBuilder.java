@@ -126,6 +126,14 @@ public class CreateCreditCardPaymentRequestBuilder {
         createCreditCardPaymentRequest.setOperationType(operationType);
         return this;
     }
+
+    /**
+     * Defines whether the card has been used one or more times.
+     */
+    public CreateCreditCardPaymentRequestBuilder recurrencyCycle(String recurrencyCycle) {
+        createCreditCardPaymentRequest.setRecurrencyCycle(recurrencyCycle);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

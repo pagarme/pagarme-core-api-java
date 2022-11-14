@@ -73,6 +73,14 @@ public class CreateDebitCardPaymentRequestBuilder {
         createDebitCardPaymentRequest.setToken(token);
         return this;
     }
+
+    /**
+     * Defines whether the card has been used one or more times.
+     */
+    public CreateDebitCardPaymentRequestBuilder recurrencyCycle(String recurrencyCycle) {
+        createDebitCardPaymentRequest.setRecurrencyCycle(recurrencyCycle);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

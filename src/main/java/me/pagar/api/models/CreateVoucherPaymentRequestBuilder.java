@@ -49,6 +49,14 @@ public class CreateVoucherPaymentRequestBuilder {
         createVoucherPaymentRequest.setCard(card);
         return this;
     }
+
+    /**
+     * Defines whether the card has been used one or more times.
+     */
+    public CreateVoucherPaymentRequestBuilder recurrencyCycle(String recurrencyCycle) {
+        createVoucherPaymentRequest.setRecurrencyCycle(recurrencyCycle);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
