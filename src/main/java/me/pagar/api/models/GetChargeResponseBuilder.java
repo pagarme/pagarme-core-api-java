@@ -119,6 +119,22 @@ public class GetChargeResponseBuilder {
         getChargeResponse.setPaidAmount(paidAmount);
         return this;
     }
+
+    /**
+     * Defines whether the card has been used one or more times.
+     */
+    public GetChargeResponseBuilder recurrencyCycle(String recurrencyCycle) {
+        getChargeResponse.setRecurrencyCycle(recurrencyCycle);
+        return this;
+    }
+
+    /**
+     * interest and fine paid
+     */
+    public GetChargeResponseBuilder interestAndFinePaid(Integer interestAndFinePaid) {
+        getChargeResponse.setInterestAndFinePaid(interestAndFinePaid);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

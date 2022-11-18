@@ -38,7 +38,7 @@ import org.joda.time.DateTime;
 @JsonInclude(Include.ALWAYS)
 public class GetTransactionResponse 
         implements java.io.Serializable {
-    private static final long serialVersionUID = -1432529684995687665L;
+    private static final long serialVersionUID = 1592334950737737323L;
     private String gatewayId;
     private int amount;
     private String status;
@@ -55,6 +55,9 @@ public class GetTransactionResponse
     private GetAntifraudResponse antifraudResponse;
     private LinkedHashMap<String, String> metadata;
     private List<GetSplitResponse> split;
+    private GetInterestResponse interest;
+    private GetFineResponse fine;
+    private Integer maxDaysToPayPastDue;
     /** GETTER
      * Gateway transaction id
      */
@@ -315,6 +318,54 @@ public class GetTransactionResponse
     @JsonSetter("split")
     public void setSplit (List<GetSplitResponse> value) { 
         this.split = value;
+    }
+ 
+    /** GETTER
+     * TODO: Write general description for this method
+     */
+    @JsonGetter("interest")
+    public GetInterestResponse getInterest ( ) { 
+        return this.interest;
+    }
+    
+    /** SETTER
+     * TODO: Write general description for this method
+     */
+    @JsonSetter("interest")
+    public void setInterest (GetInterestResponse value) { 
+        this.interest = value;
+    }
+ 
+    /** GETTER
+     * TODO: Write general description for this method
+     */
+    @JsonGetter("fine")
+    public GetFineResponse getFine ( ) { 
+        return this.fine;
+    }
+    
+    /** SETTER
+     * TODO: Write general description for this method
+     */
+    @JsonSetter("fine")
+    public void setFine (GetFineResponse value) { 
+        this.fine = value;
+    }
+ 
+    /** GETTER
+     * TODO: Write general description for this method
+     */
+    @JsonGetter("max_days_to_pay_past_due")
+    public Integer getMaxDaysToPayPastDue ( ) { 
+        return this.maxDaysToPayPastDue;
+    }
+    
+    /** SETTER
+     * TODO: Write general description for this method
+     */
+    @JsonSetter("max_days_to_pay_past_due")
+    public void setMaxDaysToPayPastDue (Integer value) { 
+        this.maxDaysToPayPastDue = value;
     }
  
 }

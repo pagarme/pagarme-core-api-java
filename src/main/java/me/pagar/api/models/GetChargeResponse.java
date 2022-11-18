@@ -18,7 +18,7 @@ import org.joda.time.DateTime;
 @JsonInclude(Include.ALWAYS)
 public class GetChargeResponse 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 3983060627646305517L;
+    private static final long serialVersionUID = -305036994272917284L;
     private String id;
     private String code;
     private String gatewayId;
@@ -38,6 +38,8 @@ public class GetChargeResponse
     private DateTime canceledAt;
     private int canceledAmount;
     private int paidAmount;
+    private String recurrencyCycle;
+    private Integer interestAndFinePaid;
     /** GETTER
      * TODO: Write general description for this method
      */
@@ -350,6 +352,38 @@ public class GetChargeResponse
     @JsonSetter("paid_amount")
     public void setPaidAmount (int value) { 
         this.paidAmount = value;
+    }
+ 
+    /** GETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonGetter("recurrency_cycle")
+    public String getRecurrencyCycle ( ) { 
+        return this.recurrencyCycle;
+    }
+    
+    /** SETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonSetter("recurrency_cycle")
+    public void setRecurrencyCycle (String value) { 
+        this.recurrencyCycle = value;
+    }
+ 
+    /** GETTER
+     * interest and fine paid
+     */
+    @JsonGetter("interest_and_fine_paid")
+    public Integer getInterestAndFinePaid ( ) { 
+        return this.interestAndFinePaid;
+    }
+    
+    /** SETTER
+     * interest and fine paid
+     */
+    @JsonSetter("interest_and_fine_paid")
+    public void setInterestAndFinePaid (Integer value) { 
+        this.interestAndFinePaid = value;
     }
  
 }

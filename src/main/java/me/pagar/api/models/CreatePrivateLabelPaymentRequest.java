@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.ALWAYS)
 public class CreatePrivateLabelPaymentRequest 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 1980068059191129928L;
+    private static final long serialVersionUID = -5469498202997975957L;
     private Integer installments = 1;
     private String statementDescriptor;
     private CreateCardRequest card;
@@ -24,6 +24,7 @@ public class CreatePrivateLabelPaymentRequest
     private Boolean capture = true;
     private Boolean extendedLimitEnabled;
     private String extendedLimitCode;
+    private String recurrencyCycle;
     /** GETTER
      * Number of installments
      */
@@ -166,6 +167,22 @@ public class CreatePrivateLabelPaymentRequest
     @JsonSetter("extended_limit_code")
     public void setExtendedLimitCode (String value) { 
         this.extendedLimitCode = value;
+    }
+ 
+    /** GETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonGetter("recurrency_cycle")
+    public String getRecurrencyCycle ( ) { 
+        return this.recurrencyCycle;
+    }
+    
+    /** SETTER
+     * Defines whether the card has been used one or more times.
+     */
+    @JsonSetter("recurrency_cycle")
+    public void setRecurrencyCycle (String value) { 
+        this.recurrencyCycle = value;
     }
  
 }

@@ -90,6 +90,21 @@ public class CreateBoletoPaymentRequestBuilder {
         createBoletoPaymentRequest.setStatementDescriptor(statementDescriptor);
         return this;
     }
+
+    public CreateBoletoPaymentRequestBuilder interest(CreateInterestRequest interest) {
+        createBoletoPaymentRequest.setInterest(interest);
+        return this;
+    }
+
+    public CreateBoletoPaymentRequestBuilder fine(CreateFineRequest fine) {
+        createBoletoPaymentRequest.setFine(fine);
+        return this;
+    }
+
+    public CreateBoletoPaymentRequestBuilder maxDaysToPayPastDue(Integer maxDaysToPayPastDue) {
+        createBoletoPaymentRequest.setMaxDaysToPayPastDue(maxDaysToPayPastDue);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */

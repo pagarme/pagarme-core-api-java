@@ -86,6 +86,14 @@ public class CreatePrivateLabelPaymentRequestBuilder {
         createPrivateLabelPaymentRequest.setExtendedLimitCode(extendedLimitCode);
         return this;
     }
+
+    /**
+     * Defines whether the card has been used one or more times.
+     */
+    public CreatePrivateLabelPaymentRequestBuilder recurrencyCycle(String recurrencyCycle) {
+        createPrivateLabelPaymentRequest.setRecurrencyCycle(recurrencyCycle);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
