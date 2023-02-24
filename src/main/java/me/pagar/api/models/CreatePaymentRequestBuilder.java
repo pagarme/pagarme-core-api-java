@@ -27,7 +27,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for credit card payment
+     * The settings for creating a credit card payment
      */
     public CreatePaymentRequestBuilder creditCard(CreateCreditCardPaymentRequest creditCard) {
         createPaymentRequest.setCreditCard(creditCard);
@@ -35,7 +35,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for debit card payment
+     * The settings for creating a debit card payment
      */
     public CreatePaymentRequestBuilder debitCard(CreateDebitCardPaymentRequest debitCard) {
         createPaymentRequest.setDebitCard(debitCard);
@@ -43,7 +43,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for boleto payment
+     * Contains the settings for creating a boleto payment
      */
     public CreatePaymentRequestBuilder boleto(CreateBoletoPaymentRequest boleto) {
         createPaymentRequest.setBoleto(boleto);
@@ -59,7 +59,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for voucher payment
+     * The settings for creating a voucher payment
      */
     public CreatePaymentRequestBuilder voucher(CreateVoucherPaymentRequest voucher) {
         createPaymentRequest.setVoucher(voucher);
@@ -75,7 +75,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for bank transfer payment
+     * Request for creating a bank transfer payment
      */
     public CreatePaymentRequestBuilder bankTransfer(CreateBankTransferPaymentRequest bankTransfer) {
         createPaymentRequest.setBankTransfer(bankTransfer);
@@ -99,7 +99,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for checkout payment
+     * Checkout payment request
      */
     public CreatePaymentRequestBuilder checkout(CreateCheckoutPaymentRequest checkout) {
         createPaymentRequest.setCheckout(checkout);
@@ -115,7 +115,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Customer
+     * Request for creating a new customer
      */
     public CreatePaymentRequestBuilder customer(CreateCustomerRequest customer) {
         createPaymentRequest.setCustomer(customer);
@@ -130,16 +130,13 @@ public class CreatePaymentRequestBuilder {
         return this;
     }
 
-    /**
-     * Settings for cash payment
-     */
     public CreatePaymentRequestBuilder cash(CreateCashPaymentRequest cash) {
         createPaymentRequest.setCash(cash);
         return this;
     }
 
     /**
-     * Settings for private label payment
+     * The settings for creating a private label payment
      */
     public CreatePaymentRequestBuilder privateLabel(CreatePrivateLabelPaymentRequest privateLabel) {
         createPaymentRequest.setPrivateLabel(privateLabel);
@@ -147,7 +144,7 @@ public class CreatePaymentRequestBuilder {
     }
 
     /**
-     * Settings for pix payment
+     * Contains information to create a pix payment
      */
     public CreatePaymentRequestBuilder pix(CreatePixPaymentRequest pix) {
         createPaymentRequest.setPix(pix);

@@ -117,7 +117,7 @@ public class GetPixTransactionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Pix payer data.
      */
     @JsonGetter("payer")
     public GetPixPayerResponse getPayer ( ) { 
@@ -125,7 +125,7 @@ public class GetPixTransactionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Pix payer data.
      */
     @JsonSetter("payer")
     public void setPayer (GetPixPayerResponse value) { 

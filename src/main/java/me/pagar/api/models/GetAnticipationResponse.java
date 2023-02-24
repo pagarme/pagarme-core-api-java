@@ -78,7 +78,7 @@ public class GetAnticipationResponse
     }
  
     /** GETTER
-     * Recipient
+     * Recipient response
      */
     @JsonGetter("recipient")
     public GetRecipientResponse getRecipient ( ) { 
@@ -86,7 +86,7 @@ public class GetAnticipationResponse
     }
     
     /** SETTER
-     * Recipient
+     * Recipient response
      */
     @JsonSetter("recipient")
     public void setRecipient (GetRecipientResponse value) { 

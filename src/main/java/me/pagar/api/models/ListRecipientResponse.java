@@ -34,7 +34,7 @@ public class ListRecipientResponse
     }
  
     /** GETTER
-     * Paging
+     * Object used for returning lists of objects with pagination
      */
     @JsonGetter("paging")
     public PagingResponse getPaging ( ) { 
@@ -42,7 +42,7 @@ public class ListRecipientResponse
     }
     
     /** SETTER
-     * Paging
+     * Object used for returning lists of objects with pagination
      */
     @JsonSetter("paging")
     public void setPaging (PagingResponse value) { 

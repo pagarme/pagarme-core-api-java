@@ -49,7 +49,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for credit card payment
+     * The settings for creating a credit card payment
      */
     @JsonGetter("credit_card")
     public CreateCreditCardPaymentRequest getCreditCard ( ) { 
@@ -57,7 +57,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for credit card payment
+     * The settings for creating a credit card payment
      */
     @JsonSetter("credit_card")
     public void setCreditCard (CreateCreditCardPaymentRequest value) { 
@@ -65,7 +65,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for debit card payment
+     * The settings for creating a debit card payment
      */
     @JsonGetter("debit_card")
     public CreateDebitCardPaymentRequest getDebitCard ( ) { 
@@ -73,7 +73,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for debit card payment
+     * The settings for creating a debit card payment
      */
     @JsonSetter("debit_card")
     public void setDebitCard (CreateDebitCardPaymentRequest value) { 
@@ -81,7 +81,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for boleto payment
+     * Contains the settings for creating a boleto payment
      */
     @JsonGetter("boleto")
     public CreateBoletoPaymentRequest getBoleto ( ) { 
@@ -89,7 +89,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for boleto payment
+     * Contains the settings for creating a boleto payment
      */
     @JsonSetter("boleto")
     public void setBoleto (CreateBoletoPaymentRequest value) { 
@@ -113,7 +113,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for voucher payment
+     * The settings for creating a voucher payment
      */
     @JsonGetter("voucher")
     public CreateVoucherPaymentRequest getVoucher ( ) { 
@@ -121,7 +121,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for voucher payment
+     * The settings for creating a voucher payment
      */
     @JsonSetter("voucher")
     public void setVoucher (CreateVoucherPaymentRequest value) { 
@@ -145,7 +145,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for bank transfer payment
+     * Request for creating a bank transfer payment
      */
     @JsonGetter("bank_transfer")
     public CreateBankTransferPaymentRequest getBankTransfer ( ) { 
@@ -153,7 +153,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for bank transfer payment
+     * Request for creating a bank transfer payment
      */
     @JsonSetter("bank_transfer")
     public void setBankTransfer (CreateBankTransferPaymentRequest value) { 
@@ -193,7 +193,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for checkout payment
+     * Checkout payment request
      */
     @JsonGetter("checkout")
     public CreateCheckoutPaymentRequest getCheckout ( ) { 
@@ -201,7 +201,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for checkout payment
+     * Checkout payment request
      */
     @JsonSetter("checkout")
     public void setCheckout (CreateCheckoutPaymentRequest value) { 
@@ -225,7 +225,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonGetter("customer")
     public CreateCustomerRequest getCustomer ( ) { 
@@ -233,7 +233,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonSetter("customer")
     public void setCustomer (CreateCustomerRequest value) { 
@@ -257,7 +257,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for cash payment
+     * TODO: Write general description for this method
      */
     @JsonGetter("cash")
     public CreateCashPaymentRequest getCash ( ) { 
@@ -265,7 +265,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for cash payment
+     * TODO: Write general description for this method
      */
     @JsonSetter("cash")
     public void setCash (CreateCashPaymentRequest value) { 
@@ -273,7 +273,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for private label payment
+     * The settings for creating a private label payment
      */
     @JsonGetter("private_label")
     public CreatePrivateLabelPaymentRequest getPrivateLabel ( ) { 
@@ -281,7 +281,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for private label payment
+     * The settings for creating a private label payment
      */
     @JsonSetter("private_label")
     public void setPrivateLabel (CreatePrivateLabelPaymentRequest value) { 
@@ -289,7 +289,7 @@ public class CreatePaymentRequest
     }
  
     /** GETTER
-     * Settings for pix payment
+     * Contains information to create a pix payment
      */
     @JsonGetter("pix")
     public CreatePixPaymentRequest getPix ( ) { 
@@ -297,7 +297,7 @@ public class CreatePaymentRequest
     }
     
     /** SETTER
-     * Settings for pix payment
+     * Contains information to create a pix payment
      */
     @JsonSetter("pix")
     public void setPix (CreatePixPaymentRequest value) { 

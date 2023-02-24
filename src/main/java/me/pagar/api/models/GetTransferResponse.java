@@ -111,7 +111,7 @@ public class GetTransferResponse
     }
  
     /** GETTER
-     * Bank account
+     * TODO: Write general description for this method
      */
     @JsonGetter("bank_account")
     public GetBankAccountResponse getBankAccount ( ) { 
@@ -119,7 +119,7 @@ public class GetTransferResponse
     }
     
     /** SETTER
-     * Bank account
+     * TODO: Write general description for this method
      */
     @JsonSetter("bank_account")
     public void setBankAccount (GetBankAccountResponse value) { 

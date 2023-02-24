@@ -39,6 +39,9 @@ public class GetTokenResponseBuilder {
         return this;
     }
 
+    /**
+     * Card token data
+     */
     public GetTokenResponseBuilder card(GetCardTokenResponse card) {
         getTokenResponse.setCard(card);
         return this;

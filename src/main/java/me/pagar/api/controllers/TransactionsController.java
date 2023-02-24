@@ -42,7 +42,7 @@ public class TransactionsController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * GetTransaction
      * @param    transactionId    Required parameter: Example: 
      * @return    Returns the GetTransactionResponse response from the API call 
      */
@@ -58,7 +58,7 @@ public class TransactionsController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * GetTransaction
      * @param    transactionId    Required parameter: Example: 
      */
     public void getTransactionAsync(
@@ -148,6 +148,27 @@ public class TransactionsController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 

@@ -52,7 +52,7 @@ public class CreateCheckoutCreditCardPaymentRequest
     }
  
     /** GETTER
-     * Creates payment authentication
+     * The payment authentication request
      */
     @JsonGetter("authentication")
     public CreatePaymentAuthenticationRequest getAuthentication ( ) { 
@@ -60,7 +60,7 @@ public class CreateCheckoutCreditCardPaymentRequest
     }
     
     /** SETTER
-     * Creates payment authentication
+     * The payment authentication request
      */
     @JsonSetter("authentication")
     public void setAuthentication (CreatePaymentAuthenticationRequest value) { 

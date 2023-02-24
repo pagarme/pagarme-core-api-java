@@ -20,7 +20,7 @@ public class CreateSubscriptionRequestBuilder {
     }
 
     /**
-     * Customer
+     * Request for creating a new customer
      */
     public CreateSubscriptionRequestBuilder customer(CreateCustomerRequest customer) {
         createSubscriptionRequest.setCustomer(customer);
@@ -28,7 +28,7 @@ public class CreateSubscriptionRequestBuilder {
     }
 
     /**
-     * Card
+     * Card data
      */
     public CreateSubscriptionRequestBuilder card(CreateCardRequest card) {
         createSubscriptionRequest.setCard(card);
@@ -100,7 +100,7 @@ public class CreateSubscriptionRequestBuilder {
     }
 
     /**
-     * Subscription pricing scheme
+     * Request for creating a pricing scheme
      */
     public CreateSubscriptionRequestBuilder pricingScheme(CreatePricingSchemeRequest pricingScheme) {
         createSubscriptionRequest.setPricingScheme(pricingScheme);
@@ -116,7 +116,7 @@ public class CreateSubscriptionRequestBuilder {
     }
 
     /**
-     * Shipping
+     * Shipping data
      */
     public CreateSubscriptionRequestBuilder shipping(CreateShippingRequest shipping) {
         createSubscriptionRequest.setShipping(shipping);
@@ -140,7 +140,7 @@ public class CreateSubscriptionRequestBuilder {
     }
 
     /**
-     * Setup data
+     * Request for creating a Setup for a subscription. The setup is an order that will be created at the subscription creation.
      */
     public CreateSubscriptionRequestBuilder setup(CreateSetupRequest setup) {
         createSubscriptionRequest.setSetup(setup);
@@ -264,9 +264,6 @@ public class CreateSubscriptionRequestBuilder {
         return this;
     }
 
-    /**
-     * Subscription's split
-     */
     public CreateSubscriptionRequestBuilder split(CreateSubscriptionSplitRequest split) {
         createSubscriptionRequest.setSplit(split);
         return this;

@@ -33,6 +33,9 @@ public class GetPixPayerResponseBuilder {
         return this;
     }
 
+    /**
+     * Payer's bank details.
+     */
     public GetPixPayerResponseBuilder bankAccount(GetPixBankAccountResponse bankAccount) {
         getPixPayerResponse.setBankAccount(bankAccount);
         return this;

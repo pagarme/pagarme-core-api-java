@@ -113,7 +113,7 @@ public class GetTransactionResponseBuilder {
     }
 
     /**
-     * The Gateway Response
+     * The Transaction Gateway Response
      */
     public GetTransactionResponseBuilder gatewayResponse(GetGatewayResponseResponse gatewayResponse) {
         getTransactionResponse.setGatewayResponse(gatewayResponse);
@@ -135,11 +135,17 @@ public class GetTransactionResponseBuilder {
         return this;
     }
 
+    /**
+     * Interest response
+     */
     public GetTransactionResponseBuilder interest(GetInterestResponse interest) {
         getTransactionResponse.setInterest(interest);
         return this;
     }
 
+    /**
+     * Fine Response
+     */
     public GetTransactionResponseBuilder fine(GetFineResponse fine) {
         getTransactionResponse.setFine(fine);
         return this;

@@ -117,7 +117,7 @@ public class GetSubscriptionItemResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public GetPricingSchemeResponse getPricingScheme ( ) { 
@@ -125,7 +125,7 @@ public class GetSubscriptionItemResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (GetPricingSchemeResponse value) { 

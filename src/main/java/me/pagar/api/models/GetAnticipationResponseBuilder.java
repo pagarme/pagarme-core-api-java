@@ -44,7 +44,7 @@ public class GetAnticipationResponseBuilder {
     }
 
     /**
-     * Recipient
+     * Recipient response
      */
     public GetAnticipationResponseBuilder recipient(GetRecipientResponse recipient) {
         getAnticipationResponse.setRecipient(recipient);

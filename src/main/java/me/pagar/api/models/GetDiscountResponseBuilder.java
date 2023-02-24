@@ -64,9 +64,6 @@ public class GetDiscountResponseBuilder {
         return this;
     }
 
-    /**
-     * The subscription item
-     */
     public GetDiscountResponseBuilder subscriptionItem(GetSubscriptionItemResponse subscriptionItem) {
         getDiscountResponse.setSubscriptionItem(subscriptionItem);
         return this;

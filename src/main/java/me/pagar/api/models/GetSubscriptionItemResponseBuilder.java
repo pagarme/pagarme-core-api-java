@@ -44,6 +44,9 @@ public class GetSubscriptionItemResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a pricing scheme
+     */
     public GetSubscriptionItemResponseBuilder pricingScheme(GetPricingSchemeResponse pricingScheme) {
         getSubscriptionItemResponse.setPricingScheme(pricingScheme);
         return this;

@@ -27,7 +27,7 @@ public class ListDiscountsResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListDiscountsResponseBuilder paging(PagingResponse paging) {
         listDiscountsResponse.setPaging(paging);

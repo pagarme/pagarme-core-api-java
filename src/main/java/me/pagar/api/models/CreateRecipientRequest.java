@@ -24,7 +24,7 @@ public class CreateRecipientRequest
     private LinkedHashMap<String, String> metadata;
     private CreateTransferSettingsRequest transferSettings;
     private String code;
-    private String paymentMode = "bank_transfer";
+    private String paymentMode;
     /** GETTER
      * Recipient name
      */
@@ -106,7 +106,7 @@ public class CreateRecipientRequest
     }
  
     /** GETTER
-     * Bank account
+     * Request for creating a bank account
      */
     @JsonGetter("default_bank_account")
     public CreateBankAccountRequest getDefaultBankAccount ( ) { 
@@ -114,7 +114,7 @@ public class CreateRecipientRequest
     }
     
     /** SETTER
-     * Bank account
+     * Request for creating a bank account
      */
     @JsonSetter("default_bank_account")
     public void setDefaultBankAccount (CreateBankAccountRequest value) { 
@@ -138,7 +138,7 @@ public class CreateRecipientRequest
     }
  
     /** GETTER
-     * Receiver Transfer Information
+     * Informações de transferência do recebedor
      */
     @JsonGetter("transfer_settings")
     public CreateTransferSettingsRequest getTransferSettings ( ) { 
@@ -146,7 +146,7 @@ public class CreateRecipientRequest
     }
     
     /** SETTER
-     * Receiver Transfer Information
+     * Informações de transferência do recebedor
      */
     @JsonSetter("transfer_settings")
     public void setTransferSettings (CreateTransferSettingsRequest value) { 

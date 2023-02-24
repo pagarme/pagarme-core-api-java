@@ -40,7 +40,7 @@ public class CreateDebitCardPaymentRequest
     }
  
     /** GETTER
-     * Debit card data
+     * Card data
      */
     @JsonGetter("card")
     public CreateCardRequest getCard ( ) { 
@@ -48,7 +48,7 @@ public class CreateDebitCardPaymentRequest
     }
     
     /** SETTER
-     * Debit card data
+     * Card data
      */
     @JsonSetter("card")
     public void setCard (CreateCardRequest value) { 
@@ -120,7 +120,7 @@ public class CreateDebitCardPaymentRequest
     }
  
     /** GETTER
-     * The Debit card payment token request
+     * The card payment contactless request
      */
     @JsonGetter("token")
     public CreateCardPaymentContactlessRequest getToken ( ) { 
@@ -128,7 +128,7 @@ public class CreateDebitCardPaymentRequest
     }
     
     /** SETTER
-     * The Debit card payment token request
+     * The card payment contactless request
      */
     @JsonSetter("token")
     public void setToken (CreateCardPaymentContactlessRequest value) { 

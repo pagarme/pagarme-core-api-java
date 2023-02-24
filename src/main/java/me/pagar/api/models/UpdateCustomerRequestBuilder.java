@@ -51,7 +51,7 @@ public class UpdateCustomerRequestBuilder {
     }
 
     /**
-     * Address
+     * Request for creating a new Address
      */
     public UpdateCustomerRequestBuilder address(CreateAddressRequest address) {
         updateCustomerRequest.setAddress(address);

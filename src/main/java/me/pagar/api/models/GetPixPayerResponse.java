@@ -68,7 +68,7 @@ public class GetPixPayerResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Payer's bank details.
      */
     @JsonGetter("bank_account")
     public GetPixBankAccountResponse getBankAccount ( ) { 
@@ -76,7 +76,7 @@ public class GetPixPayerResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Payer's bank details.
      */
     @JsonSetter("bank_account")
     public void setBankAccount (GetPixBankAccountResponse value) { 

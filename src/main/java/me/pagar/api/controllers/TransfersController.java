@@ -43,7 +43,7 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * GetTransferById
      * @param    transferId    Required parameter: Example: 
      * @return    Returns the GetTransfer response from the API call 
      */
@@ -59,7 +59,7 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * GetTransferById
      * @param    transferId    Required parameter: Example: 
      */
     public void getTransferByIdAsync(
@@ -149,6 +149,27 @@ public class TransfersController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 
@@ -161,27 +182,27 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
-     * @param    request    Required parameter: Example: 
+     * CreateTransfer
+     * @param    body    Required parameter: Example: 
      * @return    Returns the GetTransfer response from the API call 
      */
-    public GetTransfer createTransfer(
-                final CreateTransfer request
+    public GetTransfer postCreateTransfer(
+                final CreateTransfer body
     ) throws Throwable {
 
-        HttpRequest _request = _buildCreateTransferRequest(request);
+        HttpRequest _request = _buildPostCreateTransferRequest(body);
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
-        return _handleCreateTransferResponse(_context);
+        return _handlePostCreateTransferResponse(_context);
     }
 
     /**
-     * TODO: type endpoint description here
-     * @param    request    Required parameter: Example: 
+     * CreateTransfer
+     * @param    body    Required parameter: Example: 
      */
-    public void createTransferAsync(
-                final CreateTransfer request,
+    public void postCreateTransferAsync(
+                final CreateTransfer body,
                 final APICallBack<GetTransfer> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -189,7 +210,7 @@ public class TransfersController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildCreateTransferRequest(request);
+                    _request = _buildPostCreateTransferRequest(body);
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -199,7 +220,7 @@ public class TransfersController extends BaseController {
                 getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
                     public void onSuccess(HttpContext _context, HttpResponse _response) {
                         try {
-                            GetTransfer returnValue = _handleCreateTransferResponse(_context);
+                            GetTransfer returnValue = _handlePostCreateTransferResponse(_context);
                             callBack.onSuccess(_context, returnValue);
                         } catch (Exception e) {
                             callBack.onFailure(_context, e);
@@ -219,10 +240,10 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * Builds the HttpRequest object for createTransfer
+     * Builds the HttpRequest object for postCreateTransfer
      */
-    private HttpRequest _buildCreateTransferRequest(
-                final CreateTransfer request) throws IOException, APIException {
+    private HttpRequest _buildPostCreateTransferRequest(
+                final CreateTransfer body) throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
@@ -233,13 +254,13 @@ public class TransfersController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>();
+        _headers.put("Content-Type", "application/json");
         _headers.put("user-agent", BaseController.userAgent);
         _headers.put("accept", "application/json");
-        _headers.put("content-type", "application/json");
 
 
         //prepare and invoke the API call request to fetch the response
-        HttpRequest _request = getClientInstance().postBody(_queryUrl, _headers, APIHelper.serialize(request),
+        HttpRequest _request = getClientInstance().postBody(_queryUrl, _headers, APIHelper.serialize(body),
                 Configuration.basicAuthUserName, Configuration.basicAuthPassword);
 
         // Invoke the callback before request if its not null
@@ -251,10 +272,10 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * Processes the response for createTransfer
+     * Processes the response for postCreateTransfer
      * @return An object of type GetTransfer
      */
-    private GetTransfer _handleCreateTransferResponse(HttpContext _context)
+    private GetTransfer _handlePostCreateTransferResponse(HttpContext _context)
             throws APIException, IOException {
         HttpResponse _response = _context.getResponse();
 
@@ -263,6 +284,27 @@ public class TransfersController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 
@@ -278,20 +320,20 @@ public class TransfersController extends BaseController {
      * Gets all transfers
      * @return    Returns the ListTransfers response from the API call 
      */
-    public ListTransfers getTransfers(
+    public ListTransfers getTransfers1(
     ) throws Throwable {
 
-        HttpRequest _request = _buildGetTransfersRequest();
+        HttpRequest _request = _buildGetTransfers1Request();
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
-        return _handleGetTransfersResponse(_context);
+        return _handleGetTransfers1Response(_context);
     }
 
     /**
      * Gets all transfers
      */
-    public void getTransfersAsync(
+    public void getTransfers1Async(
                 final APICallBack<ListTransfers> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -299,7 +341,7 @@ public class TransfersController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildGetTransfersRequest();
+                    _request = _buildGetTransfers1Request();
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -309,7 +351,7 @@ public class TransfersController extends BaseController {
                 getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
                     public void onSuccess(HttpContext _context, HttpResponse _response) {
                         try {
-                            ListTransfers returnValue = _handleGetTransfersResponse(_context);
+                            ListTransfers returnValue = _handleGetTransfers1Response(_context);
                             callBack.onSuccess(_context, returnValue);
                         } catch (Exception e) {
                             callBack.onFailure(_context, e);
@@ -329,9 +371,9 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * Builds the HttpRequest object for getTransfers
+     * Builds the HttpRequest object for getTransfers1
      */
-    private HttpRequest _buildGetTransfersRequest() throws IOException, APIException {
+    private HttpRequest _buildGetTransfers1Request() throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
@@ -359,10 +401,10 @@ public class TransfersController extends BaseController {
     }
 
     /**
-     * Processes the response for getTransfers
+     * Processes the response for getTransfers1
      * @return An object of type ListTransfers
      */
-    private ListTransfers _handleGetTransfersResponse(HttpContext _context)
+    private ListTransfers _handleGetTransfers1Response(HttpContext _context)
             throws APIException, IOException {
         HttpResponse _response = _context.getResponse();
 
@@ -371,6 +413,27 @@ public class TransfersController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 

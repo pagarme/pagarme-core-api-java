@@ -142,7 +142,7 @@ public class GetBoletoTransactionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonGetter("billing_address")
     public GetBillingAddressResponse getBillingAddress ( ) { 
@@ -150,7 +150,7 @@ public class GetBoletoTransactionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (GetBillingAddressResponse value) { 

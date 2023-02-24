@@ -64,9 +64,6 @@ public class GetIncrementResponseBuilder {
         return this;
     }
 
-    /**
-     * The Subscription Item
-     */
     public GetIncrementResponseBuilder subscriptionItem(GetSubscriptionItemResponse subscriptionItem) {
         getIncrementResponse.setSubscriptionItem(subscriptionItem);
         return this;

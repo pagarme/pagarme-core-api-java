@@ -59,7 +59,7 @@ public class CreateRecipientRequestBuilder {
     }
 
     /**
-     * Bank account
+     * Request for creating a bank account
      */
     public CreateRecipientRequestBuilder defaultBankAccount(CreateBankAccountRequest defaultBankAccount) {
         createRecipientRequest.setDefaultBankAccount(defaultBankAccount);
@@ -75,7 +75,7 @@ public class CreateRecipientRequestBuilder {
     }
 
     /**
-     * Receiver Transfer Information
+     * Informações de transferência do recebedor
      */
     public CreateRecipientRequestBuilder transferSettings(CreateTransferSettingsRequest transferSettings) {
         createRecipientRequest.setTransferSettings(transferSettings);

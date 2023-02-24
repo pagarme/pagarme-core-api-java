@@ -43,7 +43,7 @@ public class CreateVoucherPaymentRequestBuilder {
     }
 
     /**
-     * Card info
+     * Card data
      */
     public CreateVoucherPaymentRequestBuilder card(CreateCardRequest card) {
         createVoucherPaymentRequest.setCard(card);

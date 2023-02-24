@@ -173,7 +173,7 @@ public class GetInvoiceResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -181,7 +181,7 @@ public class GetInvoiceResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 
@@ -189,7 +189,7 @@ public class GetInvoiceResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a charge
      */
     @JsonGetter("charge")
     public GetChargeResponse getCharge ( ) { 
@@ -197,7 +197,7 @@ public class GetInvoiceResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a charge
      */
     @JsonSetter("charge")
     public void setCharge (GetChargeResponse value) { 
@@ -221,7 +221,7 @@ public class GetInvoiceResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonGetter("billing_address")
     public GetBillingAddressResponse getBillingAddress ( ) { 
@@ -229,7 +229,7 @@ public class GetInvoiceResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (GetBillingAddressResponse value) { 
@@ -253,7 +253,7 @@ public class GetInvoiceResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a period
      */
     @JsonGetter("cycle")
     public GetPeriodResponse getCycle ( ) { 
@@ -261,7 +261,7 @@ public class GetInvoiceResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a period
      */
     @JsonSetter("cycle")
     public void setCycle (GetPeriodResponse value) { 
@@ -269,7 +269,7 @@ public class GetInvoiceResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting the shipping data
      */
     @JsonGetter("shipping")
     public GetShippingResponse getShipping ( ) { 
@@ -277,7 +277,7 @@ public class GetInvoiceResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting the shipping data
      */
     @JsonSetter("shipping")
     public void setShipping (GetShippingResponse value) { 

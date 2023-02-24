@@ -27,7 +27,7 @@ public class ListAddressesResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListAddressesResponseBuilder paging(PagingResponse paging) {
         listAddressesResponse.setPaging(paging);

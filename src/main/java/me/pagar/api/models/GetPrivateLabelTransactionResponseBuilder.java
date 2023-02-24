@@ -76,7 +76,7 @@ public class GetPrivateLabelTransactionResponseBuilder
     }
 
     /**
-     * Card data
+     * Response object for getting a credit card
      */
     public GetPrivateLabelTransactionResponseBuilder card(GetCardResponse card) {
         getPrivateLabelTransactionResponse.setCard(card);

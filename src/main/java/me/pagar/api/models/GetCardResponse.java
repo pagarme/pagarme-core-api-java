@@ -185,7 +185,7 @@ public class GetCardResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonGetter("billing_address")
     public GetBillingAddressResponse getBillingAddress ( ) { 
@@ -193,7 +193,7 @@ public class GetCardResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a billing address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (GetBillingAddressResponse value) { 
@@ -201,7 +201,7 @@ public class GetCardResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -209,7 +209,7 @@ public class GetCardResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 

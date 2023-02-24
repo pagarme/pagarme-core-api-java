@@ -43,7 +43,7 @@ public class UpdatePlanItemRequestBuilder {
     }
 
     /**
-     * Pricing scheme
+     * Request for updating a pricing scheme
      */
     public UpdatePlanItemRequestBuilder pricingScheme(UpdatePricingSchemeRequest pricingScheme) {
         updatePlanItemRequest.setPricingScheme(pricingScheme);

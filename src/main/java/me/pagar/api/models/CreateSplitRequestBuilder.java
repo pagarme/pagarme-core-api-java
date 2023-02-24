@@ -43,7 +43,7 @@ public class CreateSplitRequestBuilder {
     }
 
     /**
-     * The split options request
+     * The Split Options Request
      */
     public CreateSplitRequestBuilder options(CreateSplitOptionsRequest options) {
         createSplitRequest.setOptions(options);

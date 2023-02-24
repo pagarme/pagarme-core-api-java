@@ -98,7 +98,7 @@ public class CreateBoletoPaymentRequest
     }
  
     /** GETTER
-     * Card's billing address
+     * Request for creating a new Address
      */
     @JsonGetter("billing_address")
     public CreateAddressRequest getBillingAddress ( ) { 
@@ -106,7 +106,7 @@ public class CreateBoletoPaymentRequest
     }
     
     /** SETTER
-     * Card's billing address
+     * Request for creating a new Address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (CreateAddressRequest value) { 
@@ -178,7 +178,7 @@ public class CreateBoletoPaymentRequest
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Interest Request
      */
     @JsonGetter("interest")
     public CreateInterestRequest getInterest ( ) { 
@@ -186,7 +186,7 @@ public class CreateBoletoPaymentRequest
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Interest Request
      */
     @JsonSetter("interest")
     public void setInterest (CreateInterestRequest value) { 
@@ -194,7 +194,7 @@ public class CreateBoletoPaymentRequest
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Fine Request
      */
     @JsonGetter("fine")
     public CreateFineRequest getFine ( ) { 
@@ -202,7 +202,7 @@ public class CreateBoletoPaymentRequest
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Fine Request
      */
     @JsonSetter("fine")
     public void setFine (CreateFineRequest value) { 

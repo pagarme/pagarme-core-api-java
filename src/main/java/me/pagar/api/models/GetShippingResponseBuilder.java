@@ -39,6 +39,9 @@ public class GetShippingResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting an Address
+     */
     public GetShippingResponseBuilder address(GetAddressResponse address) {
         getShippingResponse.setAddress(address);
         return this;

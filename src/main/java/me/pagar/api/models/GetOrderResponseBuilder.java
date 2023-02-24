@@ -39,6 +39,9 @@ public class GetOrderResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetOrderResponseBuilder customer(GetCustomerResponse customer) {
         getOrderResponse.setCustomer(customer);
         return this;
@@ -69,6 +72,9 @@ public class GetOrderResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting the shipping data
+     */
     public GetOrderResponseBuilder shipping(GetShippingResponse shipping) {
         getOrderResponse.setShipping(shipping);
         return this;
@@ -104,7 +110,7 @@ public class GetOrderResponseBuilder {
     }
 
     /**
-     * Location
+     * Response object for geetting an order location request
      */
     public GetOrderResponseBuilder location(GetLocationResponse location) {
         getOrderResponse.setLocation(location);
@@ -112,7 +118,7 @@ public class GetOrderResponseBuilder {
     }
 
     /**
-     * Device's informations
+     * Response object for geetting an order device
      */
     public GetOrderResponseBuilder device(GetDeviceResponse device) {
         getOrderResponse.setDevice(device);

@@ -19,7 +19,7 @@ public class GetAnticipationLimitsResponseBuilder {
     }
 
     /**
-     * Max limit
+     * Anticipation limit
      */
     public GetAnticipationLimitsResponseBuilder max(GetAnticipationLimitResponse max) {
         getAnticipationLimitsResponse.setMax(max);
@@ -27,7 +27,7 @@ public class GetAnticipationLimitsResponseBuilder {
     }
 
     /**
-     * Min limit
+     * Anticipation limit
      */
     public GetAnticipationLimitsResponseBuilder min(GetAnticipationLimitResponse min) {
         getAnticipationLimitsResponse.setMin(min);

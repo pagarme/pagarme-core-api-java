@@ -76,7 +76,7 @@ public class GetDebitCardTransactionResponseBuilder
     }
 
     /**
-     * Card data
+     * Response object for getting a credit card
      */
     public GetDebitCardTransactionResponseBuilder card(GetCardResponse card) {
         getDebitCardTransactionResponse.setCard(card);

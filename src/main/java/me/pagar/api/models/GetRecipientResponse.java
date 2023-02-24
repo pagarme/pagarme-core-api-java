@@ -35,7 +35,7 @@ public class GetRecipientResponse
     private GetAutomaticAnticipationResponse automaticAnticipationSettings;
     private GetTransferSettingsResponse transferSettings;
     private String code;
-    private String paymentMode = "bank_transfer";
+    private String paymentMode;
     /** GETTER
      * Id
      */
@@ -203,7 +203,7 @@ public class GetRecipientResponse
     }
  
     /** GETTER
-     * Default bank account
+     * TODO: Write general description for this method
      */
     @JsonGetter("default_bank_account")
     public GetBankAccountResponse getDefaultBankAccount ( ) { 
@@ -211,7 +211,7 @@ public class GetRecipientResponse
     }
     
     /** SETTER
-     * Default bank account
+     * TODO: Write general description for this method
      */
     @JsonSetter("default_bank_account")
     public void setDefaultBankAccount (GetBankAccountResponse value) { 

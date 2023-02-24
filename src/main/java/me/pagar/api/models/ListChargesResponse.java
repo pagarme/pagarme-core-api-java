@@ -34,7 +34,7 @@ public class ListChargesResponse
     }
  
     /** GETTER
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     @JsonGetter("paging")
     public PagingResponse getPaging ( ) { 
@@ -42,7 +42,7 @@ public class ListChargesResponse
     }
     
     /** SETTER
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     @JsonSetter("paging")
     public void setPaging (PagingResponse value) { 

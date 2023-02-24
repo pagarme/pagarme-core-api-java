@@ -27,7 +27,7 @@ public class CreateOrderRequestBuilder {
     }
 
     /**
-     * Customer
+     * Request for creating a new customer
      */
     public CreateOrderRequestBuilder customer(CreateCustomerRequest customer) {
         createOrderRequest.setCustomer(customer);
@@ -99,7 +99,7 @@ public class CreateOrderRequestBuilder {
     }
 
     /**
-     * Request's location
+     * Request for creating a location
      */
     public CreateOrderRequestBuilder location(CreateLocationRequest location) {
         createOrderRequest.setLocation(location);
@@ -107,7 +107,7 @@ public class CreateOrderRequestBuilder {
     }
 
     /**
-     * Device's informations
+     * Request for creating a device
      */
     public CreateOrderRequestBuilder device(CreateDeviceRequest device) {
         createOrderRequest.setDevice(device);

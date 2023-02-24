@@ -27,7 +27,7 @@ public class CreatePlanItemRequestBuilder {
     }
 
     /**
-     * Item's pricing scheme
+     * Request for creating a pricing scheme
      */
     public CreatePlanItemRequestBuilder pricingScheme(CreatePricingSchemeRequest pricingScheme) {
         createPlanItemRequest.setPricingScheme(pricingScheme);

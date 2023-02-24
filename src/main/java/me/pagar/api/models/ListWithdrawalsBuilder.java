@@ -27,7 +27,7 @@ public class ListWithdrawalsBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListWithdrawalsBuilder paging(PagingResponse paging) {
         listWithdrawals.setPaging(paging);

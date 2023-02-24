@@ -63,7 +63,7 @@ public class CreateCreditCardPaymentRequest
     }
  
     /** GETTER
-     * Credit card data
+     * Card data
      */
     @JsonGetter("card")
     public CreateCardRequest getCard ( ) { 
@@ -71,7 +71,7 @@ public class CreateCreditCardPaymentRequest
     }
     
     /** SETTER
-     * Credit card data
+     * Card data
      */
     @JsonSetter("card")
     public void setCard (CreateCardRequest value) { 
@@ -207,7 +207,7 @@ public class CreateCreditCardPaymentRequest
     }
  
     /** GETTER
-     * The Credit card payment contactless request
+     * The card payment contactless request
      */
     @JsonGetter("contactless")
     public CreateCardPaymentContactlessRequest getContactless ( ) { 
@@ -215,7 +215,7 @@ public class CreateCreditCardPaymentRequest
     }
     
     /** SETTER
-     * The Credit card payment contactless request
+     * The card payment contactless request
      */
     @JsonSetter("contactless")
     public void setContactless (CreateCardPaymentContactlessRequest value) { 

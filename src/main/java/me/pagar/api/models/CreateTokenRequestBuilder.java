@@ -27,7 +27,7 @@ public class CreateTokenRequestBuilder {
     }
 
     /**
-     * Card data
+     * Card token data
      */
     public CreateTokenRequestBuilder card(CreateCardTokenRequest card) {
         createTokenRequest.setCard(card);

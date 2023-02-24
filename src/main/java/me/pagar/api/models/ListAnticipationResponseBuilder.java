@@ -27,7 +27,7 @@ public class ListAnticipationResponseBuilder {
     }
 
     /**
-     * Paging
+     * Object used for returning lists of objects with pagination
      */
     public ListAnticipationResponseBuilder paging(PagingResponse paging) {
         listAnticipationResponse.setPaging(paging);

@@ -51,7 +51,7 @@ public class UpdateCardRequestBuilder {
     }
 
     /**
-     * Billing address
+     * Request for creating a new Address
      */
     public UpdateCardRequestBuilder billingAddress(CreateAddressRequest billingAddress) {
         updateCardRequest.setBillingAddress(billingAddress);

@@ -109,7 +109,7 @@ public class CreateShippingRequest
     }
  
     /** GETTER
-     * Address data
+     * Request for creating a new Address
      */
     @JsonGetter("address")
     public CreateAddressRequest getAddress ( ) { 
@@ -117,7 +117,7 @@ public class CreateShippingRequest
     }
     
     /** SETTER
-     * Address data
+     * Request for creating a new Address
      */
     @JsonSetter("address")
     public void setAddress (CreateAddressRequest value) { 

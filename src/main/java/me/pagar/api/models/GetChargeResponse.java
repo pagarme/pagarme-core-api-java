@@ -207,7 +207,7 @@ public class GetChargeResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Generic response object for getting a transaction.
      */
     @JsonGetter("last_transaction")
     public GetTransactionResponse getLastTransaction ( ) { 
@@ -215,7 +215,7 @@ public class GetChargeResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Generic response object for getting a transaction.
      */
     @JsonSetter("last_transaction")
     public void setLastTransaction (GetTransactionResponse value) { 
@@ -223,7 +223,7 @@ public class GetChargeResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting an invoice
      */
     @JsonGetter("invoice")
     public GetInvoiceResponse getInvoice ( ) { 
@@ -231,7 +231,7 @@ public class GetChargeResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting an invoice
      */
     @JsonSetter("invoice")
     public void setInvoice (GetInvoiceResponse value) { 
@@ -239,7 +239,7 @@ public class GetChargeResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting an Order
      */
     @JsonGetter("order")
     public GetOrderResponse getOrder ( ) { 
@@ -247,7 +247,7 @@ public class GetChargeResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting an Order
      */
     @JsonSetter("order")
     public void setOrder (GetOrderResponse value) { 
@@ -255,7 +255,7 @@ public class GetChargeResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -263,7 +263,7 @@ public class GetChargeResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 

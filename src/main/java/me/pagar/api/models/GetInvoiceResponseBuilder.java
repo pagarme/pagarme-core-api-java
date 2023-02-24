@@ -59,11 +59,17 @@ public class GetInvoiceResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetInvoiceResponseBuilder customer(GetCustomerResponse customer) {
         getInvoiceResponse.setCustomer(customer);
         return this;
     }
 
+    /**
+     * Response object for getting a charge
+     */
     public GetInvoiceResponseBuilder charge(GetChargeResponse charge) {
         getInvoiceResponse.setCharge(charge);
         return this;
@@ -74,6 +80,9 @@ public class GetInvoiceResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a billing address
+     */
     public GetInvoiceResponseBuilder billingAddress(GetBillingAddressResponse billingAddress) {
         getInvoiceResponse.setBillingAddress(billingAddress);
         return this;
@@ -84,11 +93,17 @@ public class GetInvoiceResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a period
+     */
     public GetInvoiceResponseBuilder cycle(GetPeriodResponse cycle) {
         getInvoiceResponse.setCycle(cycle);
         return this;
     }
 
+    /**
+     * Response object for getting the shipping data
+     */
     public GetInvoiceResponseBuilder shipping(GetShippingResponse shipping) {
         getInvoiceResponse.setShipping(shipping);
         return this;

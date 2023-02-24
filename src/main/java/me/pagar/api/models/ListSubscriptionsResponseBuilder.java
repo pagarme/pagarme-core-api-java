@@ -27,7 +27,7 @@ public class ListSubscriptionsResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListSubscriptionsResponseBuilder paging(PagingResponse paging) {
         listSubscriptionsResponse.setPaging(paging);

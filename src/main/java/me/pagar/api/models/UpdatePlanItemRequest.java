@@ -70,7 +70,7 @@ public class UpdatePlanItemRequest
     }
  
     /** GETTER
-     * Pricing scheme
+     * Request for updating a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public UpdatePricingSchemeRequest getPricingScheme ( ) { 
@@ -78,7 +78,7 @@ public class UpdatePlanItemRequest
     }
     
     /** SETTER
-     * Pricing scheme
+     * Request for updating a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (UpdatePricingSchemeRequest value) { 

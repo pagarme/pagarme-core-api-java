@@ -34,7 +34,7 @@ public class GetCheckoutDebitCardPaymentResponse
     }
  
     /** GETTER
-     * Payment Authentication response object data
+     * Payment Authentication response
      */
     @JsonGetter("authentication")
     public GetPaymentAuthenticationResponse getAuthentication ( ) { 
@@ -42,7 +42,7 @@ public class GetCheckoutDebitCardPaymentResponse
     }
     
     /** SETTER
-     * Payment Authentication response object data
+     * Payment Authentication response
      */
     @JsonSetter("authentication")
     public void setAuthentication (GetPaymentAuthenticationResponse value) { 

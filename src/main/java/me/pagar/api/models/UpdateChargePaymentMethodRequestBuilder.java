@@ -35,7 +35,7 @@ public class UpdateChargePaymentMethodRequestBuilder {
     }
 
     /**
-     * Credit card data
+     * The settings for creating a credit card payment
      */
     public UpdateChargePaymentMethodRequestBuilder creditCard(CreateCreditCardPaymentRequest creditCard) {
         updateChargePaymentMethodRequest.setCreditCard(creditCard);
@@ -43,7 +43,7 @@ public class UpdateChargePaymentMethodRequestBuilder {
     }
 
     /**
-     * Debit card data
+     * The settings for creating a debit card payment
      */
     public UpdateChargePaymentMethodRequestBuilder debitCard(CreateDebitCardPaymentRequest debitCard) {
         updateChargePaymentMethodRequest.setDebitCard(debitCard);
@@ -51,7 +51,7 @@ public class UpdateChargePaymentMethodRequestBuilder {
     }
 
     /**
-     * Boleto data
+     * Contains the settings for creating a boleto payment
      */
     public UpdateChargePaymentMethodRequestBuilder boleto(CreateBoletoPaymentRequest boleto) {
         updateChargePaymentMethodRequest.setBoleto(boleto);
@@ -59,29 +59,29 @@ public class UpdateChargePaymentMethodRequestBuilder {
     }
 
     /**
-     * Voucher data
+     * The settings for creating a voucher payment
      */
     public UpdateChargePaymentMethodRequestBuilder voucher(CreateVoucherPaymentRequest voucher) {
         updateChargePaymentMethodRequest.setVoucher(voucher);
         return this;
     }
 
-    /**
-     * Cash data
-     */
     public UpdateChargePaymentMethodRequestBuilder cash(CreateCashPaymentRequest cash) {
         updateChargePaymentMethodRequest.setCash(cash);
         return this;
     }
 
     /**
-     * Bank Transfer data
+     * Request for creating a bank transfer payment
      */
     public UpdateChargePaymentMethodRequestBuilder bankTransfer(CreateBankTransferPaymentRequest bankTransfer) {
         updateChargePaymentMethodRequest.setBankTransfer(bankTransfer);
         return this;
     }
 
+    /**
+     * The settings for creating a private label payment
+     */
     public UpdateChargePaymentMethodRequestBuilder privateLabel(CreatePrivateLabelPaymentRequest privateLabel) {
         updateChargePaymentMethodRequest.setPrivateLabel(privateLabel);
         return this;

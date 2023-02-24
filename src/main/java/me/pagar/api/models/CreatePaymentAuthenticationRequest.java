@@ -34,7 +34,7 @@ public class CreatePaymentAuthenticationRequest
     }
  
     /** GETTER
-     * The 3D-S authentication object
+     * Creates a 3D-S authentication payment
      */
     @JsonGetter("threed_secure")
     public CreateThreeDSecureRequest getThreedSecure ( ) { 
@@ -42,7 +42,7 @@ public class CreatePaymentAuthenticationRequest
     }
     
     /** SETTER
-     * The 3D-S authentication object
+     * Creates a 3D-S authentication payment
      */
     @JsonSetter("threed_secure")
     public void setThreedSecure (CreateThreeDSecureRequest value) { 

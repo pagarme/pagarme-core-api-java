@@ -36,7 +36,7 @@ public class CreateCardPaymentContactlessRequest
     }
  
     /** GETTER
-     * The ApplePay encrypted request
+     * The ApplePay Token Payment Request
      */
     @JsonGetter("apple_pay")
     public CreateApplePayRequest getApplePay ( ) { 
@@ -44,7 +44,7 @@ public class CreateCardPaymentContactlessRequest
     }
     
     /** SETTER
-     * The ApplePay encrypted request
+     * The ApplePay Token Payment Request
      */
     @JsonSetter("apple_pay")
     public void setApplePay (CreateApplePayRequest value) { 
@@ -52,7 +52,7 @@ public class CreateCardPaymentContactlessRequest
     }
  
     /** GETTER
-     * The GooglePay encrypted request
+     * The GooglePay Token Payment Request
      */
     @JsonGetter("google_pay")
     public CreateGooglePayRequest getGooglePay ( ) { 
@@ -60,7 +60,7 @@ public class CreateCardPaymentContactlessRequest
     }
     
     /** SETTER
-     * The GooglePay encrypted request
+     * The GooglePay Token Payment Request
      */
     @JsonSetter("google_pay")
     public void setGooglePay (CreateGooglePayRequest value) { 
@@ -68,7 +68,7 @@ public class CreateCardPaymentContactlessRequest
     }
  
     /** GETTER
-     * The Emv encrypted request
+     * TODO: Write general description for this method
      */
     @JsonGetter("emv")
     public CreateEmvDecryptRequest getEmv ( ) { 
@@ -76,7 +76,7 @@ public class CreateCardPaymentContactlessRequest
     }
     
     /** SETTER
-     * The Emv encrypted request
+     * TODO: Write general description for this method
      */
     @JsonSetter("emv")
     public void setEmv (CreateEmvDecryptRequest value) { 
