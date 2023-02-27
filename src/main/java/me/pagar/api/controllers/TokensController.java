@@ -43,19 +43,21 @@ public class TokensController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * CreateToken
      * @param    publicKey    Required parameter: Public key
-     * @param    request    Required parameter: Request for creating a token
+     * @param    body    Required parameter: Request for creating a token
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    appId    Optional parameter: Example: 
      * @return    Returns the GetTokenResponse response from the API call 
      */
     public GetTokenResponse createToken(
                 final String publicKey,
-                final CreateTokenRequest request,
-                final String idempotencyKey
+                final CreateTokenRequest body,
+                final String idempotencyKey,
+                final String appId
     ) throws Throwable {
 
-        HttpRequest _request = _buildCreateTokenRequest(publicKey, request, idempotencyKey);
+        HttpRequest _request = _buildCreateTokenRequest(publicKey, body, idempotencyKey, appId);
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
@@ -63,15 +65,17 @@ public class TokensController extends BaseController {
     }
 
     /**
-     * TODO: type endpoint description here
+     * CreateToken
      * @param    publicKey    Required parameter: Public key
-     * @param    request    Required parameter: Request for creating a token
+     * @param    body    Required parameter: Request for creating a token
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    appId    Optional parameter: Example: 
      */
     public void createTokenAsync(
                 final String publicKey,
-                final CreateTokenRequest request,
+                final CreateTokenRequest body,
                 final String idempotencyKey,
+                final String appId,
                 final APICallBack<GetTokenResponse> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -79,7 +83,7 @@ public class TokensController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildCreateTokenRequest(publicKey, request, idempotencyKey);
+                    _request = _buildCreateTokenRequest(publicKey, body, idempotencyKey, appId);
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -113,33 +117,41 @@ public class TokensController extends BaseController {
      */
     private HttpRequest _buildCreateTokenRequest(
                 final String publicKey,
-                final CreateTokenRequest request,
-                final String idempotencyKey) throws IOException, APIException {
+                final CreateTokenRequest body,
+                final String idempotencyKey,
+                final String appId) throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri + "/tokens?appId={public_key}");
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri + "/tokens");
 
         //process template parameters
         Map<String, Object> _templateParameters = new HashMap<String, Object>();
         _templateParameters.put("public_key", publicKey);
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, _templateParameters);
+
+        //process query parameters
+        Map<String, Object> _queryParameters = new HashMap<String, Object>();
+        if (appId != null) {
+            _queryParameters.put("appId", appId);
+        }
+        APIHelper.appendUrlWithQueryParameters(_queryBuilder, _queryParameters);
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>();
+        _headers.put("Content-Type", "application/json");
         if (idempotencyKey != null) {
             _headers.put("idempotency-key", idempotencyKey);
         }
         _headers.put("user-agent", BaseController.userAgent);
         _headers.put("accept", "application/json");
-        _headers.put("content-type", "application/json");
 
 
         //prepare and invoke the API call request to fetch the response
-        HttpRequest _request = getClientInstance().postBody(_queryUrl, _headers, APIHelper.serialize(request));
+        HttpRequest _request = getClientInstance().postBody(_queryUrl, _headers, APIHelper.serialize(body));
 
         // Invoke the callback before request if its not null
         if (getHttpCallBack() != null) {
@@ -162,6 +174,27 @@ public class TokensController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 
@@ -177,14 +210,16 @@ public class TokensController extends BaseController {
      * Gets a token from its id
      * @param    id    Required parameter: Token id
      * @param    publicKey    Required parameter: Public key
+     * @param    appId    Optional parameter: Example: 
      * @return    Returns the GetTokenResponse response from the API call 
      */
     public GetTokenResponse getToken(
                 final String id,
-                final String publicKey
+                final String publicKey,
+                final String appId
     ) throws Throwable {
 
-        HttpRequest _request = _buildGetTokenRequest(id, publicKey);
+        HttpRequest _request = _buildGetTokenRequest(id, publicKey, appId);
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
@@ -195,10 +230,12 @@ public class TokensController extends BaseController {
      * Gets a token from its id
      * @param    id    Required parameter: Token id
      * @param    publicKey    Required parameter: Public key
+     * @param    appId    Optional parameter: Example: 
      */
     public void getTokenAsync(
                 final String id,
                 final String publicKey,
+                final String appId,
                 final APICallBack<GetTokenResponse> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -206,7 +243,7 @@ public class TokensController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildGetTokenRequest(id, publicKey);
+                    _request = _buildGetTokenRequest(id, publicKey, appId);
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -240,18 +277,26 @@ public class TokensController extends BaseController {
      */
     private HttpRequest _buildGetTokenRequest(
                 final String id,
-                final String publicKey) throws IOException, APIException {
+                final String publicKey,
+                final String appId) throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri + "/tokens/{id}?appId={public_key}");
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri + "/tokens/{id}");
 
         //process template parameters
         Map<String, Object> _templateParameters = new HashMap<String, Object>();
         _templateParameters.put("id", id);
         _templateParameters.put("public_key", publicKey);
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, _templateParameters);
+
+        //process query parameters
+        Map<String, Object> _queryParameters = new HashMap<String, Object>();
+        if (appId != null) {
+            _queryParameters.put("appId", appId);
+        }
+        APIHelper.appendUrlWithQueryParameters(_queryBuilder, _queryParameters);
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
@@ -285,6 +330,27 @@ public class TokensController extends BaseController {
             getHttpCallBack().OnAfterResponse(_context);
         }
 
+        //Error handling using HTTP status codes
+        int _responseCode = _response.getStatusCode();
+
+        if (_responseCode == 400) {
+            throw new MErrorException("Invalid request", _context);
+        }
+        if (_responseCode == 401) {
+            throw new MErrorException("Invalid API key", _context);
+        }
+        if (_responseCode == 404) {
+            throw new MErrorException("An informed resource was not found", _context);
+        }
+        if (_responseCode == 412) {
+            throw new MErrorException("Business validation error", _context);
+        }
+        if (_responseCode == 422) {
+            throw new MErrorException("Contract validation error", _context);
+        }
+        if (_responseCode == 500) {
+            throw new MErrorException("Internal server error", _context);
+        }
         //handle errors defined at the API level
         validateResponse(_response, _context);
 

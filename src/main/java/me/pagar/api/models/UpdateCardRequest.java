@@ -87,7 +87,7 @@ public class UpdateCardRequest
     }
  
     /** GETTER
-     * Billing address
+     * Request for creating a new Address
      */
     @JsonGetter("billing_address")
     public CreateAddressRequest getBillingAddress ( ) { 
@@ -95,7 +95,7 @@ public class UpdateCardRequest
     }
     
     /** SETTER
-     * Billing address
+     * Request for creating a new Address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (CreateAddressRequest value) { 

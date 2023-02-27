@@ -148,7 +148,7 @@ public class GetPrivateLabelTransactionResponse
     }
  
     /** GETTER
-     * Card data
+     * Response object for getting a credit card
      */
     @JsonGetter("card")
     public GetCardResponse getCard ( ) { 
@@ -156,7 +156,7 @@ public class GetPrivateLabelTransactionResponse
     }
     
     /** SETTER
-     * Card data
+     * Response object for getting a credit card
      */
     @JsonSetter("card")
     public void setCard (GetCardResponse value) { 

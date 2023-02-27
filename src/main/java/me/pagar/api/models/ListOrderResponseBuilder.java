@@ -27,7 +27,7 @@ public class ListOrderResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListOrderResponseBuilder paging(PagingResponse paging) {
         listOrderResponse.setPaging(paging);

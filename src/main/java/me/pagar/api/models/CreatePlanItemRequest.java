@@ -38,7 +38,7 @@ public class CreatePlanItemRequest
     }
  
     /** GETTER
-     * Item's pricing scheme
+     * Request for creating a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public CreatePricingSchemeRequest getPricingScheme ( ) { 
@@ -46,7 +46,7 @@ public class CreatePlanItemRequest
     }
     
     /** SETTER
-     * Item's pricing scheme
+     * Request for creating a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (CreatePricingSchemeRequest value) { 

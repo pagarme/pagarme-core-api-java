@@ -102,7 +102,7 @@ public class GetOrderResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -110,7 +110,7 @@ public class GetOrderResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 
@@ -202,7 +202,7 @@ public class GetOrderResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting the shipping data
      */
     @JsonGetter("shipping")
     public GetShippingResponse getShipping ( ) { 
@@ -210,7 +210,7 @@ public class GetOrderResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting the shipping data
      */
     @JsonSetter("shipping")
     public void setShipping (GetShippingResponse value) { 
@@ -282,7 +282,7 @@ public class GetOrderResponse
     }
  
     /** GETTER
-     * Location
+     * Response object for geetting an order location request
      */
     @JsonGetter("location")
     public GetLocationResponse getLocation ( ) { 
@@ -290,7 +290,7 @@ public class GetOrderResponse
     }
     
     /** SETTER
-     * Location
+     * Response object for geetting an order location request
      */
     @JsonSetter("location")
     public void setLocation (GetLocationResponse value) { 
@@ -298,7 +298,7 @@ public class GetOrderResponse
     }
  
     /** GETTER
-     * Device's informations
+     * Response object for geetting an order device
      */
     @JsonGetter("device")
     public GetDeviceResponse getDevice ( ) { 
@@ -306,7 +306,7 @@ public class GetOrderResponse
     }
     
     /** SETTER
-     * Device's informations
+     * Response object for geetting an order device
      */
     @JsonSetter("device")
     public void setDevice (GetDeviceResponse value) { 

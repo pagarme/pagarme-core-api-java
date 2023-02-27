@@ -27,7 +27,7 @@ public class CreateDebitCardPaymentRequestBuilder {
     }
 
     /**
-     * Debit card data
+     * Card data
      */
     public CreateDebitCardPaymentRequestBuilder card(CreateCardRequest card) {
         createDebitCardPaymentRequest.setCard(card);
@@ -67,7 +67,7 @@ public class CreateDebitCardPaymentRequestBuilder {
     }
 
     /**
-     * The Debit card payment token request
+     * The card payment contactless request
      */
     public CreateDebitCardPaymentRequestBuilder token(CreateCardPaymentContactlessRequest token) {
         createDebitCardPaymentRequest.setToken(token);

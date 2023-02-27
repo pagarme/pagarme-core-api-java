@@ -183,7 +183,7 @@ public class GetCustomerResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting an Address
      */
     @JsonGetter("address")
     public GetAddressResponse getAddress ( ) { 
@@ -191,7 +191,7 @@ public class GetCustomerResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting an Address
      */
     @JsonSetter("address")
     public void setAddress (GetAddressResponse value) { 

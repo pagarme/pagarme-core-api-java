@@ -69,7 +69,7 @@ public class CreateVoucherPaymentRequest
     }
  
     /** GETTER
-     * Card info
+     * Card data
      */
     @JsonGetter("Card")
     public CreateCardRequest getCard ( ) { 
@@ -77,7 +77,7 @@ public class CreateVoucherPaymentRequest
     }
     
     /** SETTER
-     * Card info
+     * Card data
      */
     @JsonSetter("Card")
     public void setCard (CreateCardRequest value) { 

@@ -18,7 +18,7 @@ public class GetAnticipationLimitsResponse
     private GetAnticipationLimitResponse max;
     private GetAnticipationLimitResponse min;
     /** GETTER
-     * Max limit
+     * Anticipation limit
      */
     @JsonGetter("max")
     public GetAnticipationLimitResponse getMax ( ) { 
@@ -26,7 +26,7 @@ public class GetAnticipationLimitsResponse
     }
     
     /** SETTER
-     * Max limit
+     * Anticipation limit
      */
     @JsonSetter("max")
     public void setMax (GetAnticipationLimitResponse value) { 
@@ -34,7 +34,7 @@ public class GetAnticipationLimitsResponse
     }
  
     /** GETTER
-     * Min limit
+     * Anticipation limit
      */
     @JsonGetter("min")
     public GetAnticipationLimitResponse getMin ( ) { 
@@ -42,7 +42,7 @@ public class GetAnticipationLimitsResponse
     }
     
     /** SETTER
-     * Min limit
+     * Anticipation limit
      */
     @JsonSetter("min")
     public void setMin (GetAnticipationLimitResponse value) { 

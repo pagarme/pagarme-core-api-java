@@ -34,7 +34,7 @@ public class CreateCheckoutDebitCardPaymentRequest
     }
  
     /** GETTER
-     * Creates payment authentication
+     * The payment authentication request
      */
     @JsonGetter("authentication")
     public CreatePaymentAuthenticationRequest getAuthentication ( ) { 
@@ -42,7 +42,7 @@ public class CreateCheckoutDebitCardPaymentRequest
     }
     
     /** SETTER
-     * Creates payment authentication
+     * The payment authentication request
      */
     @JsonSetter("authentication")
     public void setAuthentication (CreatePaymentAuthenticationRequest value) { 

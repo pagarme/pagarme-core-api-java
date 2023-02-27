@@ -28,11 +28,17 @@ public class GetInvoiceItemResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a pricing scheme
+     */
     public GetInvoiceItemResponseBuilder pricingScheme(GetPricingSchemeResponse pricingScheme) {
         getInvoiceItemResponse.setPricingScheme(pricingScheme);
         return this;
     }
 
+    /**
+     * Response object for getting a price bracket
+     */
     public GetInvoiceItemResponseBuilder priceBracket(GetPriceBracketResponse priceBracket) {
         getInvoiceItemResponse.setPriceBracket(priceBracket);
         return this;

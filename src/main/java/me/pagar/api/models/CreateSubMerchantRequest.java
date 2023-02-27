@@ -120,7 +120,7 @@ public class CreateSubMerchantRequest
     }
  
     /** GETTER
-     * Phone
+     * TODO: Write general description for this method
      */
     @JsonGetter("phone")
     public CreatePhoneRequest getPhone ( ) { 
@@ -128,7 +128,7 @@ public class CreateSubMerchantRequest
     }
     
     /** SETTER
-     * Phone
+     * TODO: Write general description for this method
      */
     @JsonSetter("phone")
     public void setPhone (CreatePhoneRequest value) { 
@@ -136,7 +136,7 @@ public class CreateSubMerchantRequest
     }
  
     /** GETTER
-     * Address
+     * Request for creating a new Address
      */
     @JsonGetter("address")
     public CreateAddressRequest getAddress ( ) { 
@@ -144,7 +144,7 @@ public class CreateSubMerchantRequest
     }
     
     /** SETTER
-     * Address
+     * Request for creating a new Address
      */
     @JsonSetter("address")
     public void setAddress (CreateAddressRequest value) { 

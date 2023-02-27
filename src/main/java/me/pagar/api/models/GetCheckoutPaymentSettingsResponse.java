@@ -88,7 +88,7 @@ public class GetCheckoutPaymentSettingsResponse
     }
  
     /** GETTER
-     * Customer
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -96,7 +96,7 @@ public class GetCheckoutPaymentSettingsResponse
     }
     
     /** SETTER
-     * Customer
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 

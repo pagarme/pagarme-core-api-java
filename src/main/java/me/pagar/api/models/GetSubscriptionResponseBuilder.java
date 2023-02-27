@@ -49,6 +49,9 @@ public class GetSubscriptionResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a period
+     */
     public GetSubscriptionResponseBuilder currentCycle(GetPeriodResponse currentCycle) {
         getSubscriptionResponse.setCurrentCycle(currentCycle);
         return this;
@@ -84,11 +87,17 @@ public class GetSubscriptionResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetSubscriptionResponseBuilder customer(GetCustomerResponse customer) {
         getSubscriptionResponse.setCustomer(customer);
         return this;
     }
 
+    /**
+     * Response object for getting a credit card
+     */
     public GetSubscriptionResponseBuilder card(GetCardResponse card) {
         getSubscriptionResponse.setCard(card);
         return this;
@@ -109,6 +118,9 @@ public class GetSubscriptionResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting the setup from a subscription
+     */
     public GetSubscriptionResponseBuilder setup(GetSetupResponse setup) {
         getSubscriptionResponse.setSetup(setup);
         return this;
@@ -166,9 +178,6 @@ public class GetSubscriptionResponseBuilder {
         return this;
     }
 
-    /**
-     * Subscription's split responde
-     */
     public GetSubscriptionResponseBuilder split(GetSubscriptionSplitResponse split) {
         getSubscriptionResponse.setSplit(split);
         return this;

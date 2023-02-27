@@ -52,7 +52,7 @@ public class CreateSubscriptionRequest
     private CreateSubMerchantRequest submerchant;
     private CreateSubscriptionSplitRequest split;
     /** GETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonGetter("customer")
     public CreateCustomerRequest getCustomer ( ) { 
@@ -60,7 +60,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonSetter("customer")
     public void setCustomer (CreateCustomerRequest value) { 
@@ -68,7 +68,7 @@ public class CreateSubscriptionRequest
     }
  
     /** GETTER
-     * Card
+     * Card data
      */
     @JsonGetter("card")
     public CreateCardRequest getCard ( ) { 
@@ -76,7 +76,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Card
+     * Card data
      */
     @JsonSetter("card")
     public void setCard (CreateCardRequest value) { 
@@ -212,7 +212,7 @@ public class CreateSubscriptionRequest
     }
  
     /** GETTER
-     * Subscription pricing scheme
+     * Request for creating a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public CreatePricingSchemeRequest getPricingScheme ( ) { 
@@ -220,7 +220,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Subscription pricing scheme
+     * Request for creating a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (CreatePricingSchemeRequest value) { 
@@ -244,7 +244,7 @@ public class CreateSubscriptionRequest
     }
  
     /** GETTER
-     * Shipping
+     * Shipping data
      */
     @JsonGetter("shipping")
     public CreateShippingRequest getShipping ( ) { 
@@ -252,7 +252,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Shipping
+     * Shipping data
      */
     @JsonSetter("shipping")
     public void setShipping (CreateShippingRequest value) { 
@@ -292,7 +292,7 @@ public class CreateSubscriptionRequest
     }
  
     /** GETTER
-     * Setup data
+     * Request for creating a Setup for a subscription. The setup is an order that will be created at the subscription creation.
      */
     @JsonGetter("setup")
     public CreateSetupRequest getSetup ( ) { 
@@ -300,7 +300,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Setup data
+     * Request for creating a Setup for a subscription. The setup is an order that will be created at the subscription creation.
      */
     @JsonSetter("setup")
     public void setSetup (CreateSetupRequest value) { 
@@ -550,7 +550,7 @@ public class CreateSubscriptionRequest
     }
  
     /** GETTER
-     * Subscription's split
+     * TODO: Write general description for this method
      */
     @JsonGetter("split")
     public CreateSubscriptionSplitRequest getSplit ( ) { 
@@ -558,7 +558,7 @@ public class CreateSubscriptionRequest
     }
     
     /** SETTER
-     * Subscription's split
+     * TODO: Write general description for this method
      */
     @JsonSetter("split")
     public void setSplit (CreateSubscriptionSplitRequest value) { 

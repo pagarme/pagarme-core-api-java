@@ -121,7 +121,7 @@ public class GetCheckoutPaymentResponseBuilder {
     }
 
     /**
-     * Dados do comprador
+     * Response object for getting a customer
      */
     public GetCheckoutPaymentResponseBuilder customer(GetCustomerResponse customer) {
         getCheckoutPaymentResponse.setCustomer(customer);
@@ -129,24 +129,18 @@ public class GetCheckoutPaymentResponseBuilder {
     }
 
     /**
-     * Dados do endereço de cobrança
+     * Response object for getting an Address
      */
     public GetCheckoutPaymentResponseBuilder billingaddress(GetAddressResponse billingaddress) {
         getCheckoutPaymentResponse.setBillingaddress(billingaddress);
         return this;
     }
 
-    /**
-     * Configurações de cartão de crédito
-     */
     public GetCheckoutPaymentResponseBuilder creditCard(GetCheckoutCreditCardPaymentResponse creditCard) {
         getCheckoutPaymentResponse.setCreditCard(creditCard);
         return this;
     }
 
-    /**
-     * Configurações de boleto
-     */
     public GetCheckoutPaymentResponseBuilder boleto(GetCheckoutBoletoPaymentResponse boleto) {
         getCheckoutPaymentResponse.setBoleto(boleto);
         return this;
@@ -161,7 +155,7 @@ public class GetCheckoutPaymentResponseBuilder {
     }
 
     /**
-     * Configurações  de entrega
+     * Response object for getting the shipping data
      */
     public GetCheckoutPaymentResponseBuilder shipping(GetShippingResponse shipping) {
         getCheckoutPaymentResponse.setShipping(shipping);
@@ -200,16 +194,13 @@ public class GetCheckoutPaymentResponseBuilder {
         return this;
     }
 
-    /**
-     * Configurações de cartão de débito
-     */
     public GetCheckoutPaymentResponseBuilder debitCard(GetCheckoutDebitCardPaymentResponse debitCard) {
         getCheckoutPaymentResponse.setDebitCard(debitCard);
         return this;
     }
 
     /**
-     * Bank transfer payment response
+     * Bank transfer checkout response
      */
     public GetCheckoutPaymentResponseBuilder bankTransfer(GetCheckoutBankTransferPaymentResponse bankTransfer) {
         getCheckoutPaymentResponse.setBankTransfer(bankTransfer);
@@ -225,7 +216,7 @@ public class GetCheckoutPaymentResponseBuilder {
     }
 
     /**
-     * Pix payment response
+     * Checkout pix payment response
      */
     public GetCheckoutPaymentResponseBuilder pix(GetCheckoutPixPaymentResponse pix) {
         getCheckoutPaymentResponse.setPix(pix);

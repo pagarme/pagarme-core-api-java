@@ -90,7 +90,7 @@ public class CreateCustomerRequest
     }
  
     /** GETTER
-     * The customer's address
+     * Request for creating a new Address
      */
     @JsonGetter("address")
     public CreateAddressRequest getAddress ( ) { 
@@ -98,7 +98,7 @@ public class CreateCustomerRequest
     }
     
     /** SETTER
-     * The customer's address
+     * Request for creating a new Address
      */
     @JsonSetter("address")
     public void setAddress (CreateAddressRequest value) { 

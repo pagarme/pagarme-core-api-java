@@ -27,7 +27,7 @@ public class CreateOrderRequest
     private String sessionId;
     private CreateLocationRequest location;
     private CreateDeviceRequest device;
-    private boolean closed = true;
+    private boolean closed;
     private String currency;
     private CreateAntifraudRequest antifraud;
     private CreateSubMerchantRequest submerchant;
@@ -48,7 +48,7 @@ public class CreateOrderRequest
     }
  
     /** GETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonGetter("customer")
     public CreateCustomerRequest getCustomer ( ) { 
@@ -56,7 +56,7 @@ public class CreateOrderRequest
     }
     
     /** SETTER
-     * Customer
+     * Request for creating a new customer
      */
     @JsonSetter("customer")
     public void setCustomer (CreateCustomerRequest value) { 
@@ -192,7 +192,7 @@ public class CreateOrderRequest
     }
  
     /** GETTER
-     * Request's location
+     * Request for creating a location
      */
     @JsonGetter("location")
     public CreateLocationRequest getLocation ( ) { 
@@ -200,7 +200,7 @@ public class CreateOrderRequest
     }
     
     /** SETTER
-     * Request's location
+     * Request for creating a location
      */
     @JsonSetter("location")
     public void setLocation (CreateLocationRequest value) { 
@@ -208,7 +208,7 @@ public class CreateOrderRequest
     }
  
     /** GETTER
-     * Device's informations
+     * Request for creating a device
      */
     @JsonGetter("device")
     public CreateDeviceRequest getDevice ( ) { 
@@ -216,7 +216,7 @@ public class CreateOrderRequest
     }
     
     /** SETTER
-     * Device's informations
+     * Request for creating a device
      */
     @JsonSetter("device")
     public void setDevice (CreateDeviceRequest value) { 

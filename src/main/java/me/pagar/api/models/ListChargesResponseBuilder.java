@@ -27,7 +27,7 @@ public class ListChargesResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListChargesResponseBuilder paging(PagingResponse paging) {
         listChargesResponse.setPaging(paging);

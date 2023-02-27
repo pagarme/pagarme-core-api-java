@@ -64,11 +64,17 @@ public class GetCardResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a billing address
+     */
     public GetCardResponseBuilder billingAddress(GetBillingAddressResponse billingAddress) {
         getCardResponse.setBillingAddress(billingAddress);
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetCardResponseBuilder customer(GetCustomerResponse customer) {
         getCardResponse.setCustomer(customer);
         return this;

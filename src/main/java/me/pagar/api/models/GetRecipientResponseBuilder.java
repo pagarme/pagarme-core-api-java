@@ -99,9 +99,6 @@ public class GetRecipientResponseBuilder {
         return this;
     }
 
-    /**
-     * Default bank account
-     */
     public GetRecipientResponseBuilder defaultBankAccount(GetBankAccountResponse defaultBankAccount) {
         getRecipientResponse.setDefaultBankAccount(defaultBankAccount);
         return this;

@@ -112,7 +112,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Credit Card payment request
+     * Checkout card payment request
      */
     @JsonGetter("credit_card")
     public CreateCheckoutCreditCardPaymentRequest getCreditCard ( ) { 
@@ -120,7 +120,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Credit Card payment request
+     * Checkout card payment request
      */
     @JsonSetter("credit_card")
     public void setCreditCard (CreateCheckoutCreditCardPaymentRequest value) { 
@@ -128,7 +128,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Debit Card payment request
+     * Checkout credit card payment request
      */
     @JsonGetter("debit_card")
     public CreateCheckoutDebitCardPaymentRequest getDebitCard ( ) { 
@@ -136,7 +136,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Debit Card payment request
+     * Checkout credit card payment request
      */
     @JsonSetter("debit_card")
     public void setDebitCard (CreateCheckoutDebitCardPaymentRequest value) { 
@@ -144,7 +144,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Boleto payment request
+     * TODO: Write general description for this method
      */
     @JsonGetter("boleto")
     public CreateCheckoutBoletoPaymentRequest getBoleto ( ) { 
@@ -152,7 +152,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Boleto payment request
+     * TODO: Write general description for this method
      */
     @JsonSetter("boleto")
     public void setBoleto (CreateCheckoutBoletoPaymentRequest value) { 
@@ -224,7 +224,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Billing Address
+     * Request for creating a new Address
      */
     @JsonGetter("billing_address")
     public CreateAddressRequest getBillingAddress ( ) { 
@@ -232,7 +232,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Billing Address
+     * Request for creating a new Address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (CreateAddressRequest value) { 
@@ -240,7 +240,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Bank Transfer payment request
+     * Checkout bank transfer payment request
      */
     @JsonGetter("bank_transfer")
     public CreateCheckoutBankTransferRequest getBankTransfer ( ) { 
@@ -248,7 +248,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Bank Transfer payment request
+     * Checkout bank transfer payment request
      */
     @JsonSetter("bank_transfer")
     public void setBankTransfer (CreateCheckoutBankTransferRequest value) { 
@@ -272,7 +272,7 @@ public class CreateCheckoutPaymentRequest
     }
  
     /** GETTER
-     * Pix payment request
+     * Checkout pix payment request
      */
     @JsonGetter("pix")
     public CreateCheckoutPixPaymentRequest getPix ( ) { 
@@ -280,7 +280,7 @@ public class CreateCheckoutPaymentRequest
     }
     
     /** SETTER
-     * Pix payment request
+     * Checkout pix payment request
      */
     @JsonSetter("pix")
     public void setPix (CreateCheckoutPixPaymentRequest value) { 

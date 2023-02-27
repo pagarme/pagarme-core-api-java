@@ -35,7 +35,7 @@ public class CreateEmvDataDecryptRequest
     }
  
     /** GETTER
-     * Dukpt data request
+     * TODO: Write general description for this method
      */
     @JsonGetter("dukpt")
     public CreateEmvDataDukptDecryptRequest getDukpt ( ) { 
@@ -43,7 +43,7 @@ public class CreateEmvDataDecryptRequest
     }
     
     /** SETTER
-     * Dukpt data request
+     * TODO: Write general description for this method
      */
     @JsonSetter("dukpt")
     public void setDukpt (CreateEmvDataDukptDecryptRequest value) { 

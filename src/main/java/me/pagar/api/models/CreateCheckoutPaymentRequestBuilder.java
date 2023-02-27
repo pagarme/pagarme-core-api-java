@@ -59,7 +59,7 @@ public class CreateCheckoutPaymentRequestBuilder {
     }
 
     /**
-     * Credit Card payment request
+     * Checkout card payment request
      */
     public CreateCheckoutPaymentRequestBuilder creditCard(CreateCheckoutCreditCardPaymentRequest creditCard) {
         createCheckoutPaymentRequest.setCreditCard(creditCard);
@@ -67,16 +67,13 @@ public class CreateCheckoutPaymentRequestBuilder {
     }
 
     /**
-     * Debit Card payment request
+     * Checkout credit card payment request
      */
     public CreateCheckoutPaymentRequestBuilder debitCard(CreateCheckoutDebitCardPaymentRequest debitCard) {
         createCheckoutPaymentRequest.setDebitCard(debitCard);
         return this;
     }
 
-    /**
-     * Boleto payment request
-     */
     public CreateCheckoutPaymentRequestBuilder boleto(CreateCheckoutBoletoPaymentRequest boleto) {
         createCheckoutPaymentRequest.setBoleto(boleto);
         return this;
@@ -115,7 +112,7 @@ public class CreateCheckoutPaymentRequestBuilder {
     }
 
     /**
-     * Billing Address
+     * Request for creating a new Address
      */
     public CreateCheckoutPaymentRequestBuilder billingAddress(CreateAddressRequest billingAddress) {
         createCheckoutPaymentRequest.setBillingAddress(billingAddress);
@@ -123,7 +120,7 @@ public class CreateCheckoutPaymentRequestBuilder {
     }
 
     /**
-     * Bank Transfer payment request
+     * Checkout bank transfer payment request
      */
     public CreateCheckoutPaymentRequestBuilder bankTransfer(CreateCheckoutBankTransferRequest bankTransfer) {
         createCheckoutPaymentRequest.setBankTransfer(bankTransfer);
@@ -139,7 +136,7 @@ public class CreateCheckoutPaymentRequestBuilder {
     }
 
     /**
-     * Pix payment request
+     * Checkout pix payment request
      */
     public CreateCheckoutPaymentRequestBuilder pix(CreateCheckoutPixPaymentRequest pix) {
         createCheckoutPaymentRequest.setPix(pix);

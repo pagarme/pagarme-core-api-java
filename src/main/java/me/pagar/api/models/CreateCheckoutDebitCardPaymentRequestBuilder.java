@@ -27,7 +27,7 @@ public class CreateCheckoutDebitCardPaymentRequestBuilder {
     }
 
     /**
-     * Creates payment authentication
+     * The payment authentication request
      */
     public CreateCheckoutDebitCardPaymentRequestBuilder authentication(CreatePaymentAuthenticationRequest authentication) {
         createCheckoutDebitCardPaymentRequest.setAuthentication(authentication);

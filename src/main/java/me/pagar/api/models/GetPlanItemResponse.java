@@ -115,7 +115,7 @@ public class GetPlanItemResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public GetPricingSchemeResponse getPricingScheme ( ) { 
@@ -123,7 +123,7 @@ public class GetPlanItemResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (GetPricingSchemeResponse value) { 
@@ -147,7 +147,7 @@ public class GetPlanItemResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a plan
      */
     @JsonGetter("plan")
     public GetPlanResponse getPlan ( ) { 
@@ -155,7 +155,7 @@ public class GetPlanItemResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a plan
      */
     @JsonSetter("plan")
     public void setPlan (GetPlanResponse value) { 

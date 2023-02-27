@@ -178,7 +178,7 @@ public class GetDiscountResponse
     }
  
     /** GETTER
-     * The subscription item
+     * TODO: Write general description for this method
      */
     @JsonGetter("subscription_item")
     public GetSubscriptionItemResponse getSubscriptionItem ( ) { 
@@ -186,7 +186,7 @@ public class GetDiscountResponse
     }
     
     /** SETTER
-     * The subscription item
+     * TODO: Write general description for this method
      */
     @JsonSetter("subscription_item")
     public void setSubscriptionItem (GetSubscriptionItemResponse value) { 

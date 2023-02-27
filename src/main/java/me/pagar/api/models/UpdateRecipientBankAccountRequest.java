@@ -16,9 +16,9 @@ public class UpdateRecipientBankAccountRequest
         implements java.io.Serializable {
     private static final long serialVersionUID = -5624721660606133302L;
     private CreateBankAccountRequest bankAccount;
-    private String paymentMode = "bank_transfer";
+    private String paymentMode;
     /** GETTER
-     * Bank account
+     * Request for creating a bank account
      */
     @JsonGetter("bank_account")
     public CreateBankAccountRequest getBankAccount ( ) { 
@@ -26,7 +26,7 @@ public class UpdateRecipientBankAccountRequest
     }
     
     /** SETTER
-     * Bank account
+     * Request for creating a bank account
      */
     @JsonSetter("bank_account")
     public void setBankAccount (CreateBankAccountRequest value) { 

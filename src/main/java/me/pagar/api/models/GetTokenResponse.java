@@ -91,7 +91,7 @@ public class GetTokenResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Card token data
      */
     @JsonGetter("card")
     public GetCardTokenResponse getCard ( ) { 
@@ -99,7 +99,7 @@ public class GetTokenResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Card token data
      */
     @JsonSetter("card")
     public void setCard (GetCardTokenResponse value) { 

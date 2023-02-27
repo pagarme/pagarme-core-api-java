@@ -79,6 +79,9 @@ public class GetAddressResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetAddressResponseBuilder customer(GetCustomerResponse customer) {
         getAddressResponse.setCustomer(customer);
         return this;

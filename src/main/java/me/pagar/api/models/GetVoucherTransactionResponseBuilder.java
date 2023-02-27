@@ -92,7 +92,7 @@ public class GetVoucherTransactionResponseBuilder
     }
 
     /**
-     * Card data
+     * Response object for getting a credit card
      */
     public GetVoucherTransactionResponseBuilder card(GetCardResponse card) {
         getVoucherTransactionResponse.setCard(card);

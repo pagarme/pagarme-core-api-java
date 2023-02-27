@@ -39,6 +39,9 @@ public class GetAccessTokenResponseBuilder {
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetAccessTokenResponseBuilder customer(GetCustomerResponse customer) {
         getAccessTokenResponse.setCustomer(customer);
         return this;

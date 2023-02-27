@@ -44,7 +44,7 @@ public class CreateChargeRequestBuilder {
     }
 
     /**
-     * Customer data
+     * Request for creating a new customer
      */
     public CreateChargeRequestBuilder customer(CreateCustomerRequest customer) {
         createChargeRequest.setCustomer(customer);

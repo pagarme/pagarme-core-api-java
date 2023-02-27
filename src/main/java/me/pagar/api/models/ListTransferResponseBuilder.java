@@ -27,7 +27,7 @@ public class ListTransferResponseBuilder {
     }
 
     /**
-     * Paging
+     * Object used for returning lists of objects with pagination
      */
     public ListTransferResponseBuilder paging(PagingResponse paging) {
         listTransferResponse.setPaging(paging);

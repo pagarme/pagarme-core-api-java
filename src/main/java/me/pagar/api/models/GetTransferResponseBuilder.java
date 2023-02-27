@@ -59,9 +59,6 @@ public class GetTransferResponseBuilder {
         return this;
     }
 
-    /**
-     * Bank account
-     */
     public GetTransferResponseBuilder bankAccount(GetBankAccountResponse bankAccount) {
         getTransferResponse.setBankAccount(bankAccount);
         return this;

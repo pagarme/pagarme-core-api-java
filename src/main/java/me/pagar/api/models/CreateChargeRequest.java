@@ -77,7 +77,7 @@ public class CreateChargeRequest
     }
  
     /** GETTER
-     * Customer data
+     * Request for creating a new customer
      */
     @JsonGetter("customer")
     public CreateCustomerRequest getCustomer ( ) { 
@@ -85,7 +85,7 @@ public class CreateChargeRequest
     }
     
     /** SETTER
-     * Customer data
+     * Request for creating a new customer
      */
     @JsonSetter("customer")
     public void setCustomer (CreateCustomerRequest value) { 

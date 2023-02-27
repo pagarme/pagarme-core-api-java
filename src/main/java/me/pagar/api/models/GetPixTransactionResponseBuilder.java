@@ -45,6 +45,9 @@ public class GetPixTransactionResponseBuilder
         return this;
     }
 
+    /**
+     * Pix payer data.
+     */
     public GetPixTransactionResponseBuilder payer(GetPixPayerResponse payer) {
         getPixTransactionResponse.setPayer(payer);
         return this;

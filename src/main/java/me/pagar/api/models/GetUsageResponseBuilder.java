@@ -72,9 +72,6 @@ public class GetUsageResponseBuilder {
         return this;
     }
 
-    /**
-     * Subscription item
-     */
     public GetUsageResponseBuilder subscriptionItem(GetSubscriptionItemResponse subscriptionItem) {
         getUsageResponse.setSubscriptionItem(subscriptionItem);
         return this;

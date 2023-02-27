@@ -52,7 +52,7 @@ public class CreateBoletoPaymentRequestBuilder {
     }
 
     /**
-     * Card's billing address
+     * Request for creating a new Address
      */
     public CreateBoletoPaymentRequestBuilder billingAddress(CreateAddressRequest billingAddress) {
         createBoletoPaymentRequest.setBillingAddress(billingAddress);
@@ -91,11 +91,17 @@ public class CreateBoletoPaymentRequestBuilder {
         return this;
     }
 
+    /**
+     * Interest Request
+     */
     public CreateBoletoPaymentRequestBuilder interest(CreateInterestRequest interest) {
         createBoletoPaymentRequest.setInterest(interest);
         return this;
     }
 
+    /**
+     * Fine Request
+     */
     public CreateBoletoPaymentRequestBuilder fine(CreateFineRequest fine) {
         createBoletoPaymentRequest.setFine(fine);
         return this;

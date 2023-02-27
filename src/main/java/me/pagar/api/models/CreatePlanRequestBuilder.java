@@ -115,7 +115,7 @@ public class CreatePlanRequestBuilder {
     }
 
     /**
-     * Plan's pricing scheme
+     * Request for creating a pricing scheme
      */
     public CreatePlanRequestBuilder pricingScheme(CreatePricingSchemeRequest pricingScheme) {
         createPlanRequest.setPricingScheme(pricingScheme);

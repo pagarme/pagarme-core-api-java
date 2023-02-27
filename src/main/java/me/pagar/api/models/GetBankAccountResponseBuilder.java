@@ -124,7 +124,7 @@ public class GetBankAccountResponseBuilder {
     }
 
     /**
-     * Recipient
+     * Recipient response
      */
     public GetBankAccountResponseBuilder recipient(GetRecipientResponse recipient) {
         getBankAccountResponse.setRecipient(recipient);

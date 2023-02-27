@@ -27,7 +27,7 @@ public class ListCyclesResponseBuilder {
     }
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      */
     public ListCyclesResponseBuilder paging(PagingResponse paging) {
         listCyclesResponse.setPaging(paging);

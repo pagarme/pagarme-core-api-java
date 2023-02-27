@@ -146,7 +146,7 @@ public class GetSubscriptionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a period
      */
     @JsonGetter("current_cycle")
     public GetPeriodResponse getCurrentCycle ( ) { 
@@ -154,7 +154,7 @@ public class GetSubscriptionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a period
      */
     @JsonSetter("current_cycle")
     public void setCurrentCycle (GetPeriodResponse value) { 
@@ -262,7 +262,7 @@ public class GetSubscriptionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -270,7 +270,7 @@ public class GetSubscriptionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 
@@ -278,7 +278,7 @@ public class GetSubscriptionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a credit card
      */
     @JsonGetter("card")
     public GetCardResponse getCard ( ) { 
@@ -286,7 +286,7 @@ public class GetSubscriptionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a credit card
      */
     @JsonSetter("card")
     public void setCard (GetCardResponse value) { 
@@ -342,7 +342,7 @@ public class GetSubscriptionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting the setup from a subscription
      */
     @JsonGetter("setup")
     public GetSetupResponse getSetup ( ) { 
@@ -350,7 +350,7 @@ public class GetSubscriptionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting the setup from a subscription
      */
     @JsonSetter("setup")
     public void setSetup (GetSetupResponse value) { 
@@ -490,7 +490,7 @@ public class GetSubscriptionResponse
     }
  
     /** GETTER
-     * Subscription's split responde
+     * TODO: Write general description for this method
      */
     @JsonGetter("split")
     public GetSubscriptionSplitResponse getSplit ( ) { 
@@ -498,7 +498,7 @@ public class GetSubscriptionResponse
     }
     
     /** SETTER
-     * Subscription's split responde
+     * TODO: Write general description for this method
      */
     @JsonSetter("split")
     public void setSplit (GetSubscriptionSplitResponse value) { 

@@ -60,7 +60,7 @@ public class CreateShippingRequestBuilder {
     }
 
     /**
-     * Address data
+     * Request for creating a new Address
      */
     public CreateShippingRequestBuilder address(CreateAddressRequest address) {
         createShippingRequest.setAddress(address);

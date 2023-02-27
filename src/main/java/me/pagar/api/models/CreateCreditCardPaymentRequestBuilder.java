@@ -35,7 +35,7 @@ public class CreateCreditCardPaymentRequestBuilder {
     }
 
     /**
-     * Credit card data
+     * Card data
      */
     public CreateCreditCardPaymentRequestBuilder card(CreateCardRequest card) {
         createCreditCardPaymentRequest.setCard(card);
@@ -104,7 +104,7 @@ public class CreateCreditCardPaymentRequestBuilder {
     }
 
     /**
-     * The Credit card payment contactless request
+     * The card payment contactless request
      */
     public CreateCreditCardPaymentRequestBuilder contactless(CreateCardPaymentContactlessRequest contactless) {
         createCreditCardPaymentRequest.setContactless(contactless);

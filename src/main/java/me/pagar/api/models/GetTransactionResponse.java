@@ -257,7 +257,7 @@ public class GetTransactionResponse
     }
  
     /** GETTER
-     * The Gateway Response
+     * The Transaction Gateway Response
      */
     @JsonGetter("gateway_response")
     public GetGatewayResponseResponse getGatewayResponse ( ) { 
@@ -265,7 +265,7 @@ public class GetTransactionResponse
     }
     
     /** SETTER
-     * The Gateway Response
+     * The Transaction Gateway Response
      */
     @JsonSetter("gateway_response")
     public void setGatewayResponse (GetGatewayResponseResponse value) { 
@@ -321,7 +321,7 @@ public class GetTransactionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Interest response
      */
     @JsonGetter("interest")
     public GetInterestResponse getInterest ( ) { 
@@ -329,7 +329,7 @@ public class GetTransactionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Interest response
      */
     @JsonSetter("interest")
     public void setInterest (GetInterestResponse value) { 
@@ -337,7 +337,7 @@ public class GetTransactionResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Fine Response
      */
     @JsonGetter("fine")
     public GetFineResponse getFine ( ) { 
@@ -345,7 +345,7 @@ public class GetTransactionResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Fine Response
      */
     @JsonSetter("fine")
     public void setFine (GetFineResponse value) { 

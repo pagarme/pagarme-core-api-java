@@ -26,9 +26,6 @@ public class CreateEmvDataDecryptRequestBuilder {
         return this;
     }
 
-    /**
-     * Dukpt data request
-     */
     public CreateEmvDataDecryptRequestBuilder dukpt(CreateEmvDataDukptDecryptRequest dukpt) {
         createEmvDataDecryptRequest.setDukpt(dukpt);
         return this;

@@ -55,7 +55,7 @@ public class GetInvoiceItemResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonGetter("pricing_scheme")
     public GetPricingSchemeResponse getPricingScheme ( ) { 
@@ -63,7 +63,7 @@ public class GetInvoiceItemResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a pricing scheme
      */
     @JsonSetter("pricing_scheme")
     public void setPricingScheme (GetPricingSchemeResponse value) { 
@@ -71,7 +71,7 @@ public class GetInvoiceItemResponse
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Response object for getting a price bracket
      */
     @JsonGetter("price_bracket")
     public GetPriceBracketResponse getPriceBracket ( ) { 
@@ -79,7 +79,7 @@ public class GetInvoiceItemResponse
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Response object for getting a price bracket
      */
     @JsonSetter("price_bracket")
     public void setPriceBracket (GetPriceBracketResponse value) { 

@@ -261,7 +261,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Dados do comprador
+     * Response object for getting a customer
      */
     @JsonGetter("customer")
     public GetCustomerResponse getCustomer ( ) { 
@@ -269,7 +269,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Dados do comprador
+     * Response object for getting a customer
      */
     @JsonSetter("customer")
     public void setCustomer (GetCustomerResponse value) { 
@@ -277,7 +277,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Dados do endereço de cobrança
+     * Response object for getting an Address
      */
     @JsonGetter("billingaddress")
     public GetAddressResponse getBillingaddress ( ) { 
@@ -285,7 +285,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Dados do endereço de cobrança
+     * Response object for getting an Address
      */
     @JsonSetter("billingaddress")
     public void setBillingaddress (GetAddressResponse value) { 
@@ -293,7 +293,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Configurações de cartão de crédito
+     * TODO: Write general description for this method
      */
     @JsonGetter("credit_card")
     public GetCheckoutCreditCardPaymentResponse getCreditCard ( ) { 
@@ -301,7 +301,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Configurações de cartão de crédito
+     * TODO: Write general description for this method
      */
     @JsonSetter("credit_card")
     public void setCreditCard (GetCheckoutCreditCardPaymentResponse value) { 
@@ -309,7 +309,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Configurações de boleto
+     * TODO: Write general description for this method
      */
     @JsonGetter("boleto")
     public GetCheckoutBoletoPaymentResponse getBoleto ( ) { 
@@ -317,7 +317,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Configurações de boleto
+     * TODO: Write general description for this method
      */
     @JsonSetter("boleto")
     public void setBoleto (GetCheckoutBoletoPaymentResponse value) { 
@@ -341,7 +341,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Configurações  de entrega
+     * Response object for getting the shipping data
      */
     @JsonGetter("shipping")
     public GetShippingResponse getShipping ( ) { 
@@ -349,7 +349,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Configurações  de entrega
+     * Response object for getting the shipping data
      */
     @JsonSetter("shipping")
     public void setShipping (GetShippingResponse value) { 
@@ -425,7 +425,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Configurações de cartão de débito
+     * TODO: Write general description for this method
      */
     @JsonGetter("debit_card")
     public GetCheckoutDebitCardPaymentResponse getDebitCard ( ) { 
@@ -433,7 +433,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Configurações de cartão de débito
+     * TODO: Write general description for this method
      */
     @JsonSetter("debit_card")
     public void setDebitCard (GetCheckoutDebitCardPaymentResponse value) { 
@@ -441,7 +441,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Bank transfer payment response
+     * Bank transfer checkout response
      */
     @JsonGetter("bank_transfer")
     public GetCheckoutBankTransferPaymentResponse getBankTransfer ( ) { 
@@ -449,7 +449,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Bank transfer payment response
+     * Bank transfer checkout response
      */
     @JsonSetter("bank_transfer")
     public void setBankTransfer (GetCheckoutBankTransferPaymentResponse value) { 
@@ -473,7 +473,7 @@ public class GetCheckoutPaymentResponse
     }
  
     /** GETTER
-     * Pix payment response
+     * Checkout pix payment response
      */
     @JsonGetter("pix")
     public GetCheckoutPixPaymentResponse getPix ( ) { 
@@ -481,7 +481,7 @@ public class GetCheckoutPaymentResponse
     }
     
     /** SETTER
-     * Pix payment response
+     * Checkout pix payment response
      */
     @JsonSetter("pix")
     public void setPix (GetCheckoutPixPaymentResponse value) { 

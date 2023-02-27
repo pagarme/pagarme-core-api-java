@@ -35,7 +35,7 @@ public class GetBalanceResponseBuilder {
     }
 
     /**
-     * Recipient
+     * Recipient response
      */
     public GetBalanceResponseBuilder recipient(GetRecipientResponse recipient) {
         getBalanceResponse.setRecipient(recipient);

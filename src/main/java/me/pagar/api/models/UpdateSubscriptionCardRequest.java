@@ -18,7 +18,7 @@ public class UpdateSubscriptionCardRequest
     private CreateCardRequest card;
     private String cardId;
     /** GETTER
-     * Credit card data
+     * Card data
      */
     @JsonGetter("card")
     public CreateCardRequest getCard ( ) { 
@@ -26,7 +26,7 @@ public class UpdateSubscriptionCardRequest
     }
     
     /** SETTER
-     * Credit card data
+     * Card data
      */
     @JsonSetter("card")
     public void setCard (CreateCardRequest value) { 

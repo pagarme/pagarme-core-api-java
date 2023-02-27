@@ -59,7 +59,7 @@ public class CreateCardRequestBuilder {
     }
 
     /**
-     * Card's billing address
+     * Request for creating a new Address
      */
     public CreateCardRequestBuilder billingAddress(CreateAddressRequest billingAddress) {
         createCardRequest.setBillingAddress(billingAddress);

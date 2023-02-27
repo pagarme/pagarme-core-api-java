@@ -69,7 +69,7 @@ public class CreateSplitRequest
     }
  
     /** GETTER
-     * The split options request
+     * The Split Options Request
      */
     @JsonGetter("options")
     public CreateSplitOptionsRequest getOptions ( ) { 
@@ -77,7 +77,7 @@ public class CreateSplitRequest
     }
     
     /** SETTER
-     * The split options request
+     * The Split Options Request
      */
     @JsonSetter("options")
     public void setOptions (CreateSplitOptionsRequest value) { 

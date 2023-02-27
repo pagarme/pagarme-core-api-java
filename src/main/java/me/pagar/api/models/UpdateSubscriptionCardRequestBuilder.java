@@ -19,7 +19,7 @@ public class UpdateSubscriptionCardRequestBuilder {
     }
 
     /**
-     * Credit card data
+     * Card data
      */
     public UpdateSubscriptionCardRequestBuilder card(CreateCardRequest card) {
         updateSubscriptionCardRequest.setCard(card);

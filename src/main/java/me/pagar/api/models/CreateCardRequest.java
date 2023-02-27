@@ -24,7 +24,7 @@ public class CreateCardRequest
     private String brand;
     private String billingAddressId;
     private LinkedHashMap<String, String> metadata;
-    private String type = "credit";
+    private String type;
     private CreateCardOptionsRequest options;
     private String holderDocument;
     private boolean privateLabel;
@@ -112,7 +112,7 @@ public class CreateCardRequest
     }
  
     /** GETTER
-     * Card's billing address
+     * Request for creating a new Address
      */
     @JsonGetter("billing_address")
     public CreateAddressRequest getBillingAddress ( ) { 
@@ -120,7 +120,7 @@ public class CreateCardRequest
     }
     
     /** SETTER
-     * Card's billing address
+     * Request for creating a new Address
      */
     @JsonSetter("billing_address")
     public void setBillingAddress (CreateAddressRequest value) { 

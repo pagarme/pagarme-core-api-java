@@ -27,7 +27,7 @@ public class CreatePaymentAuthenticationRequestBuilder {
     }
 
     /**
-     * The 3D-S authentication object
+     * Creates a 3D-S authentication payment
      */
     public CreatePaymentAuthenticationRequestBuilder threedSecure(CreateThreeDSecureRequest threedSecure) {
         createPaymentAuthenticationRequest.setThreedSecure(threedSecure);

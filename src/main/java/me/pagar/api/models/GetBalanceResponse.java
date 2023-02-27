@@ -53,7 +53,7 @@ public class GetBalanceResponse
     }
  
     /** GETTER
-     * Recipient
+     * Recipient response
      */
     @JsonGetter("recipient")
     public GetRecipientResponse getRecipient ( ) { 
@@ -61,7 +61,7 @@ public class GetBalanceResponse
     }
     
     /** SETTER
-     * Recipient
+     * Recipient response
      */
     @JsonSetter("recipient")
     public void setRecipient (GetRecipientResponse value) { 

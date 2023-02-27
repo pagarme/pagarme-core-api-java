@@ -69,21 +69,33 @@ public class GetChargeResponseBuilder {
         return this;
     }
 
+    /**
+     * Generic response object for getting a transaction.
+     */
     public GetChargeResponseBuilder lastTransaction(GetTransactionResponse lastTransaction) {
         getChargeResponse.setLastTransaction(lastTransaction);
         return this;
     }
 
+    /**
+     * Response object for getting an invoice
+     */
     public GetChargeResponseBuilder invoice(GetInvoiceResponse invoice) {
         getChargeResponse.setInvoice(invoice);
         return this;
     }
 
+    /**
+     * Response object for getting an Order
+     */
     public GetChargeResponseBuilder order(GetOrderResponse order) {
         getChargeResponse.setOrder(order);
         return this;
     }
 
+    /**
+     * Response object for getting a customer
+     */
     public GetChargeResponseBuilder customer(GetCustomerResponse customer) {
         getChargeResponse.setCustomer(customer);
         return this;

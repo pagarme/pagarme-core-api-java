@@ -27,7 +27,7 @@ public class CreateSubscriptionItemRequestBuilder {
     }
 
     /**
-     * Pricing scheme
+     * Request for creating a pricing scheme
      */
     public CreateSubscriptionItemRequestBuilder pricingScheme(CreatePricingSchemeRequest pricingScheme) {
         createSubscriptionItemRequest.setPricingScheme(pricingScheme);

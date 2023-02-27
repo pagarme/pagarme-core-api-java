@@ -250,7 +250,7 @@ public class GetBankAccountResponse
     }
  
     /** GETTER
-     * Recipient
+     * Recipient response
      */
     @JsonGetter("recipient")
     public GetRecipientResponse getRecipient ( ) { 
@@ -258,7 +258,7 @@ public class GetBankAccountResponse
     }
     
     /** SETTER
-     * Recipient
+     * Recipient response
      */
     @JsonSetter("recipient")
     public void setRecipient (GetRecipientResponse value) { 
