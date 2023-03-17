@@ -386,8 +386,8 @@ void getUsagesAsync(
 ```java
 String subscriptionId = "subscription_id";
 String itemId = "item_id";
-Integer page = 160;
-Integer size = 160;
+Integer page = 229;
+Integer size = 229;
 String code = "code";
 String group = "group";
 DateTime usedSince = new Date();
@@ -622,8 +622,8 @@ void getSubscriptionItemsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-Integer page = 160;
-Integer size = 160;
+Integer page = 229;
+Integer size = 229;
 String name = "name";
 String code = "code";
 String status = "status";
@@ -865,8 +865,8 @@ void getSubscriptionsAsync(
 #### Example Usage
 
 ```java
-Integer page = 160;
-Integer size = 160;
+Integer page = 229;
+Integer size = 229;
 String code = "code";
 String billingType = "billing_type";
 String customerId = "customer_id";
@@ -965,6 +965,7 @@ try {
 void cancelSubscriptionAsync(
         final String subscriptionId,
         final String idempotencyKey,
+        final CreateCancelSubscriptionRequest body,
         final APICallBack<GetSubscriptionResponse> callBack)
 ```
 
@@ -974,23 +975,29 @@ void cancelSubscriptionAsync(
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a subscription |
 
 
 #### Example Usage
 
 ```java
-String subscriptionId = "subscription_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-subscriptions.cancelSubscriptionAsync(subscriptionId, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-    public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
+try {
+    String subscriptionId = "subscription_id";
+    String idempotencyKey = "idempotency-key";
+    CreateCancelSubscriptionRequest body = new CreateCancelSubscriptionRequest();
+    // Invoking the API call with sample inputs
+    subscriptions.cancelSubscriptionAsync(subscriptionId, idempotencyKey, body, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
 ```
 
 #### Errors
@@ -1506,8 +1513,8 @@ void getDiscountsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-int page = 252;
-int size = 252;
+int page = 229;
+int size = 229;
 // Invoking the API call with sample inputs
 subscriptions.getDiscountsAsync(subscriptionId, page, size, new APICallBack<ListDiscountsResponse>() {
     public void onSuccess(HttpContext context, ListDiscountsResponse response) {
@@ -1669,8 +1676,8 @@ void getIncrementsAsync(
 
 ```java
 String subscriptionId = "subscription_id";
-Integer page = 252;
-Integer size = 252;
+Integer page = 229;
+Integer size = 229;
 // Invoking the API call with sample inputs
 subscriptions.getIncrementsAsync(subscriptionId, page, size, new APICallBack<ListIncrementsResponse>() {
     public void onSuccess(HttpContext context, ListIncrementsResponse response) {
@@ -2123,8 +2130,8 @@ void getOrdersAsync(
 #### Example Usage
 
 ```java
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 String code = "code";
 String status = "status";
 DateTime createdSince = new Date();
@@ -3170,8 +3177,8 @@ void getPlansAsync(
 #### Example Usage
 
 ```java
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 String name = "name";
 String status = "status";
 String billingType = "billing_type";
@@ -3516,8 +3523,8 @@ void getInvoicesAsync(
 #### Example Usage
 
 ```java
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 String code = "code";
 String customerId = "customer_id";
 String subscriptionId = "subscription_id";
@@ -4133,8 +4140,8 @@ void getAccessTokensAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 // Invoking the API call with sample inputs
 customers.getAccessTokensAsync(customerId, page, size, new APICallBack<ListAccessTokensResponse>() {
     public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
@@ -4243,8 +4250,8 @@ void getAddressesAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 // Invoking the API call with sample inputs
 customers.getAddressesAsync(customerId, page, size, new APICallBack<ListAddressesResponse>() {
     public void onSuccess(HttpContext context, ListAddressesResponse response) {
@@ -4516,8 +4523,8 @@ void getCardsAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 252;
-Integer size = 252;
+Integer page = 187;
+Integer size = 187;
 // Invoking the API call with sample inputs
 customers.getCardsAsync(customerId, page, size, new APICallBack<ListCardsResponse>() {
     public void onSuccess(HttpContext context, ListCardsResponse response) {
@@ -4966,8 +4973,8 @@ void getChargeTransactionsAsync(
 
 ```java
 String chargeId = "charge_id";
-Integer page = 252;
-Integer size = 252;
+Integer page = 23;
+Integer size = 23;
 // Invoking the API call with sample inputs
 charges.getChargeTransactionsAsync(chargeId, page, size, new APICallBack<ListChargeTransactionsResponse>() {
     public void onSuccess(HttpContext context, ListChargeTransactionsResponse response) {
@@ -5087,8 +5094,8 @@ void getChargesAsync(
 #### Example Usage
 
 ```java
-Integer page = 252;
-Integer size = 252;
+Integer page = 23;
+Integer size = 23;
 String code = "code";
 String status = "status";
 String paymentMethod = "payment_method";
@@ -5234,6 +5241,7 @@ charges.getChargeAsync(chargeId, new APICallBack<GetChargeResponse>() {
 void cancelChargeAsync(
         final String chargeId,
         final String idempotencyKey,
+        final CreateCancelChargeRequest body,
         final APICallBack<GetChargeResponse> callBack)
 ```
 
@@ -5243,23 +5251,29 @@ void cancelChargeAsync(
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a charge |
 
 
 #### Example Usage
 
 ```java
-String chargeId = "charge_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-charges.cancelChargeAsync(chargeId, idempotencyKey, new APICallBack<GetChargeResponse>() {
-    public void onSuccess(HttpContext context, GetChargeResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
+try {
+    String chargeId = "charge_id";
+    String idempotencyKey = "idempotency-key";
+    CreateCancelChargeRequest body = new CreateCancelChargeRequest();
+    // Invoking the API call with sample inputs
+    charges.cancelChargeAsync(chargeId, idempotencyKey, body, new APICallBack<GetChargeResponse>() {
+        public void onSuccess(HttpContext context, GetChargeResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
 ```
 
 #### Errors
@@ -5750,8 +5764,8 @@ void getAnticipationsAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 210;
-Integer size = 210;
+Integer page = 23;
+Integer size = 23;
 String status = "status";
 String timeframe = "timeframe";
 DateTime paymentDateSince = new Date();
@@ -5859,8 +5873,8 @@ void getRecipientsAsync(
 #### Example Usage
 
 ```java
-Integer page = 210;
-Integer size = 210;
+Integer page = 23;
+Integer size = 23;
 // Invoking the API call with sample inputs
 recipients.getRecipientsAsync(page, size, new APICallBack<ListRecipientResponse>() {
     public void onSuccess(HttpContext context, ListRecipientResponse response) {
@@ -6136,8 +6150,8 @@ void getTransfersAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 210;
-Integer size = 210;
+Integer page = 23;
+Integer size = 23;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();
@@ -6309,8 +6323,8 @@ void getWithdrawalsAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 210;
-Integer size = 210;
+Integer page = 23;
+Integer size = 23;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();

@@ -1315,14 +1315,16 @@ public class ChargesController extends BaseController {
      * Cancel a charge
      * @param    chargeId    Required parameter: Charge id
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    body    Optional parameter: Request for cancelling a charge
      * @return    Returns the GetChargeResponse response from the API call 
      */
     public GetChargeResponse cancelCharge(
                 final String chargeId,
-                final String idempotencyKey
+                final String idempotencyKey,
+                final CreateCancelChargeRequest body
     ) throws Throwable {
 
-        HttpRequest _request = _buildCancelChargeRequest(chargeId, idempotencyKey);
+        HttpRequest _request = _buildCancelChargeRequest(chargeId, idempotencyKey, body);
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
@@ -1333,10 +1335,12 @@ public class ChargesController extends BaseController {
      * Cancel a charge
      * @param    chargeId    Required parameter: Charge id
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    body    Optional parameter: Request for cancelling a charge
      */
     public void cancelChargeAsync(
                 final String chargeId,
                 final String idempotencyKey,
+                final CreateCancelChargeRequest body,
                 final APICallBack<GetChargeResponse> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -1344,7 +1348,7 @@ public class ChargesController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildCancelChargeRequest(chargeId, idempotencyKey);
+                    _request = _buildCancelChargeRequest(chargeId, idempotencyKey, body);
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -1378,7 +1382,8 @@ public class ChargesController extends BaseController {
      */
     private HttpRequest _buildCancelChargeRequest(
                 final String chargeId,
-                final String idempotencyKey) throws IOException, APIException {
+                final String idempotencyKey,
+                final CreateCancelChargeRequest body) throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
@@ -1394,6 +1399,7 @@ public class ChargesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>();
+        _headers.put("Content-Type", "application/json");
         if (idempotencyKey != null) {
             _headers.put("idempotency-key", idempotencyKey);
         }
@@ -1402,7 +1408,7 @@ public class ChargesController extends BaseController {
 
 
         //prepare and invoke the API call request to fetch the response
-        HttpRequest _request = getClientInstance().delete(_queryUrl, _headers, null,
+        HttpRequest _request = getClientInstance().deleteBody(_queryUrl, _headers, APIHelper.serialize(body),
                 Configuration.basicAuthUserName, Configuration.basicAuthPassword);
 
         // Invoke the callback before request if its not null
