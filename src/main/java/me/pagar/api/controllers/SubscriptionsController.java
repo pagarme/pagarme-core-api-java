@@ -2349,14 +2349,16 @@ public class SubscriptionsController extends BaseController {
      * Cancels a subscription
      * @param    subscriptionId    Required parameter: Subscription id
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    body    Optional parameter: Request for cancelling a subscription
      * @return    Returns the GetSubscriptionResponse response from the API call 
      */
     public GetSubscriptionResponse cancelSubscription(
                 final String subscriptionId,
-                final String idempotencyKey
+                final String idempotencyKey,
+                final CreateCancelSubscriptionRequest body
     ) throws Throwable {
 
-        HttpRequest _request = _buildCancelSubscriptionRequest(subscriptionId, idempotencyKey);
+        HttpRequest _request = _buildCancelSubscriptionRequest(subscriptionId, idempotencyKey, body);
         HttpResponse _response = getClientInstance().executeAsString(_request);
         HttpContext _context = new HttpContext(_request, _response);
 
@@ -2367,10 +2369,12 @@ public class SubscriptionsController extends BaseController {
      * Cancels a subscription
      * @param    subscriptionId    Required parameter: Subscription id
      * @param    idempotencyKey    Optional parameter: Example: 
+     * @param    body    Optional parameter: Request for cancelling a subscription
      */
     public void cancelSubscriptionAsync(
                 final String subscriptionId,
                 final String idempotencyKey,
+                final CreateCancelSubscriptionRequest body,
                 final APICallBack<GetSubscriptionResponse> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -2378,7 +2382,7 @@ public class SubscriptionsController extends BaseController {
 
                 HttpRequest _request;
                 try {
-                    _request = _buildCancelSubscriptionRequest(subscriptionId, idempotencyKey);
+                    _request = _buildCancelSubscriptionRequest(subscriptionId, idempotencyKey, body);
                 } catch (Exception e) {
                     callBack.onFailure(null, e);
                     return;
@@ -2412,7 +2416,8 @@ public class SubscriptionsController extends BaseController {
      */
     private HttpRequest _buildCancelSubscriptionRequest(
                 final String subscriptionId,
-                final String idempotencyKey) throws IOException, APIException {
+                final String idempotencyKey,
+                final CreateCancelSubscriptionRequest body) throws IOException, APIException {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
@@ -2428,6 +2433,7 @@ public class SubscriptionsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>();
+        _headers.put("Content-Type", "application/json");
         if (idempotencyKey != null) {
             _headers.put("idempotency-key", idempotencyKey);
         }
@@ -2436,7 +2442,7 @@ public class SubscriptionsController extends BaseController {
 
 
         //prepare and invoke the API call request to fetch the response
-        HttpRequest _request = getClientInstance().delete(_queryUrl, _headers, null,
+        HttpRequest _request = getClientInstance().deleteBody(_queryUrl, _headers, APIHelper.serialize(body),
                 Configuration.basicAuthUserName, Configuration.basicAuthPassword);
 
         // Invoke the callback before request if its not null
