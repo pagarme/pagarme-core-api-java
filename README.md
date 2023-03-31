@@ -113,8 +113,8 @@ PagarmeCoreApiClient client = new PagarmeCoreApiClient(basicAuthUserName, basicA
 * [ChargesController](#charges_controller)
 * [RecipientsController](#recipients_controller)
 * [TokensController](#tokens_controller)
-* [TransactionsController](#transactions_controller)
 * [TransfersController](#transfers_controller)
+* [TransactionsController](#transactions_controller)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.SubscriptionsController") SubscriptionsController
 
@@ -158,119 +158,6 @@ try {
     // Invoking the API call with sample inputs
     subscriptions.updateSubscriptionCardAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
         public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="delete_usage_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.deleteUsageAsync") deleteUsageAsync
-
-> Deletes a usage
-
-
-```java
-void deleteUsageAsync(
-        final String subscriptionId,
-        final String itemId,
-        final String usageId,
-        final String idempotencyKey,
-        final APICallBack<GetUsageResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| usageId |  ``` Required ```  | The usage id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-String itemId = "item_id";
-String usageId = "usage_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-subscriptions.deleteUsageAsync(subscriptionId, itemId, usageId, idempotencyKey, new APICallBack<GetUsageResponse>() {
-    public void onSuccess(HttpContext context, GetUsageResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="create_discount_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.createDiscountAsync") createDiscountAsync
-
-> Creates a discount
-
-
-```java
-void createDiscountAsync(
-        final String subscriptionId,
-        final CreateDiscountRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetDiscountResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| body |  ``` Required ```  | Request for creating a discount |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    CreateDiscountRequest body = new CreateDiscountRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.createDiscountAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetDiscountResponse>() {
-        public void onSuccess(HttpContext context, GetDiscountResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -349,131 +236,6 @@ subscriptions.createAnUsageAsync(subscriptionId, itemId, idempotencyKey, new API
 
 
 
-### <a name="get_usages_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getUsagesAsync") getUsagesAsync
-
-> Lists all usages from a subscription item
-
-
-```java
-void getUsagesAsync(
-        final String subscriptionId,
-        final String itemId,
-        final Integer page,
-        final Integer size,
-        final String code,
-        final String group,
-        final DateTime usedSince,
-        final DateTime usedUntil,
-        final APICallBack<ListUsagesResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Identification code in the client system |
-| group |  ``` Optional ```  | Identification group in the client system |
-| usedSince |  ``` Optional ```  | TODO: Add a parameter description |
-| usedUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-String itemId = "item_id";
-Integer page = 229;
-Integer size = 229;
-String code = "code";
-String group = "group";
-DateTime usedSince = new Date();
-DateTime usedUntil = new Date();
-// Invoking the API call with sample inputs
-subscriptions.getUsagesAsync(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, new APICallBack<ListUsagesResponse>() {
-    public void onSuccess(HttpContext context, ListUsagesResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_current_cycle_status_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateCurrentCycleStatusAsync") updateCurrentCycleStatusAsync
-
-> UpdateCurrentCycleStatus
-
-
-```java
-void updateCurrentCycleStatusAsync(
-        final String subscriptionId,
-        final UpdateCurrentCycleStatusRequest body,
-        final String idempotencyKey,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| body |  ``` Required ```  | Request for updating the end date of the subscription current status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateCurrentCycleStatusRequest body = new UpdateCurrentCycleStatusRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateCurrentCycleStatusAsync(subscriptionId, body, idempotencyKey, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="update_subscription_payment_method_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionPaymentMethodAsync") updateSubscriptionPaymentMethodAsync
 
 > Updates the payment method from a subscription
@@ -516,130 +278,6 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="delete_discount_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.deleteDiscountAsync") deleteDiscountAsync
-
-> Deletes a discount
-
-
-```java
-void deleteDiscountAsync(
-        final String subscriptionId,
-        final String discountId,
-        final String idempotencyKey,
-        final APICallBack<GetDiscountResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-String discountId = "discount_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-subscriptions.deleteDiscountAsync(subscriptionId, discountId, idempotencyKey, new APICallBack<GetDiscountResponse>() {
-    public void onSuccess(HttpContext context, GetDiscountResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_subscription_items_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionItemsAsync") getSubscriptionItemsAsync
-
-> Get Subscription Items
-
-
-```java
-void getSubscriptionItemsAsync(
-        final String subscriptionId,
-        final Integer page,
-        final Integer size,
-        final String name,
-        final String code,
-        final String status,
-        final String description,
-        final String createdSince,
-        final String createdUntil,
-        final APICallBack<ListSubscriptionItemsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | The item name |
-| code |  ``` Optional ```  | Identification code in the client system |
-| status |  ``` Optional ```  | The item statis |
-| description |  ``` Optional ```  | The item description |
-| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-Integer page = 229;
-Integer size = 229;
-String name = "name";
-String code = "code";
-String status = "status";
-String description = "description";
-String createdSince = "created_since";
-String createdUntil = "created_until";
-// Invoking the API call with sample inputs
-subscriptions.getSubscriptionItemsAsync(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, new APICallBack<ListSubscriptionItemsResponse>() {
-    public void onSuccess(HttpContext context, ListSubscriptionItemsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
 ```
 
 #### Errors
@@ -762,6 +400,404 @@ subscriptions.getSubscriptionItemAsync(subscriptionId, itemId, new APICallBack<G
 
 
 
+### <a name="update_subscription_affiliation_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionAffiliationIdAsync") updateSubscriptionAffiliationIdAsync
+
+> UpdateSubscriptionAffiliationId
+
+
+```java
+void updateSubscriptionAffiliationIdAsync(
+        final String subscriptionId,
+        final UpdateSubscriptionAffiliationIdRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | Request for updating a subscription affiliation id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateSubscriptionAffiliationIdRequest body = new UpdateSubscriptionAffiliationIdRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateSubscriptionAffiliationIdAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_increments_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getIncrementsAsync") getIncrementsAsync
+
+> GetIncrements
+
+
+```java
+void getIncrementsAsync(
+        final String subscriptionId,
+        final Integer page,
+        final Integer size,
+        final APICallBack<ListIncrementsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+Integer page = 88;
+Integer size = 88;
+// Invoking the API call with sample inputs
+subscriptions.getIncrementsAsync(subscriptionId, page, size, new APICallBack<ListIncrementsResponse>() {
+    public void onSuccess(HttpContext context, ListIncrementsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_subscription_due_days_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionDueDaysAsync") updateSubscriptionDueDaysAsync
+
+> Updates the boleto due days from a subscription
+
+
+```java
+void updateSubscriptionDueDaysAsync(
+        final String subscriptionId,
+        final UpdateSubscriptionDueDaysRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateSubscriptionDueDaysRequest body = new UpdateSubscriptionDueDaysRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateSubscriptionDueDaysAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_subscription_start_at_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionStartAtAsync") updateSubscriptionStartAtAsync
+
+> Updates the start at date from a subscription
+
+
+```java
+void updateSubscriptionStartAtAsync(
+        final String subscriptionId,
+        final UpdateSubscriptionStartAtRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| body |  ``` Required ```  | Request for updating the subscription start date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateSubscriptionStartAtRequest body = new UpdateSubscriptionStartAtRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateSubscriptionStartAtAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_subscription_cycle_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionCycleByIdAsync") getSubscriptionCycleByIdAsync
+
+> GetSubscriptionCycleById
+
+
+```java
+void getSubscriptionCycleByIdAsync(
+        final String subscriptionId,
+        final String cycleId,
+        final APICallBack<GetPeriodResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| cycleId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+String cycleId = "cycleId";
+// Invoking the API call with sample inputs
+subscriptions.getSubscriptionCycleByIdAsync(subscriptionId, cycleId, new APICallBack<GetPeriodResponse>() {
+    public void onSuccess(HttpContext context, GetPeriodResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="delete_discount_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.deleteDiscountAsync") deleteDiscountAsync
+
+> Deletes a discount
+
+
+```java
+void deleteDiscountAsync(
+        final String subscriptionId,
+        final String discountId,
+        final String idempotencyKey,
+        final APICallBack<GetDiscountResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| discountId |  ``` Required ```  | Discount Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+String discountId = "discount_id";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+subscriptions.deleteDiscountAsync(subscriptionId, discountId, idempotencyKey, new APICallBack<GetDiscountResponse>() {
+    public void onSuccess(HttpContext context, GetDiscountResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_subscription_items_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionItemsAsync") getSubscriptionItemsAsync
+
+> Get Subscription Items
+
+
+```java
+void getSubscriptionItemsAsync(
+        final String subscriptionId,
+        final Integer page,
+        final Integer size,
+        final String name,
+        final String code,
+        final String status,
+        final String description,
+        final String createdSince,
+        final String createdUntil,
+        final APICallBack<ListSubscriptionItemsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | The item name |
+| code |  ``` Optional ```  | Identification code in the client system |
+| status |  ``` Optional ```  | The item statis |
+| description |  ``` Optional ```  | The item description |
+| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+Integer page = 88;
+Integer size = 88;
+String name = "name";
+String code = "code";
+String status = "status";
+String description = "description";
+String createdSince = "created_since";
+String createdUntil = "created_until";
+// Invoking the API call with sample inputs
+subscriptions.getSubscriptionItemsAsync(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, new APICallBack<ListSubscriptionItemsResponse>() {
+    public void onSuccess(HttpContext context, ListSubscriptionItemsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 ### <a name="update_subscription_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionItemAsync") updateSubscriptionItemAsync
 
 > Updates a subscription item
@@ -822,86 +858,6 @@ try {
 
 
 
-### <a name="get_subscriptions_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionsAsync") getSubscriptionsAsync
-
-> Gets all subscriptions
-
-
-```java
-void getSubscriptionsAsync(
-        final Integer page,
-        final Integer size,
-        final String code,
-        final String billingType,
-        final String customerId,
-        final String planId,
-        final String cardId,
-        final String status,
-        final DateTime nextBillingSince,
-        final DateTime nextBillingUntil,
-        final DateTime createdSince,
-        final DateTime createdUntil,
-        final APICallBack<ListSubscriptionsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for subscription's code |
-| billingType |  ``` Optional ```  | Filter for subscription's billing type |
-| customerId |  ``` Optional ```  | Filter for subscription's customer id |
-| planId |  ``` Optional ```  | Filter for subscription's plan id |
-| cardId |  ``` Optional ```  | Filter for subscription's card id |
-| status |  ``` Optional ```  | Filter for subscription's status |
-| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
-| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
-| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
-
-
-#### Example Usage
-
-```java
-Integer page = 229;
-Integer size = 229;
-String code = "code";
-String billingType = "billing_type";
-String customerId = "customer_id";
-String planId = "plan_id";
-String cardId = "card_id";
-String status = "status";
-DateTime nextBillingSince = new Date();
-DateTime nextBillingUntil = new Date();
-DateTime createdSince = new Date();
-DateTime createdUntil = new Date();
-// Invoking the API call with sample inputs
-subscriptions.getSubscriptionsAsync(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, new APICallBack<ListSubscriptionsResponse>() {
-    public void onSuccess(HttpContext context, ListSubscriptionsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="create_subscription_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.createSubscriptionAsync") createSubscriptionAsync
 
 > Creates a new subscription
@@ -931,6 +887,408 @@ try {
     // Invoking the API call with sample inputs
     subscriptions.createSubscriptionAsync(body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
         public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_discount_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getDiscountByIdAsync") getDiscountByIdAsync
+
+> GetDiscountById
+
+
+```java
+void getDiscountByIdAsync(
+        final String subscriptionId,
+        final String discountId,
+        final APICallBack<GetDiscountResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+String discountId = "discountId";
+// Invoking the API call with sample inputs
+subscriptions.getDiscountByIdAsync(subscriptionId, discountId, new APICallBack<GetDiscountResponse>() {
+    public void onSuccess(HttpContext context, GetDiscountResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_subscription_billing_date_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionBillingDateAsync") updateSubscriptionBillingDateAsync
+
+> Updates the billing date from a subscription
+
+
+```java
+void updateSubscriptionBillingDateAsync(
+        final String subscriptionId,
+        final UpdateSubscriptionBillingDateRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| body |  ``` Required ```  | Request for updating the subscription billing date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateSubscriptionBillingDateRequest body = new UpdateSubscriptionBillingDateRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateSubscriptionBillingDateAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_latest_period_end_at_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateLatestPeriodEndAtAsync") updateLatestPeriodEndAtAsync
+
+> UpdateLatestPeriodEndAt
+
+
+```java
+void updateLatestPeriodEndAtAsync(
+        final String subscriptionId,
+        final UpdateCurrentCycleEndDateRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | Request for updating the end date of the current signature cycle |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateCurrentCycleEndDateRequest body = new UpdateCurrentCycleEndDateRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateLatestPeriodEndAtAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_discount_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.createDiscountAsync") createDiscountAsync
+
+> Creates a discount
+
+
+```java
+void createDiscountAsync(
+        final String subscriptionId,
+        final CreateDiscountRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetDiscountResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| body |  ``` Required ```  | Request for creating a discount |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    CreateDiscountRequest body = new CreateDiscountRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.createDiscountAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetDiscountResponse>() {
+        public void onSuccess(HttpContext context, GetDiscountResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="delete_usage_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.deleteUsageAsync") deleteUsageAsync
+
+> Deletes a usage
+
+
+```java
+void deleteUsageAsync(
+        final String subscriptionId,
+        final String itemId,
+        final String usageId,
+        final String idempotencyKey,
+        final APICallBack<GetUsageResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+String itemId = "item_id";
+String usageId = "usage_id";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+subscriptions.deleteUsageAsync(subscriptionId, itemId, usageId, idempotencyKey, new APICallBack<GetUsageResponse>() {
+    public void onSuccess(HttpContext context, GetUsageResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_usages_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getUsagesAsync") getUsagesAsync
+
+> Lists all usages from a subscription item
+
+
+```java
+void getUsagesAsync(
+        final String subscriptionId,
+        final String itemId,
+        final Integer page,
+        final Integer size,
+        final String code,
+        final String group,
+        final DateTime usedSince,
+        final DateTime usedUntil,
+        final APICallBack<ListUsagesResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Identification code in the client system |
+| group |  ``` Optional ```  | Identification group in the client system |
+| usedSince |  ``` Optional ```  | TODO: Add a parameter description |
+| usedUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+String itemId = "item_id";
+Integer page = 180;
+Integer size = 180;
+String code = "code";
+String group = "group";
+DateTime usedSince = new Date();
+DateTime usedUntil = new Date();
+// Invoking the API call with sample inputs
+subscriptions.getUsagesAsync(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, new APICallBack<ListUsagesResponse>() {
+    public void onSuccess(HttpContext context, ListUsagesResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_current_cycle_status_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateCurrentCycleStatusAsync") updateCurrentCycleStatusAsync
+
+> UpdateCurrentCycleStatus
+
+
+```java
+void updateCurrentCycleStatusAsync(
+        final String subscriptionId,
+        final UpdateCurrentCycleStatusRequest body,
+        final String idempotencyKey,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| body |  ``` Required ```  | Request for updating the end date of the subscription current status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateCurrentCycleStatusRequest body = new UpdateCurrentCycleStatusRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateCurrentCycleStatusAsync(subscriptionId, body, idempotencyKey, new APICallBack<void>() {
+        public void onSuccess(HttpContext context, void response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -1013,53 +1371,6 @@ try {
 
 
 
-### <a name="get_subscription_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionAsync") getSubscriptionAsync
-
-> Gets a subscription
-
-
-```java
-void getSubscriptionAsync(
-        final String subscriptionId,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-// Invoking the API call with sample inputs
-subscriptions.getSubscriptionAsync(subscriptionId, new APICallBack<GetSubscriptionResponse>() {
-    public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="create_increment_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.createIncrementAsync") createIncrementAsync
 
 > Creates a increment
@@ -1092,113 +1403,6 @@ try {
     // Invoking the API call with sample inputs
     subscriptions.createIncrementAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetIncrementResponse>() {
         public void onSuccess(HttpContext context, GetIncrementResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_discount_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getDiscountByIdAsync") getDiscountByIdAsync
-
-> GetDiscountById
-
-
-```java
-void getDiscountByIdAsync(
-        final String subscriptionId,
-        final String discountId,
-        final APICallBack<GetDiscountResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-String discountId = "discountId";
-// Invoking the API call with sample inputs
-subscriptions.getDiscountByIdAsync(subscriptionId, discountId, new APICallBack<GetDiscountResponse>() {
-    public void onSuccess(HttpContext context, GetDiscountResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_subscription_affiliation_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionAffiliationIdAsync") updateSubscriptionAffiliationIdAsync
-
-> UpdateSubscriptionAffiliationId
-
-
-```java
-void updateSubscriptionAffiliationIdAsync(
-        final String subscriptionId,
-        final UpdateSubscriptionAffiliationIdRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | Request for updating a subscription affiliation id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateSubscriptionAffiliationIdRequest body = new UpdateSubscriptionAffiliationIdRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateSubscriptionAffiliationIdAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -1266,6 +1470,297 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_discounts_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getDiscountsAsync") getDiscountsAsync
+
+> GetDiscounts
+
+
+```java
+void getDiscountsAsync(
+        final String subscriptionId,
+        final int page,
+        final int size,
+        final APICallBack<ListDiscountsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+int page = 180;
+int size = 180;
+// Invoking the API call with sample inputs
+subscriptions.getDiscountsAsync(subscriptionId, page, size, new APICallBack<ListDiscountsResponse>() {
+    public void onSuccess(HttpContext context, ListDiscountsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_subscription_minium_price_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionMiniumPriceAsync") updateSubscriptionMiniumPriceAsync
+
+> Atualização do valor mínimo da assinatura
+
+
+```java
+void updateSubscriptionMiniumPriceAsync(
+        final String subscriptionId,
+        final UpdateSubscriptionMinimumPriceRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| body |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String subscriptionId = "subscription_id";
+    UpdateSubscriptionMinimumPriceRequest body = new UpdateSubscriptionMinimumPriceRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    subscriptions.updateSubscriptionMiniumPriceAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_split_subscription_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSplitSubscriptionAsync") updateSplitSubscriptionAsync
+
+> UpdateSplitSubscription
+
+
+```java
+void updateSplitSubscriptionAsync(
+        final String id,
+        final UpdateSubscriptionSplitRequest body,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Subscription's id |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String id = "id";
+    UpdateSubscriptionSplitRequest body = new UpdateSubscriptionSplitRequest();
+    // Invoking the API call with sample inputs
+    subscriptions.updateSplitSubscriptionAsync(id, body, new APICallBack<GetSubscriptionResponse>() {
+        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_subscriptions_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionsAsync") getSubscriptionsAsync
+
+> Gets all subscriptions
+
+
+```java
+void getSubscriptionsAsync(
+        final Integer page,
+        final Integer size,
+        final String code,
+        final String billingType,
+        final String customerId,
+        final String planId,
+        final String cardId,
+        final String status,
+        final DateTime nextBillingSince,
+        final DateTime nextBillingUntil,
+        final DateTime createdSince,
+        final DateTime createdUntil,
+        final APICallBack<ListSubscriptionsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for subscription's code |
+| billingType |  ``` Optional ```  | Filter for subscription's billing type |
+| customerId |  ``` Optional ```  | Filter for subscription's customer id |
+| planId |  ``` Optional ```  | Filter for subscription's plan id |
+| cardId |  ``` Optional ```  | Filter for subscription's card id |
+| status |  ``` Optional ```  | Filter for subscription's status |
+| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
+| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
+| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
+
+
+#### Example Usage
+
+```java
+Integer page = 180;
+Integer size = 180;
+String code = "code";
+String billingType = "billing_type";
+String customerId = "customer_id";
+String planId = "plan_id";
+String cardId = "card_id";
+String status = "status";
+DateTime nextBillingSince = new Date();
+DateTime nextBillingUntil = new Date();
+DateTime createdSince = new Date();
+DateTime createdUntil = new Date();
+// Invoking the API call with sample inputs
+subscriptions.getSubscriptionsAsync(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, new APICallBack<ListSubscriptionsResponse>() {
+    public void onSuccess(HttpContext context, ListSubscriptionsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_subscription_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionAsync") getSubscriptionAsync
+
+> Gets a subscription
+
+
+```java
+void getSubscriptionAsync(
+        final String subscriptionId,
+        final APICallBack<GetSubscriptionResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+// Invoking the API call with sample inputs
+subscriptions.getSubscriptionAsync(subscriptionId, new APICallBack<GetSubscriptionResponse>() {
+    public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 #### Errors
@@ -1487,116 +1982,6 @@ subscriptions.renewSubscriptionAsync(subscriptionId, idempotencyKey, new APICall
 
 
 
-### <a name="get_discounts_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getDiscountsAsync") getDiscountsAsync
-
-> GetDiscounts
-
-
-```java
-void getDiscountsAsync(
-        final String subscriptionId,
-        final int page,
-        final int size,
-        final APICallBack<ListDiscountsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-int page = 229;
-int size = 229;
-// Invoking the API call with sample inputs
-subscriptions.getDiscountsAsync(subscriptionId, page, size, new APICallBack<ListDiscountsResponse>() {
-    public void onSuccess(HttpContext context, ListDiscountsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_subscription_billing_date_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionBillingDateAsync") updateSubscriptionBillingDateAsync
-
-> Updates the billing date from a subscription
-
-
-```java
-void updateSubscriptionBillingDateAsync(
-        final String subscriptionId,
-        final UpdateSubscriptionBillingDateRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| body |  ``` Required ```  | Request for updating the subscription billing date |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateSubscriptionBillingDateRequest body = new UpdateSubscriptionBillingDateRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateSubscriptionBillingDateAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="delete_subscription_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.deleteSubscriptionItemAsync") deleteSubscriptionItemAsync
 
 > Deletes a subscription item
@@ -1628,337 +2013,6 @@ String idempotencyKey = "idempotency-key";
 // Invoking the API call with sample inputs
 subscriptions.deleteSubscriptionItemAsync(subscriptionId, subscriptionItemId, idempotencyKey, new APICallBack<GetSubscriptionItemResponse>() {
     public void onSuccess(HttpContext context, GetSubscriptionItemResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_increments_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getIncrementsAsync") getIncrementsAsync
-
-> GetIncrements
-
-
-```java
-void getIncrementsAsync(
-        final String subscriptionId,
-        final Integer page,
-        final Integer size,
-        final APICallBack<ListIncrementsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-Integer page = 229;
-Integer size = 229;
-// Invoking the API call with sample inputs
-subscriptions.getIncrementsAsync(subscriptionId, page, size, new APICallBack<ListIncrementsResponse>() {
-    public void onSuccess(HttpContext context, ListIncrementsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_subscription_due_days_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionDueDaysAsync") updateSubscriptionDueDaysAsync
-
-> Updates the boleto due days from a subscription
-
-
-```java
-void updateSubscriptionDueDaysAsync(
-        final String subscriptionId,
-        final UpdateSubscriptionDueDaysRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateSubscriptionDueDaysRequest body = new UpdateSubscriptionDueDaysRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateSubscriptionDueDaysAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_subscription_start_at_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionStartAtAsync") updateSubscriptionStartAtAsync
-
-> Updates the start at date from a subscription
-
-
-```java
-void updateSubscriptionStartAtAsync(
-        final String subscriptionId,
-        final UpdateSubscriptionStartAtRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| body |  ``` Required ```  | Request for updating the subscription start date |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateSubscriptionStartAtRequest body = new UpdateSubscriptionStartAtRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateSubscriptionStartAtAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_latest_period_end_at_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateLatestPeriodEndAtAsync") updateLatestPeriodEndAtAsync
-
-> UpdateLatestPeriodEndAt
-
-
-```java
-void updateLatestPeriodEndAtAsync(
-        final String subscriptionId,
-        final UpdateCurrentCycleEndDateRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | Request for updating the end date of the current signature cycle |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateCurrentCycleEndDateRequest body = new UpdateCurrentCycleEndDateRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateLatestPeriodEndAtAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_subscription_minium_price_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSubscriptionMiniumPriceAsync") updateSubscriptionMiniumPriceAsync
-
-> Atualização do valor mínimo da assinatura
-
-
-```java
-void updateSubscriptionMiniumPriceAsync(
-        final String subscriptionId,
-        final UpdateSubscriptionMinimumPriceRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| body |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String subscriptionId = "subscription_id";
-    UpdateSubscriptionMinimumPriceRequest body = new UpdateSubscriptionMinimumPriceRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    subscriptions.updateSubscriptionMiniumPriceAsync(subscriptionId, body, idempotencyKey, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_subscription_cycle_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.getSubscriptionCycleByIdAsync") getSubscriptionCycleByIdAsync
-
-> GetSubscriptionCycleById
-
-
-```java
-void getSubscriptionCycleByIdAsync(
-        final String subscriptionId,
-        final String cycleId,
-        final APICallBack<GetPeriodResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| cycleId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-String cycleId = "cycleId";
-// Invoking the API call with sample inputs
-subscriptions.getSubscriptionCycleByIdAsync(subscriptionId, cycleId, new APICallBack<GetPeriodResponse>() {
-    public void onSuccess(HttpContext context, GetPeriodResponse response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -2031,60 +2085,6 @@ subscriptions.getUsageReportAsync(subscriptionId, periodId, new APICallBack<GetU
 
 
 
-### <a name="update_split_subscription_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.SubscriptionsController.updateSplitSubscriptionAsync") updateSplitSubscriptionAsync
-
-> UpdateSplitSubscription
-
-
-```java
-void updateSplitSubscriptionAsync(
-        final String id,
-        final UpdateSubscriptionSplitRequest body,
-        final APICallBack<GetSubscriptionResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Subscription's id |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String id = "id";
-    UpdateSubscriptionSplitRequest body = new UpdateSubscriptionSplitRequest();
-    // Invoking the API call with sample inputs
-    subscriptions.updateSplitSubscriptionAsync(id, body, new APICallBack<GetSubscriptionResponse>() {
-        public void onSuccess(HttpContext context, GetSubscriptionResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.OrdersController") OrdersController
@@ -2130,8 +2130,8 @@ void getOrdersAsync(
 #### Example Usage
 
 ```java
-Integer page = 187;
-Integer size = 187;
+Integer page = 180;
+Integer size = 180;
 String code = "code";
 String status = "status";
 DateTime createdSince = new Date();
@@ -2216,56 +2216,6 @@ try {
 
 
 
-### <a name="delete_all_order_items_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.deleteAllOrderItemsAsync") deleteAllOrderItemsAsync
-
-> DeleteAllOrderItems
-
-
-```java
-void deleteAllOrderItemsAsync(
-        final String orderId,
-        final String idempotencyKey,
-        final APICallBack<GetOrderResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String orderId = "orderId";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-orders.deleteAllOrderItemsAsync(orderId, idempotencyKey, new APICallBack<GetOrderResponse>() {
-    public void onSuccess(HttpContext context, GetOrderResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="create_order_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.createOrderItemAsync") createOrderItemAsync
 
 > CreateOrderItem
@@ -2308,6 +2258,216 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_order_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.getOrderItemAsync") getOrderItemAsync
+
+> GetOrderItem
+
+
+```java
+void getOrderItemAsync(
+        final String orderId,
+        final String itemId,
+        final APICallBack<GetOrderItemResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+
+
+#### Example Usage
+
+```java
+String orderId = "orderId";
+String itemId = "itemId";
+// Invoking the API call with sample inputs
+orders.getOrderItemAsync(orderId, itemId, new APICallBack<GetOrderItemResponse>() {
+    public void onSuccess(HttpContext context, GetOrderItemResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="delete_order_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.deleteOrderItemAsync") deleteOrderItemAsync
+
+> DeleteOrderItem
+
+
+```java
+void deleteOrderItemAsync(
+        final String orderId,
+        final String itemId,
+        final String idempotencyKey,
+        final APICallBack<GetOrderItemResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String orderId = "orderId";
+String itemId = "itemId";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+orders.deleteOrderItemAsync(orderId, itemId, idempotencyKey, new APICallBack<GetOrderItemResponse>() {
+    public void onSuccess(HttpContext context, GetOrderItemResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_order_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.updateOrderMetadataAsync") updateOrderMetadataAsync
+
+> Updates the metadata from an order
+
+
+```java
+void updateOrderMetadataAsync(
+        final String orderId,
+        final UpdateMetadataRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetOrderResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | The order id |
+| body |  ``` Required ```  | Request for updating the order metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String orderId = "order_id";
+    UpdateMetadataRequest body = new UpdateMetadataRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    orders.updateOrderMetadataAsync(orderId, body, idempotencyKey, new APICallBack<GetOrderResponse>() {
+        public void onSuccess(HttpContext context, GetOrderResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="delete_all_order_items_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.deleteAllOrderItemsAsync") deleteAllOrderItemsAsync
+
+> DeleteAllOrderItems
+
+
+```java
+void deleteAllOrderItemsAsync(
+        final String orderId,
+        final String idempotencyKey,
+        final APICallBack<GetOrderResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String orderId = "orderId";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+orders.deleteAllOrderItemsAsync(orderId, idempotencyKey, new APICallBack<GetOrderResponse>() {
+    public void onSuccess(HttpContext context, GetOrderResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 #### Errors
@@ -2383,109 +2543,6 @@ try {
 
 
 
-### <a name="delete_order_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.deleteOrderItemAsync") deleteOrderItemAsync
-
-> DeleteOrderItem
-
-
-```java
-void deleteOrderItemAsync(
-        final String orderId,
-        final String itemId,
-        final String idempotencyKey,
-        final APICallBack<GetOrderItemResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String orderId = "orderId";
-String itemId = "itemId";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-orders.deleteOrderItemAsync(orderId, itemId, idempotencyKey, new APICallBack<GetOrderItemResponse>() {
-    public void onSuccess(HttpContext context, GetOrderItemResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_order_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.getOrderItemAsync") getOrderItemAsync
-
-> GetOrderItem
-
-
-```java
-void getOrderItemAsync(
-        final String orderId,
-        final String itemId,
-        final APICallBack<GetOrderItemResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-
-
-#### Example Usage
-
-```java
-String orderId = "orderId";
-String itemId = "itemId";
-// Invoking the API call with sample inputs
-orders.getOrderItemAsync(orderId, itemId, new APICallBack<GetOrderItemResponse>() {
-    public void onSuccess(HttpContext context, GetOrderItemResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="close_order_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.closeOrderAsync") closeOrderAsync
 
 > CloseOrder
@@ -2517,63 +2574,6 @@ try {
     String idempotencyKey = "idempotency-key";
     // Invoking the API call with sample inputs
     orders.closeOrderAsync(id, body, idempotencyKey, new APICallBack<GetOrderResponse>() {
-        public void onSuccess(HttpContext context, GetOrderResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_order_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.OrdersController.updateOrderMetadataAsync") updateOrderMetadataAsync
-
-> Updates the metadata from an order
-
-
-```java
-void updateOrderMetadataAsync(
-        final String orderId,
-        final UpdateMetadataRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetOrderResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | The order id |
-| body |  ``` Required ```  | Request for updating the order metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String orderId = "order_id";
-    UpdateMetadataRequest body = new UpdateMetadataRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    orders.updateOrderMetadataAsync(orderId, body, idempotencyKey, new APICallBack<GetOrderResponse>() {
         public void onSuccess(HttpContext context, GetOrderResponse response) {
             // TODO success callback handler
         }
@@ -2706,6 +2706,60 @@ plans.getPlanAsync(planId, new APICallBack<GetPlanResponse>() {
 
 
 
+### <a name="create_plan_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.createPlanAsync") createPlanAsync
+
+> Creates a new plan
+
+
+```java
+void createPlanAsync(
+        final CreatePlanRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetPlanResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a plan |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CreatePlanRequest body = new CreatePlanRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    plans.createPlanAsync(body, idempotencyKey, new APICallBack<GetPlanResponse>() {
+        public void onSuccess(HttpContext context, GetPlanResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 ### <a name="update_plan_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.updatePlanAsync") updatePlanAsync
 
 > Updates a plan
@@ -2748,6 +2802,178 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_plan_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.getPlanItemAsync") getPlanItemAsync
+
+> Gets a plan item
+
+
+```java
+void getPlanItemAsync(
+        final String planId,
+        final String planItemId,
+        final APICallBack<GetPlanItemResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+
+
+#### Example Usage
+
+```java
+String planId = "plan_id";
+String planItemId = "plan_item_id";
+// Invoking the API call with sample inputs
+plans.getPlanItemAsync(planId, planItemId, new APICallBack<GetPlanItemResponse>() {
+    public void onSuccess(HttpContext context, GetPlanItemResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_plan_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.createPlanItemAsync") createPlanItemAsync
+
+> Adds a new item to a plan
+
+
+```java
+void createPlanItemAsync(
+        final String planId,
+        final CreatePlanItemRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetPlanItemResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| body |  ``` Required ```  | Request for creating a plan item |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String planId = "plan_id";
+    CreatePlanItemRequest body = new CreatePlanItemRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    plans.createPlanItemAsync(planId, body, idempotencyKey, new APICallBack<GetPlanItemResponse>() {
+        public void onSuccess(HttpContext context, GetPlanItemResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_plans_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.getPlansAsync") getPlansAsync
+
+> Gets all plans
+
+
+```java
+void getPlansAsync(
+        final Integer page,
+        final Integer size,
+        final String name,
+        final String status,
+        final String billingType,
+        final DateTime createdSince,
+        final DateTime createdUntil,
+        final APICallBack<ListPlansResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | Filter for Plan's name |
+| status |  ``` Optional ```  | Filter for Plan's status |
+| billingType |  ``` Optional ```  | Filter for plan's billing type |
+| createdSince |  ``` Optional ```  | Filter for plan's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for plan's creation date end range |
+
+
+#### Example Usage
+
+```java
+Integer page = 180;
+Integer size = 180;
+String name = "name";
+String status = "status";
+String billingType = "billing_type";
+DateTime createdSince = new Date();
+DateTime createdUntil = new Date();
+// Invoking the API call with sample inputs
+plans.getPlansAsync(page, size, name, status, billingType, createdSince, createdUntil, new APICallBack<ListPlansResponse>() {
+    public void onSuccess(HttpContext context, ListPlansResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 #### Errors
@@ -2930,56 +3156,6 @@ try {
 
 
 
-### <a name="get_plan_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.getPlanItemAsync") getPlanItemAsync
-
-> Gets a plan item
-
-
-```java
-void getPlanItemAsync(
-        final String planId,
-        final String planItemId,
-        final APICallBack<GetPlanItemResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-
-
-#### Example Usage
-
-```java
-String planId = "plan_id";
-String planItemId = "plan_item_id";
-// Invoking the API call with sample inputs
-plans.getPlanItemAsync(planId, planItemId, new APICallBack<GetPlanItemResponse>() {
-    public void onSuccess(HttpContext context, GetPlanItemResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="delete_plan_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.deletePlanItemAsync") deletePlanItemAsync
 
 > Removes an item from a plan
@@ -3033,182 +3209,6 @@ plans.deletePlanItemAsync(planId, planItemId, idempotencyKey, new APICallBack<Ge
 
 
 
-### <a name="create_plan_item_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.createPlanItemAsync") createPlanItemAsync
-
-> Adds a new item to a plan
-
-
-```java
-void createPlanItemAsync(
-        final String planId,
-        final CreatePlanItemRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetPlanItemResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| body |  ``` Required ```  | Request for creating a plan item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String planId = "plan_id";
-    CreatePlanItemRequest body = new CreatePlanItemRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    plans.createPlanItemAsync(planId, body, idempotencyKey, new APICallBack<GetPlanItemResponse>() {
-        public void onSuccess(HttpContext context, GetPlanItemResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="create_plan_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.createPlanAsync") createPlanAsync
-
-> Creates a new plan
-
-
-```java
-void createPlanAsync(
-        final CreatePlanRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetPlanResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a plan |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    CreatePlanRequest body = new CreatePlanRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    plans.createPlanAsync(body, idempotencyKey, new APICallBack<GetPlanResponse>() {
-        public void onSuccess(HttpContext context, GetPlanResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_plans_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.PlansController.getPlansAsync") getPlansAsync
-
-> Gets all plans
-
-
-```java
-void getPlansAsync(
-        final Integer page,
-        final Integer size,
-        final String name,
-        final String status,
-        final String billingType,
-        final DateTime createdSince,
-        final DateTime createdUntil,
-        final APICallBack<ListPlansResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | Filter for Plan's name |
-| status |  ``` Optional ```  | Filter for Plan's status |
-| billingType |  ``` Optional ```  | Filter for plan's billing type |
-| createdSince |  ``` Optional ```  | Filter for plan's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for plan's creation date end range |
-
-
-#### Example Usage
-
-```java
-Integer page = 187;
-Integer size = 187;
-String name = "name";
-String status = "status";
-String billingType = "billing_type";
-DateTime createdSince = new Date();
-DateTime createdUntil = new Date();
-// Invoking the API call with sample inputs
-plans.getPlansAsync(page, size, name, status, billingType, createdSince, createdUntil, new APICallBack<ListPlansResponse>() {
-    public void onSuccess(HttpContext context, ListPlansResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.InvoicesController") InvoicesController
@@ -3220,53 +3220,6 @@ The singleton instance of the ``` InvoicesController ``` class can be accessed f
 ```java
 InvoicesController invoices = client.getInvoices();
 ```
-
-### <a name="get_partial_invoice_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.InvoicesController.getPartialInvoiceAsync") getPartialInvoiceAsync
-
-> GetPartialInvoice
-
-
-```java
-void getPartialInvoiceAsync(
-        final String subscriptionId,
-        final APICallBack<GetInvoiceResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-
-
-#### Example Usage
-
-```java
-String subscriptionId = "subscription_id";
-// Invoking the API call with sample inputs
-invoices.getPartialInvoiceAsync(subscriptionId, new APICallBack<GetInvoiceResponse>() {
-    public void onSuccess(HttpContext context, GetInvoiceResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
 
 ### <a name="cancel_invoice_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.InvoicesController.cancelInvoiceAsync") cancelInvoiceAsync
 
@@ -3523,8 +3476,8 @@ void getInvoicesAsync(
 #### Example Usage
 
 ```java
-Integer page = 187;
-Integer size = 187;
+Integer page = 180;
+Integer size = 180;
 String code = "code";
 String customerId = "customer_id";
 String subscriptionId = "subscription_id";
@@ -3537,6 +3490,53 @@ String customerDocument = "customer_document";
 // Invoking the API call with sample inputs
 invoices.getInvoicesAsync(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, customerDocument, new APICallBack<ListInvoicesResponse>() {
     public void onSuccess(HttpContext context, ListInvoicesResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_partial_invoice_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.InvoicesController.getPartialInvoiceAsync") getPartialInvoiceAsync
+
+> GetPartialInvoice
+
+
+```java
+void getPartialInvoiceAsync(
+        final String subscriptionId,
+        final APICallBack<GetInvoiceResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+
+
+#### Example Usage
+
+```java
+String subscriptionId = "subscription_id";
+// Invoking the API call with sample inputs
+invoices.getPartialInvoiceAsync(subscriptionId, new APICallBack<GetInvoiceResponse>() {
+    public void onSuccess(HttpContext context, GetInvoiceResponse response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -3628,66 +3628,6 @@ The singleton instance of the ``` CustomersController ``` class can be accessed 
 CustomersController customers = client.getCustomers();
 ```
 
-### <a name="update_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCardAsync") updateCardAsync
-
-> Updates a card
-
-
-```java
-void updateCardAsync(
-        final String customerId,
-        final String cardId,
-        final UpdateCardRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetCardResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| cardId |  ``` Required ```  | Card id |
-| body |  ``` Required ```  | Request for updating a card |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String customerId = "customer_id";
-    String cardId = "card_id";
-    UpdateCardRequest body = new UpdateCardRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    customers.updateCardAsync(customerId, cardId, body, idempotencyKey, new APICallBack<GetCardResponse>() {
-        public void onSuccess(HttpContext context, GetCardResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="delete_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.deleteCardAsync") deleteCardAsync
 
 > Delete a customer's card
@@ -3718,56 +3658,6 @@ String cardId = "card_id";
 String idempotencyKey = "idempotency-key";
 // Invoking the API call with sample inputs
 customers.deleteCardAsync(customerId, cardId, idempotencyKey, new APICallBack<GetCardResponse>() {
-    public void onSuccess(HttpContext context, GetCardResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCardAsync") getCardAsync
-
-> Get a customer's card
-
-
-```java
-void getCardAsync(
-        final String customerId,
-        final String cardId,
-        final APICallBack<GetCardResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| cardId |  ``` Required ```  | Card id |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-String cardId = "card_id";
-// Invoking the API call with sample inputs
-customers.getCardAsync(customerId, cardId, new APICallBack<GetCardResponse>() {
     public void onSuccess(HttpContext context, GetCardResponse response) {
         // TODO success callback handler
     }
@@ -3901,6 +3791,385 @@ customers.getAddressAsync(customerId, addressId, new APICallBack<GetAddressRespo
 
 
 
+### <a name="get_access_tokens_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getAccessTokensAsync") getAccessTokensAsync
+
+> Get all access tokens from a customer
+
+
+```java
+void getAccessTokensAsync(
+        final String customerId,
+        final Integer page,
+        final Integer size,
+        final APICallBack<ListAccessTokensResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+Integer page = 180;
+Integer size = 180;
+// Invoking the API call with sample inputs
+customers.getAccessTokensAsync(customerId, page, size, new APICallBack<ListAccessTokensResponse>() {
+    public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_customer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCustomerAsync") updateCustomerAsync
+
+> Updates a customer
+
+
+```java
+void updateCustomerAsync(
+        final String customerId,
+        final UpdateCustomerRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetCustomerResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| body |  ``` Required ```  | Request for updating a customer |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String customerId = "customer_id";
+    UpdateCustomerRequest body = new UpdateCustomerRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    customers.updateCustomerAsync(customerId, body, idempotencyKey, new APICallBack<GetCustomerResponse>() {
+        public void onSuccess(HttpContext context, GetCustomerResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="renew_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.renewCardAsync") renewCardAsync
+
+> Renew a card
+
+
+```java
+void renewCardAsync(
+        final String customerId,
+        final String cardId,
+        final String idempotencyKey,
+        final APICallBack<GetCardResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| cardId |  ``` Required ```  | Card Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+String cardId = "card_id";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+customers.renewCardAsync(customerId, cardId, idempotencyKey, new APICallBack<GetCardResponse>() {
+    public void onSuccess(HttpContext context, GetCardResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_customers_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCustomersAsync") getCustomersAsync
+
+> Get all Customers
+
+
+```java
+void getCustomersAsync(
+        final String name,
+        final String document,
+        final Integer page,
+        final Integer size,
+        final String email,
+        final String code,
+        final APICallBack<ListCustomersResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| name |  ``` Optional ```  | Name of the Customer |
+| document |  ``` Optional ```  | Document of the Customer |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
+| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
+| email |  ``` Optional ```  | Customer's email |
+| code |  ``` Optional ```  | Customer's code |
+
+
+#### Example Usage
+
+```java
+String name = "name";
+String document = "document";
+Integer page = 1;
+Integer size = 10;
+String email = "email";
+String code = "Code";
+// Invoking the API call with sample inputs
+customers.getCustomersAsync(name, document, page, size, email, code, new APICallBack<ListCustomersResponse>() {
+    public void onSuccess(HttpContext context, ListCustomersResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="delete_access_tokens_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.deleteAccessTokensAsync") deleteAccessTokensAsync
+
+> Delete a Customer's access tokens
+
+
+```java
+void deleteAccessTokensAsync(
+        final String customerId,
+        final APICallBack<ListAccessTokensResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+// Invoking the API call with sample inputs
+customers.deleteAccessTokensAsync(customerId, new APICallBack<ListAccessTokensResponse>() {
+    public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_customer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCustomerAsync") getCustomerAsync
+
+> Get a customer
+
+
+```java
+void getCustomerAsync(
+        final String customerId,
+        final APICallBack<GetCustomerResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+// Invoking the API call with sample inputs
+customers.getCustomerAsync(customerId, new APICallBack<GetCustomerResponse>() {
+    public void onSuccess(HttpContext context, GetCustomerResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCardAsync") updateCardAsync
+
+> Updates a card
+
+
+```java
+void updateCardAsync(
+        final String customerId,
+        final String cardId,
+        final UpdateCardRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetCardResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| cardId |  ``` Required ```  | Card id |
+| body |  ``` Required ```  | Request for updating a card |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String customerId = "customer_id";
+    String cardId = "card_id";
+    UpdateCardRequest body = new UpdateCardRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    customers.updateCardAsync(customerId, cardId, body, idempotencyKey, new APICallBack<GetCardResponse>() {
+        public void onSuccess(HttpContext context, GetCardResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 ### <a name="delete_address_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.deleteAddressAsync") deleteAddressAsync
 
 > Delete a Customer's address
@@ -3932,6 +4201,280 @@ String idempotencyKey = "idempotency-key";
 // Invoking the API call with sample inputs
 customers.deleteAddressAsync(customerId, addressId, idempotencyKey, new APICallBack<GetAddressResponse>() {
     public void onSuccess(HttpContext context, GetAddressResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_access_token_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.createAccessTokenAsync") createAccessTokenAsync
+
+> Creates a access token for a customer
+
+
+```java
+void createAccessTokenAsync(
+        final String customerId,
+        final CreateAccessTokenRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetAccessTokenResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| body |  ``` Required ```  | Request for creating a access token |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String customerId = "customer_id";
+    CreateAccessTokenRequest body = new CreateAccessTokenRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    customers.createAccessTokenAsync(customerId, body, idempotencyKey, new APICallBack<GetAccessTokenResponse>() {
+        public void onSuccess(HttpContext context, GetAccessTokenResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_address_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.createAddressAsync") createAddressAsync
+
+> Creates a new address for a customer
+
+
+```java
+void createAddressAsync(
+        final String customerId,
+        final CreateAddressRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetAddressResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| body |  ``` Required ```  | Request for creating an address |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String customerId = "customer_id";
+    CreateAddressRequest body = new CreateAddressRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    customers.createAddressAsync(customerId, body, idempotencyKey, new APICallBack<GetAddressResponse>() {
+        public void onSuccess(HttpContext context, GetAddressResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_cards_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCardsAsync") getCardsAsync
+
+> Get all cards from a customer
+
+
+```java
+void getCardsAsync(
+        final String customerId,
+        final Integer page,
+        final Integer size,
+        final APICallBack<ListCardsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+Integer page = 180;
+Integer size = 180;
+// Invoking the API call with sample inputs
+customers.getCardsAsync(customerId, page, size, new APICallBack<ListCardsResponse>() {
+    public void onSuccess(HttpContext context, ListCardsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_customer_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCustomerMetadataAsync") updateCustomerMetadataAsync
+
+> Updates the metadata a customer
+
+
+```java
+void updateCustomerMetadataAsync(
+        final String customerId,
+        final UpdateMetadataRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetCustomerResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | The customer id |
+| body |  ``` Required ```  | Request for updating the customer metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String customerId = "customer_id";
+    UpdateMetadataRequest body = new UpdateMetadataRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    customers.updateCustomerMetadataAsync(customerId, body, idempotencyKey, new APICallBack<GetCustomerResponse>() {
+        public void onSuccess(HttpContext context, GetCustomerResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCardAsync") getCardAsync
+
+> Get a customer's card
+
+
+```java
+void getCardAsync(
+        final String customerId,
+        final String cardId,
+        final APICallBack<GetCardResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| cardId |  ``` Required ```  | Card id |
+
+
+#### Example Usage
+
+```java
+String customerId = "customer_id";
+String cardId = "card_id";
+// Invoking the API call with sample inputs
+customers.getCardAsync(customerId, cardId, new APICallBack<GetCardResponse>() {
+    public void onSuccess(HttpContext context, GetCardResponse response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -4057,173 +4600,6 @@ customers.getAccessTokenAsync(customerId, tokenId, new APICallBack<GetAccessToke
 
 
 
-### <a name="create_access_token_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.createAccessTokenAsync") createAccessTokenAsync
-
-> Creates a access token for a customer
-
-
-```java
-void createAccessTokenAsync(
-        final String customerId,
-        final CreateAccessTokenRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetAccessTokenResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| body |  ``` Required ```  | Request for creating a access token |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String customerId = "customer_id";
-    CreateAccessTokenRequest body = new CreateAccessTokenRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    customers.createAccessTokenAsync(customerId, body, idempotencyKey, new APICallBack<GetAccessTokenResponse>() {
-        public void onSuccess(HttpContext context, GetAccessTokenResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_access_tokens_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getAccessTokensAsync") getAccessTokensAsync
-
-> Get all access tokens from a customer
-
-
-```java
-void getAccessTokensAsync(
-        final String customerId,
-        final Integer page,
-        final Integer size,
-        final APICallBack<ListAccessTokensResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-Integer page = 187;
-Integer size = 187;
-// Invoking the API call with sample inputs
-customers.getAccessTokensAsync(customerId, page, size, new APICallBack<ListAccessTokensResponse>() {
-    public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="create_address_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.createAddressAsync") createAddressAsync
-
-> Creates a new address for a customer
-
-
-```java
-void createAddressAsync(
-        final String customerId,
-        final CreateAddressRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetAddressResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| body |  ``` Required ```  | Request for creating an address |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String customerId = "customer_id";
-    CreateAddressRequest body = new CreateAddressRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    customers.createAddressAsync(customerId, body, idempotencyKey, new APICallBack<GetAddressResponse>() {
-        public void onSuccess(HttpContext context, GetAddressResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="get_addresses_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getAddressesAsync") getAddressesAsync
 
 > Gets all adressess from a customer
@@ -4250,8 +4626,8 @@ void getAddressesAsync(
 
 ```java
 String customerId = "customer_id";
-Integer page = 187;
-Integer size = 187;
+Integer page = 180;
+Integer size = 180;
 // Invoking the API call with sample inputs
 customers.getAddressesAsync(customerId, page, size, new APICallBack<ListAddressesResponse>() {
     public void onSuccess(HttpContext context, ListAddressesResponse response) {
@@ -4331,115 +4707,6 @@ try {
 
 
 
-### <a name="get_customers_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCustomersAsync") getCustomersAsync
-
-> Get all Customers
-
-
-```java
-void getCustomersAsync(
-        final String name,
-        final String document,
-        final Integer page,
-        final Integer size,
-        final String email,
-        final String code,
-        final APICallBack<ListCustomersResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Name of the Customer |
-| document |  ``` Optional ```  | Document of the Customer |
-| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
-| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
-| email |  ``` Optional ```  | Customer's email |
-| code |  ``` Optional ```  | Customer's code |
-
-
-#### Example Usage
-
-```java
-String name = "name";
-String document = "document";
-Integer page = 1;
-Integer size = 10;
-String email = "email";
-String code = "Code";
-// Invoking the API call with sample inputs
-customers.getCustomersAsync(name, document, page, size, email, code, new APICallBack<ListCustomersResponse>() {
-    public void onSuccess(HttpContext context, ListCustomersResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="delete_access_tokens_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.deleteAccessTokensAsync") deleteAccessTokensAsync
-
-> Delete a Customer's access tokens
-
-
-```java
-void deleteAccessTokensAsync(
-        final String customerId,
-        final APICallBack<ListAccessTokensResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-// Invoking the API call with sample inputs
-customers.deleteAccessTokensAsync(customerId, new APICallBack<ListAccessTokensResponse>() {
-    public void onSuccess(HttpContext context, ListAccessTokensResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="create_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.createCardAsync") createCardAsync
 
 > Creates a new card for a customer
@@ -4497,273 +4764,6 @@ try {
 
 
 
-### <a name="get_cards_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCardsAsync") getCardsAsync
-
-> Get all cards from a customer
-
-
-```java
-void getCardsAsync(
-        final String customerId,
-        final Integer page,
-        final Integer size,
-        final APICallBack<ListCardsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-Integer page = 187;
-Integer size = 187;
-// Invoking the API call with sample inputs
-customers.getCardsAsync(customerId, page, size, new APICallBack<ListCardsResponse>() {
-    public void onSuccess(HttpContext context, ListCardsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_customer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCustomerAsync") updateCustomerAsync
-
-> Updates a customer
-
-
-```java
-void updateCustomerAsync(
-        final String customerId,
-        final UpdateCustomerRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetCustomerResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| body |  ``` Required ```  | Request for updating a customer |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String customerId = "customer_id";
-    UpdateCustomerRequest body = new UpdateCustomerRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    customers.updateCustomerAsync(customerId, body, idempotencyKey, new APICallBack<GetCustomerResponse>() {
-        public void onSuccess(HttpContext context, GetCustomerResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_customer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.getCustomerAsync") getCustomerAsync
-
-> Get a customer
-
-
-```java
-void getCustomerAsync(
-        final String customerId,
-        final APICallBack<GetCustomerResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-// Invoking the API call with sample inputs
-customers.getCustomerAsync(customerId, new APICallBack<GetCustomerResponse>() {
-    public void onSuccess(HttpContext context, GetCustomerResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="renew_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.renewCardAsync") renewCardAsync
-
-> Renew a card
-
-
-```java
-void renewCardAsync(
-        final String customerId,
-        final String cardId,
-        final String idempotencyKey,
-        final APICallBack<GetCardResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| cardId |  ``` Required ```  | Card Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String customerId = "customer_id";
-String cardId = "card_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-customers.renewCardAsync(customerId, cardId, idempotencyKey, new APICallBack<GetCardResponse>() {
-    public void onSuccess(HttpContext context, GetCardResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_customer_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.CustomersController.updateCustomerMetadataAsync") updateCustomerMetadataAsync
-
-> Updates the metadata a customer
-
-
-```java
-void updateCustomerMetadataAsync(
-        final String customerId,
-        final UpdateMetadataRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetCustomerResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | The customer id |
-| body |  ``` Required ```  | Request for updating the customer metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String customerId = "customer_id";
-    UpdateMetadataRequest body = new UpdateMetadataRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    customers.updateCustomerMetadataAsync(customerId, body, idempotencyKey, new APICallBack<GetCustomerResponse>() {
-        public void onSuccess(HttpContext context, GetCustomerResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.ChargesController") ChargesController
@@ -4775,63 +4775,6 @@ The singleton instance of the ``` ChargesController ``` class can be accessed fr
 ```java
 ChargesController charges = client.getCharges();
 ```
-
-### <a name="update_charge_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.updateChargeMetadataAsync") updateChargeMetadataAsync
-
-> Updates the metadata from a charge
-
-
-```java
-void updateChargeMetadataAsync(
-        final String chargeId,
-        final UpdateMetadataRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetChargeResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | The charge id |
-| body |  ``` Required ```  | Request for updating the charge metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String chargeId = "charge_id";
-    UpdateMetadataRequest body = new UpdateMetadataRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    charges.updateChargeMetadataAsync(chargeId, body, idempotencyKey, new APICallBack<GetChargeResponse>() {
-        public void onSuccess(HttpContext context, GetChargeResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
 
 ### <a name="capture_charge_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.captureChargeAsync") captureChargeAsync
 
@@ -4875,6 +4818,130 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_charge_transactions_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.getChargeTransactionsAsync") getChargeTransactionsAsync
+
+> GetChargeTransactions
+
+
+```java
+void getChargeTransactionsAsync(
+        final String chargeId,
+        final Integer page,
+        final Integer size,
+        final APICallBack<ListChargeTransactionsResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```java
+String chargeId = "charge_id";
+Integer page = 180;
+Integer size = 180;
+// Invoking the API call with sample inputs
+charges.getChargeTransactionsAsync(chargeId, page, size, new APICallBack<ListChargeTransactionsResponse>() {
+    public void onSuccess(HttpContext context, ListChargeTransactionsResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_charges_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.getChargesAsync") getChargesAsync
+
+> Lists all charges
+
+
+```java
+void getChargesAsync(
+        final Integer page,
+        final Integer size,
+        final String code,
+        final String status,
+        final String paymentMethod,
+        final String customerId,
+        final String orderId,
+        final DateTime createdSince,
+        final DateTime createdUntil,
+        final APICallBack<ListChargesResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for charge's code |
+| status |  ``` Optional ```  | Filter for charge's status |
+| paymentMethod |  ``` Optional ```  | Filter for charge's payment method |
+| customerId |  ``` Optional ```  | Filter for charge's customer id |
+| orderId |  ``` Optional ```  | Filter for charge's order id |
+| createdSince |  ``` Optional ```  | Filter for the beginning of the range for charge's creation |
+| createdUntil |  ``` Optional ```  | Filter for the end of the range for charge's creation |
+
+
+#### Example Usage
+
+```java
+Integer page = 180;
+Integer size = 180;
+String code = "code";
+String status = "status";
+String paymentMethod = "payment_method";
+String customerId = "customer_id";
+String orderId = "order_id";
+DateTime createdSince = new Date();
+DateTime createdUntil = new Date();
+// Invoking the API call with sample inputs
+charges.getChargesAsync(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil, new APICallBack<ListChargesResponse>() {
+    public void onSuccess(HttpContext context, ListChargesResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
 ```
 
 #### Errors
@@ -4947,59 +5014,6 @@ try {
 
 
 
-### <a name="get_charge_transactions_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.getChargeTransactionsAsync") getChargeTransactionsAsync
-
-> GetChargeTransactions
-
-
-```java
-void getChargeTransactionsAsync(
-        final String chargeId,
-        final Integer page,
-        final Integer size,
-        final APICallBack<ListChargeTransactionsResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```java
-String chargeId = "charge_id";
-Integer page = 23;
-Integer size = 23;
-// Invoking the API call with sample inputs
-charges.getChargeTransactionsAsync(chargeId, page, size, new APICallBack<ListChargeTransactionsResponse>() {
-    public void onSuccess(HttpContext context, ListChargeTransactionsResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="update_charge_due_date_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.updateChargeDueDateAsync") updateChargeDueDateAsync
 
 > Updates the due date from a charge
@@ -5057,87 +5071,16 @@ try {
 
 
 
-### <a name="get_charges_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.getChargesAsync") getChargesAsync
+### <a name="confirm_payment_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.confirmPaymentAsync") confirmPaymentAsync
 
-> Lists all charges
-
-
-```java
-void getChargesAsync(
-        final Integer page,
-        final Integer size,
-        final String code,
-        final String status,
-        final String paymentMethod,
-        final String customerId,
-        final String orderId,
-        final DateTime createdSince,
-        final DateTime createdUntil,
-        final APICallBack<ListChargesResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for charge's code |
-| status |  ``` Optional ```  | Filter for charge's status |
-| paymentMethod |  ``` Optional ```  | Filter for charge's payment method |
-| customerId |  ``` Optional ```  | Filter for charge's customer id |
-| orderId |  ``` Optional ```  | Filter for charge's order id |
-| createdSince |  ``` Optional ```  | Filter for the beginning of the range for charge's creation |
-| createdUntil |  ``` Optional ```  | Filter for the end of the range for charge's creation |
-
-
-#### Example Usage
-
-```java
-Integer page = 23;
-Integer size = 23;
-String code = "code";
-String status = "status";
-String paymentMethod = "payment_method";
-String customerId = "customer_id";
-String orderId = "order_id";
-DateTime createdSince = new Date();
-DateTime createdUntil = new Date();
-// Invoking the API call with sample inputs
-charges.getChargesAsync(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil, new APICallBack<ListChargesResponse>() {
-    public void onSuccess(HttpContext context, ListChargesResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_charge_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.updateChargeCardAsync") updateChargeCardAsync
-
-> Updates the card from a charge
+> ConfirmPayment
 
 
 ```java
-void updateChargeCardAsync(
+void confirmPaymentAsync(
         final String chargeId,
-        final UpdateChargeCardRequest body,
         final String idempotencyKey,
+        final CreateConfirmPaymentRequest body,
         final APICallBack<GetChargeResponse> callBack)
 ```
 
@@ -5145,9 +5088,9 @@ void updateChargeCardAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Required ```  | Request for updating a charge's card |
+| chargeId |  ``` Required ```  | TODO: Add a parameter description |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for confirm payment |
 
 
 #### Example Usage
@@ -5155,10 +5098,10 @@ void updateChargeCardAsync(
 ```java
 try {
     String chargeId = "charge_id";
-    UpdateChargeCardRequest body = new UpdateChargeCardRequest();
     String idempotencyKey = "idempotency-key";
+    CreateConfirmPaymentRequest body = new CreateConfirmPaymentRequest();
     // Invoking the API call with sample inputs
-    charges.updateChargeCardAsync(chargeId, body, idempotencyKey, new APICallBack<GetChargeResponse>() {
+    charges.confirmPaymentAsync(chargeId, idempotencyKey, body, new APICallBack<GetChargeResponse>() {
         public void onSuccess(HttpContext context, GetChargeResponse response) {
             // TODO success callback handler
         }
@@ -5217,6 +5160,170 @@ charges.getChargeAsync(chargeId, new APICallBack<GetChargeResponse>() {
     }
 });
 
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="retry_charge_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.retryChargeAsync") retryChargeAsync
+
+> Retries a charge
+
+
+```java
+void retryChargeAsync(
+        final String chargeId,
+        final String idempotencyKey,
+        final APICallBack<GetChargeResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String chargeId = "charge_id";
+String idempotencyKey = "idempotency-key";
+// Invoking the API call with sample inputs
+charges.retryChargeAsync(chargeId, idempotencyKey, new APICallBack<GetChargeResponse>() {
+    public void onSuccess(HttpContext context, GetChargeResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_charge_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.updateChargeMetadataAsync") updateChargeMetadataAsync
+
+> Updates the metadata from a charge
+
+
+```java
+void updateChargeMetadataAsync(
+        final String chargeId,
+        final UpdateMetadataRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetChargeResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | The charge id |
+| body |  ``` Required ```  | Request for updating the charge metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String chargeId = "charge_id";
+    UpdateMetadataRequest body = new UpdateMetadataRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    charges.updateChargeMetadataAsync(chargeId, body, idempotencyKey, new APICallBack<GetChargeResponse>() {
+        public void onSuccess(HttpContext context, GetChargeResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_charge_card_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.updateChargeCardAsync") updateChargeCardAsync
+
+> Updates the card from a charge
+
+
+```java
+void updateChargeCardAsync(
+        final String chargeId,
+        final UpdateChargeCardRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetChargeResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| body |  ``` Required ```  | Request for updating a charge's card |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String chargeId = "charge_id";
+    UpdateChargeCardRequest body = new UpdateChargeCardRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    charges.updateChargeCardAsync(chargeId, body, idempotencyKey, new APICallBack<GetChargeResponse>() {
+        public void onSuccess(HttpContext context, GetChargeResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
 ```
 
 #### Errors
@@ -5342,56 +5449,6 @@ charges.getChargesSummaryAsync(status, createdSince, createdUntil, new APICallBa
 
 
 
-### <a name="retry_charge_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.retryChargeAsync") retryChargeAsync
-
-> Retries a charge
-
-
-```java
-void retryChargeAsync(
-        final String chargeId,
-        final String idempotencyKey,
-        final APICallBack<GetChargeResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String chargeId = "charge_id";
-String idempotencyKey = "idempotency-key";
-// Invoking the API call with sample inputs
-charges.retryChargeAsync(chargeId, idempotencyKey, new APICallBack<GetChargeResponse>() {
-    public void onSuccess(HttpContext context, GetChargeResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="create_charge_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.createChargeAsync") createChargeAsync
 
 > Creates a new charge
@@ -5420,63 +5477,6 @@ try {
     String idempotencyKey = "idempotency-key";
     // Invoking the API call with sample inputs
     charges.createChargeAsync(body, idempotencyKey, new APICallBack<GetChargeResponse>() {
-        public void onSuccess(HttpContext context, GetChargeResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="confirm_payment_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.ChargesController.confirmPaymentAsync") confirmPaymentAsync
-
-> ConfirmPayment
-
-
-```java
-void confirmPaymentAsync(
-        final String chargeId,
-        final String idempotencyKey,
-        final CreateConfirmPaymentRequest body,
-        final APICallBack<GetChargeResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-| body |  ``` Optional ```  | Request for confirm payment |
-
-
-#### Example Usage
-
-```java
-try {
-    String chargeId = "charge_id";
-    String idempotencyKey = "idempotency-key";
-    CreateConfirmPaymentRequest body = new CreateConfirmPaymentRequest();
-    // Invoking the API call with sample inputs
-    charges.confirmPaymentAsync(chargeId, idempotencyKey, body, new APICallBack<GetChargeResponse>() {
         public void onSuccess(HttpContext context, GetChargeResponse response) {
             // TODO success callback handler
         }
@@ -5565,6 +5565,446 @@ recipients.getTransferAsync(recipientId, transferId, new APICallBack<GetTransfer
 
 
 
+### <a name="get_recipient_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getRecipientAsync") getRecipientAsync
+
+> Retrieves recipient information
+
+
+```java
+void getRecipientAsync(
+        final String recipientId,
+        final APICallBack<GetRecipientResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipiend id |
+
+
+#### Example Usage
+
+```java
+String recipientId = "recipient_id";
+// Invoking the API call with sample inputs
+recipients.getRecipientAsync(recipientId, new APICallBack<GetRecipientResponse>() {
+    public void onSuccess(HttpContext context, GetRecipientResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_recipient_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateRecipientMetadataAsync") updateRecipientMetadataAsync
+
+> Updates recipient metadata
+
+
+```java
+void updateRecipientMetadataAsync(
+        final String recipientId,
+        final UpdateMetadataRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetRecipientResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| body |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String recipientId = "recipient_id";
+    UpdateMetadataRequest body = new UpdateMetadataRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    recipients.updateRecipientMetadataAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
+        public void onSuccess(HttpContext context, GetRecipientResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_transfer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.createTransferAsync") createTransferAsync
+
+> Creates a transfer for a recipient
+
+
+```java
+void createTransferAsync(
+        final String recipientId,
+        final CreateTransferRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetTransferResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient Id |
+| body |  ``` Required ```  | Transfer data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String recipientId = "recipient_id";
+    CreateTransferRequest body = new CreateTransferRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    recipients.createTransferAsync(recipientId, body, idempotencyKey, new APICallBack<GetTransferResponse>() {
+        public void onSuccess(HttpContext context, GetTransferResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="update_automatic_anticipation_settings_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateAutomaticAnticipationSettingsAsync") updateAutomaticAnticipationSettingsAsync
+
+> Updates recipient metadata
+
+
+```java
+void updateAutomaticAnticipationSettingsAsync(
+        final String recipientId,
+        final UpdateAutomaticAnticipationSettingsRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetRecipientResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| body |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String recipientId = "recipient_id";
+    UpdateAutomaticAnticipationSettingsRequest body = new UpdateAutomaticAnticipationSettingsRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    recipients.updateAutomaticAnticipationSettingsAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
+        public void onSuccess(HttpContext context, GetRecipientResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_balance_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getBalanceAsync") getBalanceAsync
+
+> Get balance information for a recipient
+
+
+```java
+void getBalanceAsync(
+        final String recipientId,
+        final APICallBack<GetBalanceResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+
+
+#### Example Usage
+
+```java
+String recipientId = "recipient_id";
+// Invoking the API call with sample inputs
+recipients.getBalanceAsync(recipientId, new APICallBack<GetBalanceResponse>() {
+    public void onSuccess(HttpContext context, GetBalanceResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_anticipations_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getAnticipationsAsync") getAnticipationsAsync
+
+> Retrieves a paginated list of anticipations from a recipient
+
+
+```java
+void getAnticipationsAsync(
+        final String recipientId,
+        final Integer page,
+        final Integer size,
+        final String status,
+        final String timeframe,
+        final DateTime paymentDateSince,
+        final DateTime paymentDateUntil,
+        final DateTime createdSince,
+        final DateTime createdUntil,
+        final APICallBack<ListAnticipationResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| status |  ``` Optional ```  | Filter for anticipation status |
+| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
+| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
+| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
+| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
+| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
+
+
+#### Example Usage
+
+```java
+String recipientId = "recipient_id";
+Integer page = 16;
+Integer size = 16;
+String status = "status";
+String timeframe = "timeframe";
+DateTime paymentDateSince = new Date();
+DateTime paymentDateUntil = new Date();
+DateTime createdSince = new Date();
+DateTime createdUntil = new Date();
+// Invoking the API call with sample inputs
+recipients.getAnticipationsAsync(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, new APICallBack<ListAnticipationResponse>() {
+    public void onSuccess(HttpContext context, ListAnticipationResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_withdraw_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getWithdrawByIdAsync") getWithdrawByIdAsync
+
+> GetWithdrawById
+
+
+```java
+void getWithdrawByIdAsync(
+        final String recipientId,
+        final String withdrawalId,
+        final APICallBack<GetWithdrawResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+String recipientId = "recipient_id";
+String withdrawalId = "withdrawal_id";
+// Invoking the API call with sample inputs
+recipients.getWithdrawByIdAsync(recipientId, withdrawalId, new APICallBack<GetWithdrawResponse>() {
+    public void onSuccess(HttpContext context, GetWithdrawResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="create_withdraw_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.createWithdrawAsync") createWithdrawAsync
+
+> CreateWithdraw
+
+
+```java
+void createWithdrawAsync(
+        final String recipientId,
+        final CreateWithdrawRequest body,
+        final APICallBack<GetWithdrawResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String recipientId = "recipient_id";
+    CreateWithdrawRequest body = new CreateWithdrawRequest();
+    // Invoking the API call with sample inputs
+    recipients.createWithdrawAsync(recipientId, body, new APICallBack<GetWithdrawResponse>() {
+        public void onSuccess(HttpContext context, GetWithdrawResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 ### <a name="update_recipient_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateRecipientAsync") updateRecipientAsync
 
 > Updates a recipient
@@ -5607,53 +6047,6 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_recipient_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getRecipientAsync") getRecipientAsync
-
-> Retrieves recipient information
-
-
-```java
-void getRecipientAsync(
-        final String recipientId,
-        final APICallBack<GetRecipientResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipiend id |
-
-
-#### Example Usage
-
-```java
-String recipientId = "recipient_id";
-// Invoking the API call with sample inputs
-recipients.getRecipientAsync(recipientId, new APICallBack<GetRecipientResponse>() {
-    public void onSuccess(HttpContext context, GetRecipientResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
 ```
 
 #### Errors
@@ -5726,23 +6119,17 @@ try {
 
 
 
-### <a name="get_anticipations_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getAnticipationsAsync") getAnticipationsAsync
+### <a name="update_recipient_default_bank_account_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateRecipientDefaultBankAccountAsync") updateRecipientDefaultBankAccountAsync
 
-> Retrieves a paginated list of anticipations from a recipient
+> Updates the default bank account from a recipient
 
 
 ```java
-void getAnticipationsAsync(
+void updateRecipientDefaultBankAccountAsync(
         final String recipientId,
-        final Integer page,
-        final Integer size,
-        final String status,
-        final String timeframe,
-        final DateTime paymentDateSince,
-        final DateTime paymentDateUntil,
-        final DateTime createdSince,
-        final DateTime createdUntil,
-        final APICallBack<ListAnticipationResponse> callBack)
+        final UpdateRecipientBankAccountRequest body,
+        final String idempotencyKey,
+        final APICallBack<GetRecipientResponse> callBack)
 ```
 
 #### Parameters
@@ -5750,31 +6137,70 @@ void getAnticipationsAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | recipientId |  ``` Required ```  | Recipient id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| status |  ``` Optional ```  | Filter for anticipation status |
-| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
-| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
-| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
-| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
-| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
+| body |  ``` Required ```  | Bank account data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-String recipientId = "recipient_id";
-Integer page = 23;
-Integer size = 23;
-String status = "status";
-String timeframe = "timeframe";
-DateTime paymentDateSince = new Date();
-DateTime paymentDateUntil = new Date();
-DateTime createdSince = new Date();
-DateTime createdUntil = new Date();
+try {
+    String recipientId = "recipient_id";
+    UpdateRecipientBankAccountRequest body = new UpdateRecipientBankAccountRequest();
+    String idempotencyKey = "idempotency-key";
+    // Invoking the API call with sample inputs
+    recipients.updateRecipientDefaultBankAccountAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
+        public void onSuccess(HttpContext context, GetRecipientResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+### <a name="get_recipient_by_code_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getRecipientByCodeAsync") getRecipientByCodeAsync
+
+> Retrieves recipient information
+
+
+```java
+void getRecipientByCodeAsync(
+        final String code,
+        final APICallBack<GetRecipientResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| code |  ``` Required ```  | Recipient code |
+
+
+#### Example Usage
+
+```java
+String code = "code";
 // Invoking the API call with sample inputs
-recipients.getAnticipationsAsync(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, new APICallBack<ListAnticipationResponse>() {
-    public void onSuccess(HttpContext context, ListAnticipationResponse response) {
+recipients.getRecipientByCodeAsync(code, new APICallBack<GetRecipientResponse>() {
+    public void onSuccess(HttpContext context, GetRecipientResponse response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -5873,8 +6299,8 @@ void getRecipientsAsync(
 #### Example Usage
 
 ```java
-Integer page = 23;
-Integer size = 23;
+Integer page = 16;
+Integer size = 16;
 // Invoking the API call with sample inputs
 recipients.getRecipientsAsync(page, size, new APICallBack<ListRecipientResponse>() {
     public void onSuccess(HttpContext context, ListRecipientResponse response) {
@@ -5954,170 +6380,6 @@ try {
 
 
 
-### <a name="get_withdraw_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getWithdrawByIdAsync") getWithdrawByIdAsync
-
-> GetWithdrawById
-
-
-```java
-void getWithdrawByIdAsync(
-        final String recipientId,
-        final String withdrawalId,
-        final APICallBack<GetWithdrawResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String recipientId = "recipient_id";
-String withdrawalId = "withdrawal_id";
-// Invoking the API call with sample inputs
-recipients.getWithdrawByIdAsync(recipientId, withdrawalId, new APICallBack<GetWithdrawResponse>() {
-    public void onSuccess(HttpContext context, GetWithdrawResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_recipient_default_bank_account_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateRecipientDefaultBankAccountAsync") updateRecipientDefaultBankAccountAsync
-
-> Updates the default bank account from a recipient
-
-
-```java
-void updateRecipientDefaultBankAccountAsync(
-        final String recipientId,
-        final UpdateRecipientBankAccountRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetRecipientResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Bank account data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String recipientId = "recipient_id";
-    UpdateRecipientBankAccountRequest body = new UpdateRecipientBankAccountRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    recipients.updateRecipientDefaultBankAccountAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
-        public void onSuccess(HttpContext context, GetRecipientResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_recipient_metadata_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateRecipientMetadataAsync") updateRecipientMetadataAsync
-
-> Updates recipient metadata
-
-
-```java
-void updateRecipientMetadataAsync(
-        final String recipientId,
-        final UpdateMetadataRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetRecipientResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String recipientId = "recipient_id";
-    UpdateMetadataRequest body = new UpdateMetadataRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    recipients.updateRecipientMetadataAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
-        public void onSuccess(HttpContext context, GetRecipientResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
 ### <a name="get_transfers_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getTransfersAsync") getTransfersAsync
 
 > Gets a paginated list of transfers for the recipient
@@ -6150,8 +6412,8 @@ void getTransfersAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 23;
-Integer size = 23;
+Integer page = 16;
+Integer size = 16;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();
@@ -6165,117 +6427,6 @@ recipients.getTransfersAsync(recipientId, page, size, status, createdSince, crea
     }
 });
 
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="create_transfer_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.createTransferAsync") createTransferAsync
-
-> Creates a transfer for a recipient
-
-
-```java
-void createTransferAsync(
-        final String recipientId,
-        final CreateTransferRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetTransferResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient Id |
-| body |  ``` Required ```  | Transfer data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String recipientId = "recipient_id";
-    CreateTransferRequest body = new CreateTransferRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    recipients.createTransferAsync(recipientId, body, idempotencyKey, new APICallBack<GetTransferResponse>() {
-        public void onSuccess(HttpContext context, GetTransferResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="create_withdraw_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.createWithdrawAsync") createWithdrawAsync
-
-> CreateWithdraw
-
-
-```java
-void createWithdrawAsync(
-        final String recipientId,
-        final CreateWithdrawRequest body,
-        final APICallBack<GetWithdrawResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String recipientId = "recipient_id";
-    CreateWithdrawRequest body = new CreateWithdrawRequest();
-    // Invoking the API call with sample inputs
-    recipients.createWithdrawAsync(recipientId, body, new APICallBack<GetWithdrawResponse>() {
-        public void onSuccess(HttpContext context, GetWithdrawResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
 
 #### Errors
@@ -6323,8 +6474,8 @@ void getWithdrawalsAsync(
 
 ```java
 String recipientId = "recipient_id";
-Integer page = 23;
-Integer size = 23;
+Integer page = 16;
+Integer size = 16;
 String status = "status";
 DateTime createdSince = new Date();
 DateTime createdUntil = new Date();
@@ -6338,63 +6489,6 @@ recipients.getWithdrawalsAsync(recipientId, page, size, status, createdSince, cr
     }
 });
 
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="update_automatic_anticipation_settings_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.updateAutomaticAnticipationSettingsAsync") updateAutomaticAnticipationSettingsAsync
-
-> Updates recipient metadata
-
-
-```java
-void updateAutomaticAnticipationSettingsAsync(
-        final String recipientId,
-        final UpdateAutomaticAnticipationSettingsRequest body,
-        final String idempotencyKey,
-        final APICallBack<GetRecipientResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    String recipientId = "recipient_id";
-    UpdateAutomaticAnticipationSettingsRequest body = new UpdateAutomaticAnticipationSettingsRequest();
-    String idempotencyKey = "idempotency-key";
-    // Invoking the API call with sample inputs
-    recipients.updateAutomaticAnticipationSettingsAsync(recipientId, body, idempotencyKey, new APICallBack<GetRecipientResponse>() {
-        public void onSuccess(HttpContext context, GetRecipientResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
 
 #### Errors
@@ -6502,100 +6596,6 @@ try {
     // TODO Auto-generated catch block
     e.printStackTrace();
 }
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_balance_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getBalanceAsync") getBalanceAsync
-
-> Get balance information for a recipient
-
-
-```java
-void getBalanceAsync(
-        final String recipientId,
-        final APICallBack<GetBalanceResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-
-
-#### Example Usage
-
-```java
-String recipientId = "recipient_id";
-// Invoking the API call with sample inputs
-recipients.getBalanceAsync(recipientId, new APICallBack<GetBalanceResponse>() {
-    public void onSuccess(HttpContext context, GetBalanceResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-### <a name="get_recipient_by_code_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.RecipientsController.getRecipientByCodeAsync") getRecipientByCodeAsync
-
-> Retrieves recipient information
-
-
-```java
-void getRecipientByCodeAsync(
-        final String code,
-        final APICallBack<GetRecipientResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| code |  ``` Required ```  | Recipient code |
-
-
-#### Example Usage
-
-```java
-String code = "code";
-// Invoking the API call with sample inputs
-recipients.getRecipientByCodeAsync(code, new APICallBack<GetRecipientResponse>() {
-    public void onSuccess(HttpContext context, GetRecipientResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
 ```
 
 #### Errors
@@ -6779,41 +6779,31 @@ tokens.getTokenAsync(id, publicKey, appId, new APICallBack<GetTokenResponse>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.TransactionsController") TransactionsController
+## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.TransfersController") TransfersController
 
 ### Get singleton instance
 
-The singleton instance of the ``` TransactionsController ``` class can be accessed from the API Client.
+The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
 
 ```java
-TransactionsController transactions = client.getTransactions();
+TransfersController transfers = client.getTransfers();
 ```
 
-### <a name="get_transaction_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.TransactionsController.getTransactionAsync") getTransactionAsync
+### <a name="get_transfers1_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.TransfersController.getTransfers1Async") getTransfers1Async
 
-> GetTransaction
+> Gets all transfers
 
 
 ```java
-void getTransactionAsync(
-        final String transactionId,
-        final APICallBack<GetTransactionResponse> callBack)
+void getTransfers1Async(final APICallBack<ListTransfers> callBack)
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| transactionId |  ``` Required ```  | TODO: Add a parameter description |
-
 
 #### Example Usage
 
 ```java
-String transactionId = "transaction_id";
 // Invoking the API call with sample inputs
-transactions.getTransactionAsync(transactionId, new APICallBack<GetTransactionResponse>() {
-    public void onSuccess(HttpContext context, GetTransactionResponse response) {
+transfers.getTransfers1Async(new APICallBack<ListTransfers>() {
+    public void onSuccess(HttpContext context, ListTransfers response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -6835,18 +6825,6 @@ transactions.getTransactionAsync(transactionId, new APICallBack<GetTransactionRe
 | 500 | Internal server error |
 
 
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.TransfersController") TransfersController
-
-### Get singleton instance
-
-The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
-
-```java
-TransfersController transfers = client.getTransfers();
-```
 
 ### <a name="get_transfer_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.TransfersController.getTransferByIdAsync") getTransferByIdAsync
 
@@ -6946,21 +6924,43 @@ try {
 
 
 
-### <a name="get_transfers1_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.TransfersController.getTransfers1Async") getTransfers1Async
+[Back to List of Controllers](#list_of_controllers)
 
-> Gets all transfers
+## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png "me.pagar.api.controllers.TransactionsController") TransactionsController
+
+### Get singleton instance
+
+The singleton instance of the ``` TransactionsController ``` class can be accessed from the API Client.
+
+```java
+TransactionsController transactions = client.getTransactions();
+```
+
+### <a name="get_transaction_async"></a>![Method: ](https://apidocs.io/img/method.png "me.pagar.api.controllers.TransactionsController.getTransactionAsync") getTransactionAsync
+
+> GetTransaction
 
 
 ```java
-void getTransfers1Async(final APICallBack<ListTransfers> callBack)
+void getTransactionAsync(
+        final String transactionId,
+        final APICallBack<GetTransactionResponse> callBack)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| transactionId |  ``` Required ```  | TODO: Add a parameter description |
+
 
 #### Example Usage
 
 ```java
+String transactionId = "transaction_id";
 // Invoking the API call with sample inputs
-transfers.getTransfers1Async(new APICallBack<ListTransfers>() {
-    public void onSuccess(HttpContext context, ListTransfers response) {
+transactions.getTransactionAsync(transactionId, new APICallBack<GetTransactionResponse>() {
+    public void onSuccess(HttpContext context, GetTransactionResponse response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
