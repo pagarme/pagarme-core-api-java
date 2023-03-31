@@ -130,6 +130,14 @@ public class GetDebitCardTransactionResponseBuilder
         getDebitCardTransactionResponse.setThreedAuthenticationUrl(threedAuthenticationUrl);
         return this;
     }
+
+    /**
+     * Identify when a card is prepaid, credit or debit.
+     */
+    public GetDebitCardTransactionResponseBuilder fundingSource(String fundingSource) {
+        getDebitCardTransactionResponse.setFundingSource(fundingSource);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
