@@ -57,6 +57,14 @@ public class CreateVoucherPaymentRequestBuilder {
         createVoucherPaymentRequest.setRecurrencyCycle(recurrencyCycle);
         return this;
     }
+
+    /**
+     * Customer business segment code
+     */
+    public CreateVoucherPaymentRequestBuilder merchantCategoryCode(Long merchantCategoryCode) {
+        createVoucherPaymentRequest.setMerchantCategoryCode(merchantCategoryCode);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
