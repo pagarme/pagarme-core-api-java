@@ -52,6 +52,14 @@ public class GetPixTransactionResponseBuilder
         getPixTransactionResponse.setPayer(payer);
         return this;
     }
+
+    /**
+     * Pix provider TID
+     */
+    public GetPixTransactionResponseBuilder pixProviderTid(String pixProviderTid) {
+        getPixTransactionResponse.setPixProviderTid(pixProviderTid);
+        return this;
+    }
     /**
      * Build the instance with the given values
      */
