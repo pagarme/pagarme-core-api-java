@@ -74,19 +74,19 @@ public class PagarmeCoreApiClient {
     }
 
     /**
-     * Singleton access to Transactions controller
-     * @return	Returns the TransactionsController instance 
-     */
-    public TransactionsController getTransactions() {
-        return TransactionsController.getInstance();
-    }
-
-    /**
      * Singleton access to Transfers controller
      * @return	Returns the TransfersController instance 
      */
     public TransfersController getTransfers() {
         return TransfersController.getInstance();
+    }
+
+    /**
+     * Singleton access to Transactions controller
+     * @return	Returns the TransactionsController instance 
+     */
+    public TransactionsController getTransactions() {
+        return TransactionsController.getInstance();
     }
 
     /**
@@ -114,8 +114,9 @@ public class PagarmeCoreApiClient {
     /**
      * Client initialization constructor 
      */     
-    public PagarmeCoreApiClient(String basicAuthUserName, String basicAuthPassword) {
+    public PagarmeCoreApiClient(String serviceRefererName, String basicAuthUserName, String basicAuthPassword) {
         this();
+        Configuration.serviceRefererName = serviceRefererName;
         Configuration.basicAuthUserName = basicAuthUserName;
         Configuration.basicAuthPassword = basicAuthPassword;
     }

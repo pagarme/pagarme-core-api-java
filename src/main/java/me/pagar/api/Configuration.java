@@ -10,6 +10,9 @@ public class Configuration {
     //The base Uri for API calls
     public static String baseUri = "https://api.pagar.me/core/v5";
 
+    //TODO: Replace the serviceRefererName with an appropriate value
+    public static String serviceRefererName = "";
+
     //The username to use with basic authentication
     //TODO: Replace the basicAuthUserName with an appropriate value
     public static String basicAuthUserName = "TODO: Replace";
