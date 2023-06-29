@@ -114,10 +114,10 @@ public class PagarmeCoreApiClient {
     /**
      * Client initialization constructor 
      */     
-    public PagarmeCoreApiClient(String serviceRefererName, String basicAuthUserName, String basicAuthPassword) {
+    public PagarmeCoreApiClient(String basicAuthUserName, String basicAuthPassword, String serviceRefererName) {
         this();
-        Configuration.serviceRefererName = serviceRefererName;
         Configuration.basicAuthUserName = basicAuthUserName;
         Configuration.basicAuthPassword = basicAuthPassword;
+        Configuration.serviceRefererName = serviceRefererName;
     }
 }
