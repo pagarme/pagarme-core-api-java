@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
+import java.nio.charset.StandardCharsets;
+
 import me.pagar.api.http.request.HttpBodyRequest;
 import me.pagar.api.http.request.HttpMethod;
 import me.pagar.api.http.request.HttpRequest;
@@ -208,7 +210,7 @@ public class OkClient implements HttpClient {
 
             // set request body
             requestBody = okhttp3.RequestBody.create(okhttp3.MediaType.parse(contentType),
-                    ((HttpBodyRequest) httpRequest).getBody().getBytes());
+                    ((HttpBodyRequest) httpRequest).getBody().getBytes(StandardCharsets.UTF_8));
         } else {
 
             List<SimpleEntry<String, Object>> parameters = httpRequest.getParameters();
